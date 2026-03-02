@@ -11,7 +11,7 @@
 
 ## Navigation (sticky)
 - Left: Brag & Bev wordmark (no trash can)
-- Right: links: Dumpster Diver, Brag & Bev, Saint Julian, Contact
+- Right: links: Dumpster Diver, Brag & Bev, Contact
 - Sticky top, subtle blur/opacity, thin bottom border
 
 ## Hero (must be edge-to-edge)
@@ -28,7 +28,6 @@
 ## Section 2 (placeholder)
 - Title: “Made for people who care about the details.”
 - 3 feature cards (placeholders): “Fast”, “Clean”, “Controlled”
-- Add a placeholder “Saint Julian feature” block below that (text only for now)
 
 ## Deliverable
 - Update ONLY `index.html`
