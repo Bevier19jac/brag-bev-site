@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Brag &amp; Bev — Dumpster Diver</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                gold: '#d4af37',
+                dark: '#050816',
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="min-h-screen bg-brand-dark text-slate-100 antialiased">
+    <!-- Sticky Navigation -->
+    <header
+      class="sticky top-0 z-50 border-b border-white/10 bg-brand-dark/80 backdrop-blur-md"
+    >
+      <nav
+        class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8"
+        aria-label="Primary"
+      >
+        <a href="#" class="flex items-center gap-3">
+          <img
+            src="assets/brag-bev-wordmark.png"
+            alt="Brag &amp; Bev"
+            class="h-7 w-auto"
+          />
+        </a>
+        <div class="hidden items-center gap-8 text-sm font-medium sm:flex">
+          <a
+            href="#dumpster-diver"
+            class="transition-colors hover:text-brand-gold"
+            >Dumpster Diver</a
+          >
+          <a
+            href="#brag-bev"
+            class="transition-colors hover:text-brand-gold"
+            >Brag &amp; Bev</a
+          >
+          <a
+            href="#saint-julian"
+            class="transition-colors hover:text-brand-gold"
+            >Saint Julian</a
+          >
+          <a
+            href="#contact"
+            class="transition-colors hover:text-brand-gold"
+            >Contact</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero (edge-to-edge, full-width background) -->
+      <section
+        id="dumpster-diver"
+        class="relative overflow-hidden bg-gradient-to-br from-brand-dark via-slate-900 to-black"
+      >
+        <div
+          class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(212,175,55,0.24),_transparent_55%)]"
+          aria-hidden="true"
+        ></div>
+
+        <div
+          class="relative mx-auto flex max-w-6xl flex-col gap-12 px-4 py-16 sm:px-6 sm:py-20 md:flex-row md:items-center lg:px-8 lg:py-24"
+        >
+          <!-- Left column: copy + CTAs -->
+          <div class="max-w-xl space-y-6 md:flex-1">
+            <p class="text-xs font-semibold uppercase tracking-[0.25em] text-brand-gold/80">
+              Brag &amp; Bev — Dumpster Diver
+            </p>
+            <h1
+              class="text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl"
+            >
+              Clean Without Compromise.
+            </h1>
+            <p class="text-base text-slate-300 sm:text-lg">
+              Premium, purpose-built products from Brag &amp; Bev — starting
+              with Dumpster Diver.
+            </p>
+            <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
+              <a
+                href="#dumpster-diver"
+                class="inline-flex items-center justify-center rounded-full bg-brand-gold px-6 py-2.5 text-sm font-semibold text-black shadow-lg shadow-brand-gold/40 transition hover:bg-brand-gold/90"
+              >
+                Explore Dumpster Diver
+              </a>
+              <a
+                href="#brag-bev"
+                class="inline-flex items-center justify-center rounded-full border border-slate-600/70 bg-transparent px-6 py-2.5 text-sm font-semibold text-slate-100 transition hover:border-brand-gold hover:text-brand-gold"
+              >
+                Learn about Brag &amp; Bev
+              </a>
+            </div>
+          </div>
+
+          <!-- Right column: crest image -->
+          <div class="md:flex-1">
+            <div
+              class="mx-auto flex h-64 w-64 items-center justify-center rounded-full border border-brand-gold/40 bg-slate-900/60 shadow-[0_0_80px_rgba(212,175,55,0.45)] backdrop-blur-md sm:h-72 sm:w-72 md:h-80 md:w-80"
+            >
+              <img
+                src="assets/dumpster-diver-crest.png"
+                alt="Dumpster Diver crest"
+                class="h-40 w-auto sm:h-44 md:h-48"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Placeholder content -->
+      <section
+        id="brag-bev"
+        class="border-t border-white/5 bg-slate-950/80 px-4 py-16 sm:px-6 lg:px-8 lg:py-20"
+      >
+        <div class="mx-auto max-w-6xl space-y-10">
+          <div class="max-w-2xl space-y-4">
+            <h2 class="text-2xl font-semibold tracking-tight sm:text-3xl">
+              Made for people who care about the details.
+            </h2>
+            <p class="text-sm text-slate-300">
+              Placeholder copy for the Brag &amp; Bev story and how Dumpster
+              Diver fits into a broader ecosystem of considered, premium
+              products.
+            </p>
+          </div>
+
+          <!-- Feature cards -->
+          <div class="grid gap-6 md:grid-cols-3">
+            <article class="rounded-2xl border border-white/10 bg-slate-900/60 p-6">
+              <h3 class="mb-2 text-sm font-semibold tracking-wide text-brand-gold">
+                Fast
+              </h3>
+              <p class="text-sm text-slate-300">
+                Placeholder copy describing speed and efficiency benefits for
+                busy operators and teams.
+              </p>
+            </article>
+
+            <article class="rounded-2xl border border-white/10 bg-slate-900/60 p-6">
+              <h3 class="mb-2 text-sm font-semibold tracking-wide text-brand-gold">
+                Clean
+              </h3>
+              <p class="text-sm text-slate-300">
+                Placeholder copy emphasizing cleanliness, hygiene, and elevated
+                standards in harsh environments.
+              </p>
+            </article>
+
+            <article class="rounded-2xl border border-white/10 bg-slate-900/60 p-6">
+              <h3 class="mb-2 text-sm font-semibold tracking-wide text-brand-gold">
+                Controlled
+              </h3>
+              <p class="text-sm text-slate-300">
+                Placeholder copy focusing on control, precision, and confidence
+                in how Dumpster Diver is deployed.
+              </p>
+            </article>
+          </div>
+
+          <!-- Saint Julian placeholder feature block -->
+          <section
+            id="saint-julian"
+            class="rounded-2xl border border-white/10 bg-slate-900/80 p-6 sm:p-8"
+          >
+            <h3 class="text-sm font-semibold tracking-wide text-brand-gold">
+              Saint Julian feature (placeholder)
+            </h3>
+            <p class="mt-3 text-sm text-slate-300">
+              Placeholder copy for a future Saint Julian feature highlight.
+              This is where we will introduce how Saint Julian complements the
+              Brag &amp; Bev portfolio and the Dumpster Diver offering.
+            </p>
+          </section>
+        </div>
+      </section>
+
+      <!-- Placeholder contact anchor -->
+      <section id="contact" class="px-4 py-10 text-center text-xs text-slate-500">
+        <p>Contact section placeholder.</p>
+      </section>
+    </main>
+  </body>
+</html>
