@@ -30,11 +30,11 @@
         class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8"
         aria-label="Primary"
       >
-        <a href="#" class="flex items-center gap-3">
+        <a href="index.html" class="flex items-center gap-3">
           <img
-            src="assets/brag-bev-wordmark.png"
+            src="assets/BragAndBev_Transparent.png"
             alt="Brag &amp; Bev"
-            class="h-7 w-auto"
+            class="h-9 w-auto sm:h-10 lg:h-11"
           />
         </a>
         <div class="hidden items-center gap-8 text-sm font-medium sm:flex">
@@ -48,6 +48,32 @@
             class="transition-colors hover:text-brand-gold"
             >Brag &amp; Bev</a
           >
+          <div class="relative group">
+            <a
+              href="about.html"
+              class="inline-flex items-center gap-1 transition-colors hover:text-brand-gold"
+            >
+              <span>About Us</span>
+              <span
+                class="text-xs leading-none text-slate-300 group-hover:text-brand-gold"
+                >▾</span
+              >
+            </a>
+            <div
+              class="invisible absolute right-0 mt-2 w-52 rounded-xl border border-white/10 bg-brand-dark/95 py-1 text-sm shadow-lg opacity-0 transition group-hover:visible group-hover:opacity-100"
+            >
+              <a
+                href="about.html#founders"
+                class="block px-4 py-2 text-slate-100 hover:bg-white/5 hover:text-brand-gold"
+                >Founders</a
+              >
+              <a
+                href="about.html#braganini-bevier"
+                class="block px-4 py-2 text-slate-100 hover:bg-white/5 hover:text-brand-gold"
+                >Braganini &amp; Bevier</a
+              >
+            </div>
+          </div>
           <a
             href="#contact"
             class="transition-colors hover:text-brand-gold"
@@ -61,7 +87,7 @@
       <!-- Hero (edge-to-edge, full-width background) -->
       <section
         id="dumpster-diver"
-        class="relative overflow-hidden bg-gradient-to-br from-brand-dark via-slate-900 to-black"
+        class="relative overflow-hidden min-h-[70vh] lg:min-h-[78vh] bg-gradient-to-br from-brand-dark via-slate-900 to-black"
       >
         <div
           class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(212,175,55,0.24),_transparent_55%)]"
@@ -69,28 +95,19 @@
         ></div>
 
         <div
-          class="relative mx-auto flex w-full flex-col gap-12 px-6 py-16 sm:px-6 sm:py-20 md:flex-row md:items-center lg:px-8 lg:py-24"
+          class="relative mx-auto flex w-full max-w-7xl flex-col gap-6 px-6 py-10 sm:px-6 sm:py-14 md:grid md:grid-cols-2 md:items-center lg:grid-cols-[1.05fr_0.95fr] lg:gap-8 lg:px-8 lg:py-16"
         >
           <!-- Left column: copy + CTAs -->
           <div class="space-y-6 md:flex-1">
             <div class="flex items-center gap-3">
               <img
-                src="assets/brag-bev-wordmark.png"
-                alt="Brag &amp; Bev"
-                class="h-6 w-auto"
+                src="assets/DumpsterDiver_Horizontal_Transparent.png"
+                alt="Dumpster Diver"
+                class="block w-full max-w-[340px] sm:max-w-[420px] md:max-w-[520px] lg:max-w-[620px] xl:max-w-[720px] h-auto object-contain"
               />
-              <p
-                class="text-xs font-semibold uppercase tracking-[0.25em] text-brand-gold/80"
-              >
-                From Brag &amp; Bev
-              </p>
             </div>
-            <h1
-              class="text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl"
-            >
-              Dumpster Diver
-            </h1>
-            <p class="text-base text-slate-200 sm:text-lg">
+            <h1 class="sr-only">Dumpster Diver</h1>
+            <p class="text-lg font-semibold text-slate-100 sm:text-xl">
               Clean Without Compromise.
             </p>
             <p class="text-sm text-slate-300 sm:text-base">
@@ -105,7 +122,7 @@
                 Explore Dumpster Diver
               </a>
               <a
-                href="#about-brag-bev"
+                href="about.html"
                 class="inline-flex items-center justify-center rounded-full border border-slate-600/70 bg-transparent px-6 py-2.5 text-sm font-semibold text-slate-100 transition hover:border-brand-gold hover:text-brand-gold"
               >
                 Learn about Brag &amp; Bev
@@ -113,15 +130,15 @@
             </div>
           </div>
 
-          <!-- Right column: crest image -->
+          <!-- Right column: hero logo image -->
           <div class="md:flex-1">
             <div
-              class="mx-auto flex h-64 w-64 items-center justify-center rounded-full border border-brand-gold/40 bg-slate-900/60 shadow-[0_0_80px_rgba(212,175,55,0.45)] backdrop-blur-md sm:h-72 sm:w-72 md:h-80 md:w-80"
+              class="mx-auto flex items-center justify-center"
             >
               <img
-                src="assets/dumpster-diver-crest.png"
-                alt="Dumpster Diver crest"
-                class="h-40 w-auto sm:h-44 md:h-48"
+                src="assets/DumpsterDiver_Stacked_Transparent.png"
+                alt="Dumpster Diver"
+                class="h-[340px] w-auto sm:h-[420px] lg:h-[520px] xl:h-[600px] object-contain"
               />
             </div>
           </div>
@@ -159,6 +176,13 @@
               goal: products that earn a permanent place in your workflow, not
               just another thing that lives in the supply closet.
             </p>
+            <div class="pt-3">
+              <img
+                src="assets/BragAndBev_Transparent.png"
+                alt="Brag &amp; Bev"
+                class="h-10 w-auto sm:h-12 md:h-14"
+              />
+            </div>
           </div>
           <div
             class="space-y-4 rounded-2xl border border-white/10 bg-slate-900/70 p-6"

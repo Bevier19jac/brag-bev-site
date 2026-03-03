@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Brag &amp; Bev — Dumpster Diver</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                gold: '#d4af37',
+                dark: '#050816',
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="min-h-screen bg-brand-dark text-slate-100 antialiased">
+    <!-- Sticky Navigation -->
+    <header
+      class="sticky top-0 z-50 border-b border-white/10 bg-brand-dark/80 backdrop-blur-md"
+    >
+      <nav
+        class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8"
+        aria-label="Primary"
+      >
+        <a href="index.html" class="flex items-center gap-3">
+          <img
+            src="assets/BragAndBev_Transparent.png"
+            alt="Brag &amp; Bev"
+            class="h-9 w-auto sm:h-10 lg:h-11"
+          />
+        </a>
+        <div class="hidden items-center gap-8 text-sm font-medium sm:flex">
+          <a
+            href="index.html#dumpster-diver"
+            class="transition-colors hover:text-brand-gold"
+            >Dumpster Diver</a
+          >
+          <a
+            href="index.html#brag-bev"
+            class="transition-colors hover:text-brand-gold"
+            >Brag &amp; Bev</a
+          >
+          <div class="relative group">
+            <a
+              href="about.html"
+              class="inline-flex items-center gap-1 transition-colors hover:text-brand-gold"
+            >
+              <span>About Us</span>
+              <span
+                class="text-xs leading-none text-slate-300 group-hover:text-brand-gold"
+                >▾</span
+              >
+            </a>
+            <div
+              class="invisible absolute right-0 mt-2 w-52 rounded-xl border border-white/10 bg-brand-dark/95 py-1 text-sm shadow-lg opacity-0 transition group-hover:visible group-hover:opacity-100"
+            >
+              <a
+                href="about.html#founders"
+                class="block px-4 py-2 text-slate-100 hover:bg-white/5 hover:text-brand-gold"
+                >Founders</a
+              >
+              <a
+                href="about.html#braganini-bevier"
+                class="block px-4 py-2 text-slate-100 hover:bg-white/5 hover:text-brand-gold"
+                >Braganini &amp; Bevier</a
+              >
+            </div>
+          </div>
+          <a
+            href="index.html#contact"
+            class="transition-colors hover:text-brand-gold"
+            >Contact</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- About hero: Braganini & Bevier -->
+      <section class="border-b border-white/10 bg-slate-950/90">
+        <div class="mx-auto max-w-7xl px-6 pt-16 pb-10 text-center">
+          <!-- Big Braganini & Bevier Logo -->
+          <img
+            src="assets/BraganiniAndBevier_Transparent.png"
+            alt="Braganini &amp; Bevier"
+            class="mx-auto h-[120px] sm:h-[160px] md:h-[200px] lg:h-[240px] xl:h-[280px] w-auto object-contain"
+          />
+
+          <!-- Story Copy -->
+          <div
+            class="mt-8 mx-auto max-w-3xl text-sm leading-relaxed text-slate-300"
+          >
+            <p>
+              This page is a placeholder for the full Braganini &amp; Bevier
+              story. Final copy will introduce the partners, the work behind
+              Dumpster Diver, and the broader family of products.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Founders section -->
+      <section
+        id="founders"
+        class="border-t border-white/10 bg-slate-950/90"
+      >
+        <div class="mx-auto max-w-7xl px-6 py-12">
+          <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div class="space-y-3">
+              <h2 class="text-2xl font-semibold tracking-tight sm:text-3xl">
+                Founders
+              </h2>
+              <p class="text-sm text-slate-300 sm:max-w-xl">
+                A small founding group of operators, builders, and collaborators
+                shaping Dumpster Diver and the work around it. Copy here will be
+                updated with full bios later.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <!-- Candice -->
+            <article
+              class="flex flex-col rounded-2xl border border-white/10 bg-slate-900/70 p-5 shadow-sm"
+            >
+              <div class="mx-auto mb-4 h-28 w-28 overflow-hidden rounded-2xl bg-slate-800">
+                <img
+                  src="assets/Candice_Headshot.png"
+                  alt="Candice"
+                  class="h-full w-full object-cover"
+                />
+              </div>
+              <h3 class="text-sm font-semibold text-slate-50">Candice</h3>
+              <p
+                class="mt-1 text-[11px] font-medium uppercase tracking-[0.22em] text-brand-gold/80"
+              >
+                Co-Founder
+              </p>
+              <div
+                class="mt-4 rounded-xl border border-white/5 bg-slate-950/60 p-3"
+              >
+                <p class="text-xs text-slate-300">
+                  Background placeholder copy for Candice. This will eventually
+                  highlight experience, point of view on operations, and how
+                  that shapes the Dumpster Diver system.
+                </p>
+              </div>
+            </article>
+
+            <!-- Jacob -->
+            <article
+              class="flex flex-col rounded-2xl border border-white/10 bg-slate-900/70 p-5 shadow-sm"
+            >
+              <div class="mx-auto mb-4 h-28 w-28 overflow-hidden rounded-2xl bg-slate-800">
+                <img
+                  src="assets/Jacob_Headshot.png"
+                  alt="Jacob"
+                  class="h-full w-full object-cover"
+                />
+              </div>
+              <h3 class="text-sm font-semibold text-slate-50">Jacob</h3>
+              <p
+                class="mt-1 text-[11px] font-medium uppercase tracking-[0.22em] text-brand-gold/80"
+              >
+                Co-Founder
+              </p>
+              <div
+                class="mt-4 rounded-xl border border-white/5 bg-slate-950/60 p-3"
+              >
+                <p class="text-xs text-slate-300">
+                  Background placeholder copy for Jacob. Final text will speak
+                  to lived experience, the problems being solved, and why this
+                  work matters personally.
+                </p>
+              </div>
+            </article>
+
+            <!-- John Braganini -->
+            <article
+              class="flex flex-col rounded-2xl border border-white/10 bg-slate-900/70 p-5 shadow-sm"
+            >
+              <div class="mx-auto mb-4 h-28 w-28 overflow-hidden rounded-2xl bg-slate-800">
+                <img
+                  src="assets/JB_Headshot.png"
+                  alt="John Braganini"
+                  class="h-full w-full object-cover"
+                />
+              </div>
+              <h3 class="text-sm font-semibold text-slate-50">
+                John Braganini
+              </h3>
+              <p
+                class="mt-1 text-[11px] font-medium uppercase tracking-[0.22em] text-brand-gold/80"
+              >
+                Co-Founder
+              </p>
+              <div
+                class="mt-4 rounded-xl border border-white/5 bg-slate-950/60 p-3"
+              >
+                <p class="text-xs text-slate-300">
+                  Background placeholder copy for John Braganini. This will
+                  eventually cover craft, domain expertise, and contributions to
+                  the Braganini &amp; Bevier collaboration.
+                </p>
+              </div>
+            </article>
+
+            <!-- Apollo -->
+            <article
+              class="flex flex-col rounded-2xl border border-white/10 bg-slate-900/70 p-5 shadow-sm"
+            >
+              <div class="mx-auto mb-4 h-28 w-28 overflow-hidden rounded-2xl bg-slate-800">
+                <img
+                  src="assets/Apollo_Headshot.png"
+                  alt="Apollo"
+                  class="h-full w-full object-cover"
+                />
+              </div>
+              <h3 class="text-sm font-semibold text-slate-50">Apollo</h3>
+              <p
+                class="mt-1 text-[11px] font-medium uppercase tracking-[0.22em] text-brand-gold/80"
+              >
+                Co-Founder
+              </p>
+              <div
+                class="mt-4 rounded-xl border border-white/5 bg-slate-950/60 p-3"
+              >
+                <p class="text-xs text-slate-300">
+                  Background placeholder copy for Apollo. Future copy will
+                  outline story, perspective, and how they help keep the work
+                  grounded and real.
+                </p>
+              </div>
+            </article>
+
+            <!-- Sarah -->
+            <article
+              class="flex flex-col rounded-2xl border border-white/10 bg-slate-900/70 p-5 shadow-sm"
+            >
+              <div class="mx-auto mb-4 h-28 w-28 overflow-hidden rounded-2xl bg-slate-800">
+                <img
+                  src="assets/Sarah_Headshot.png"
+                  alt="Sarah"
+                  class="h-full w-full object-cover"
+                />
+              </div>
+              <h3 class="text-sm font-semibold text-slate-50">Sarah</h3>
+              <p
+                class="mt-1 text-[11px] font-medium uppercase tracking-[0.22em] text-brand-gold/80"
+              >
+                Co-Founder
+              </p>
+              <div
+                class="mt-4 rounded-xl border border-white/5 bg-slate-950/60 p-3"
+              >
+                <p class="text-xs text-slate-300">
+                  Background placeholder copy for Sarah. This will eventually
+                  outline experience, hospitality instincts, and her role in
+                  shaping how Dumpster Diver shows up in the field.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Braganini & Bevier section -->
+      <section
+        id="braganini-bevier"
+        class="border-t border-white/5 bg-slate-950/80 px-4 py-16 sm:px-6 lg:px-8 lg:py-20"
+      >
+        <div class="mx-auto max-w-4xl space-y-4">
+          <h2 class="text-2xl font-semibold tracking-tight sm:text-3xl">
+            Braganini &amp; Bevier
+          </h2>
+          <p class="text-sm text-slate-300">
+            This is placeholder text for the Braganini &amp; Bevier story.
+            Final content will explain how the partnership came together, the
+            history behind the name, and how it connects to Brag &amp; Bev and
+            Dumpster Diver.
+          </p>
+          <p class="text-sm text-slate-300">
+            Use this section for the deeper origin story, philosophy, and any
+            details that deserve a dedicated anchor from the navigation. The
+            structure is intentionally simple and can be expanded later.
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
