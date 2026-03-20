@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Product — Dumpster Diver</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { brand: { gold: '#d4af37', dark: '#050816' } },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="min-h-screen bg-brand-dark text-slate-100 antialiased">
+    <header class="sticky top-0 z-50 border-b border-white/10 bg-brand-dark/75 backdrop-blur-xl">
+      <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+        <a href="index.html"><img src="assets/BragAndBev_Transparent.png" alt="Brag and Bev" class="h-9 w-auto sm:h-10" /></a>
+        <div class="hidden items-center gap-7 text-sm font-medium sm:flex">
+          <a href="index.html" class="transition hover:text-brand-gold">Home</a>
+          <div class="group relative">
+            <a href="product.html" class="inline-flex items-center gap-1 text-brand-gold">Product <span class="text-xs">▾</span></a>
+            <div class="invisible absolute right-0 mt-2 w-56 rounded-2xl border border-white/10 bg-slate-950/95 p-2 opacity-0 transition group-hover:visible group-hover:opacity-100">
+              <a href="product.html" class="block rounded-lg px-3 py-2 hover:bg-white/5 hover:text-brand-gold">Overview</a>
+              <a href="prototype.html" class="block rounded-lg px-3 py-2 hover:bg-white/5 hover:text-brand-gold">Prototype Development</a>
+              <a href="partners.html" class="block rounded-lg px-3 py-2 hover:bg-white/5 hover:text-brand-gold">Development Partners</a>
+            </div>
+          </div>
+          <div class="group relative">
+            <a href="about.html" class="inline-flex items-center gap-1 transition hover:text-brand-gold">About <span class="text-xs">▾</span></a>
+            <div class="invisible absolute right-0 mt-2 w-52 rounded-2xl border border-white/10 bg-slate-950/95 p-2 opacity-0 transition group-hover:visible group-hover:opacity-100">
+              <a href="about.html#company" class="block rounded-lg px-3 py-2 hover:bg-white/5 hover:text-brand-gold">Brag &amp; Bev</a>
+              <a href="about.html#founders" class="block rounded-lg px-3 py-2 hover:bg-white/5 hover:text-brand-gold">Founders</a>
+            </div>
+          </div>
+          <a href="contact.html" class="transition hover:text-brand-gold">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="relative overflow-hidden border-b border-white/10 bg-gradient-to-br from-black via-slate-950 to-brand-dark px-6 py-14">
+        <div class="mx-auto grid max-w-7xl gap-8 md:grid-cols-2 md:items-center">
+          <div class="space-y-5">
+            <p class="text-xs uppercase tracking-[0.22em] text-brand-gold">Dumpster Diver</p>
+            <h1 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl">Purpose-built sanitation for outdoor bins.</h1>
+            <p class="text-sm text-slate-300 sm:text-base">
+              Dumpster Diver is a patent-pending, disposable, eco-friendly cleaning innovation designed to simplify trash bin sanitation. The current program is focused on prototype finalization, not mass production.
+            </p>
+          </div>
+          <div class="flex justify-center">
+            <img src="assets/dumpster-diver-crest.png" alt="Dumpster Diver crest" class="lb-trigger h-64 w-auto cursor-pointer object-contain transition duration-300 hover:scale-[1.02] hover:brightness-110 sm:h-72" />
+          </div>
+        </div>
+      </section>
+
+      <section class="border-b border-white/10 bg-slate-950/90 px-6 py-12">
+        <div class="mx-auto grid max-w-7xl gap-6 lg:grid-cols-3">
+          <article class="rounded-2xl border border-white/10 bg-slate-900/60 p-6">
+            <h2 class="text-lg font-semibold text-white">Activation</h2>
+            <p class="mt-3 text-sm text-slate-300">
+              Prototype architecture includes manual safety priming through an integrated pull tab. Inertial and impact-based activation concepts are under evaluation.
+            </p>
+          </article>
+          <article class="rounded-2xl border border-white/10 bg-slate-900/60 p-6">
+            <h2 class="text-lg font-semibold text-white">Coverage &amp; Foam</h2>
+            <p class="mt-3 text-sm text-slate-300">
+              High-expansion foam pathways are intended to adhere to interior walls and help dissolve grime and neutralize odors. Dispersion behavior is currently being refined.
+            </p>
+          </article>
+          <article class="rounded-2xl border border-white/10 bg-slate-900/60 p-6">
+            <h2 class="text-lg font-semibold text-white">Control</h2>
+            <p class="mt-3 text-sm text-slate-300">
+              Self-righting architecture through a weighted base is designed to improve orientation control and repeatable interior coverage.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="border-b border-white/10 bg-slate-950/85 px-6 py-12">
+        <div class="mx-auto max-w-7xl space-y-7">
+          <h2 class="text-2xl font-semibold tracking-tight text-white sm:text-3xl">Core Priorities</h2>
+          <div class="grid gap-6 md:grid-cols-3">
+            <article class="rounded-2xl border border-white/10 bg-slate-900/55 p-6">
+              <h3 class="text-sm font-semibold text-brand-gold">Reliable Activation</h3>
+              <p class="mt-2 text-sm text-slate-300">Improving controlled activation behavior while maintaining practical handling and safety intent.</p>
+            </article>
+            <article class="rounded-2xl border border-white/10 bg-slate-900/55 p-6">
+              <h3 class="text-sm font-semibold text-brand-gold">Effective Spray Dispersion</h3>
+              <p class="mt-2 text-sm text-slate-300">Tuning foam expansion and dispersion characteristics for more dependable interior performance.</p>
+            </article>
+            <article class="rounded-2xl border border-white/10 bg-slate-900/55 p-6">
+              <h3 class="text-sm font-semibold text-brand-gold">Full Interior Coverage</h3>
+              <p class="mt-2 text-sm text-slate-300">Designing for consistent wall contact and improved cleaning reach inside outdoor bins.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-slate-950/90 px-6 py-12">
+        <div class="mx-auto max-w-7xl">
+          <h2 class="text-2xl font-semibold tracking-tight text-white sm:text-3xl">Program Specifications (Target)</h2>
+          <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="rounded-xl border border-white/10 bg-slate-900/60 p-4"><p class="text-xs uppercase tracking-[0.18em] text-slate-400">Bin Class</p><p class="mt-1 text-sm text-slate-100">Outdoor residential bins up to 96 gallons</p></div>
+            <div class="rounded-xl border border-white/10 bg-slate-900/60 p-4"><p class="text-xs uppercase tracking-[0.18em] text-slate-400">Grip Diameter</p><p class="mt-1 text-sm text-slate-100">Target 4-inch diameter for one-handed grip</p></div>
+            <div class="rounded-xl border border-white/10 bg-slate-900/60 p-4"><p class="text-xs uppercase tracking-[0.18em] text-slate-400">Weight</p><p class="mt-1 text-sm text-slate-100">Target approximately 0.6 lbs</p></div>
+            <div class="rounded-xl border border-white/10 bg-slate-900/60 p-4"><p class="text-xs uppercase tracking-[0.18em] text-slate-400">Development Stage</p><p class="mt-1 text-sm text-slate-100">Prototype finalization</p></div>
+            <div class="rounded-xl border border-white/10 bg-slate-900/60 p-4"><p class="text-xs uppercase tracking-[0.18em] text-slate-400">Production Status</p><p class="mt-1 text-sm text-slate-100">Not in mass production</p></div>
+            <div class="rounded-xl border border-white/10 bg-slate-900/60 p-4"><p class="text-xs uppercase tracking-[0.18em] text-slate-400">Validation Track</p><p class="mt-1 text-sm text-slate-100">Mechanical, formulation, and test alignment in progress</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="border-t border-white/10 bg-slate-950/80 px-6 py-12">
+        <div class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-4 rounded-2xl border border-white/10 bg-slate-900/55 p-6 md:flex-row md:items-center">
+          <div>
+            <h2 class="text-xl font-semibold text-white">Next: validate build performance.</h2>
+            <p class="mt-1 text-sm text-slate-300">Review prototype development and current SITREP milestones.</p>
+          </div>
+          <div class="flex gap-3">
+            <a href="prototype.html" class="rounded-full bg-brand-gold px-5 py-2.5 text-sm font-semibold text-black">View Prototype</a>
+            <a href="contact.html" class="rounded-full border border-white/20 px-5 py-2.5 text-sm font-semibold hover:border-brand-gold hover:text-brand-gold">Contact</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="border-t border-white/10 bg-black/40 px-6 py-10">
+      <div class="mx-auto flex max-w-7xl flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <div class="space-y-2"><img src="assets/BragAndBev_Transparent.png" alt="Brag and Bev" class="h-8 w-auto" /><p class="text-xs text-slate-400">Brag &amp; Bev L.L.C. — engineering practical sanitation innovation.</p></div>
+        <div class="flex flex-wrap gap-5 text-sm text-slate-300"><a href="index.html" class="transition hover:text-brand-gold">Home</a><a href="product.html" class="transition hover:text-brand-gold">Product</a><a href="prototype.html" class="transition hover:text-brand-gold">Prototype</a><a href="about.html" class="transition hover:text-brand-gold">About</a><a href="partners.html" class="transition hover:text-brand-gold">Partners</a><a href="contact.html" class="transition hover:text-brand-gold">Contact</a></div>
+      </div>
+      <div class="mx-auto mt-6 max-w-7xl border-t border-white/10 pt-4 text-xs text-slate-500">© 2026 Brag &amp; Bev L.L.C. All rights reserved.</div>
+    </footer>
+    <div id="lightbox" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 px-4 py-8 opacity-0 transition-opacity duration-300">
+      <button id="lightbox-close" type="button" class="absolute right-4 top-4 rounded-full border border-white/20 bg-black/40 px-3 py-1 text-sm text-white transition hover:border-brand-gold hover:text-brand-gold">✕</button>
+      <img id="lightbox-image" src="" alt="" class="max-h-[88vh] w-auto max-w-[92vw] rounded-2xl object-contain shadow-2xl shadow-black/70" />
+    </div>
+    <script>
+      (() => {
+        const modal = document.getElementById('lightbox');
+        const image = document.getElementById('lightbox-image');
+        const closeBtn = document.getElementById('lightbox-close');
+        const triggers = document.querySelectorAll('.lb-trigger');
+        const open = (src, alt) => {
+          image.src = src;
+          image.alt = alt || 'Expanded image';
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+          requestAnimationFrame(() => modal.classList.remove('opacity-0'));
+        };
+        const close = () => {
+          modal.classList.add('opacity-0');
+          setTimeout(() => {
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+            image.src = '';
+          }, 200);
+        };
+        triggers.forEach((el) => el.addEventListener('click', () => open(el.src, el.alt)));
+        closeBtn.addEventListener('click', close);
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) close();
+        });
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && !modal.classList.contains('hidden')) close();
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Prototype Development — Dumpster Diver</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { theme: { extend: { colors: { brand: { gold: '#d4af37', dark: '#050816' } } } } };
+    </script>
+  </head>
+  <body class="min-h-screen bg-brand-dark text-slate-100 antialiased">
+    <header class="sticky top-0 z-50 border-b border-white/10 bg-brand-dark/75 backdrop-blur-xl">
+      <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+        <a href="index.html"><img src="assets/BragAndBev_Transparent.png" alt="Brag and Bev" class="h-9 w-auto sm:h-10" /></a>
+        <div class="hidden items-center gap-7 text-sm font-medium sm:flex">
+          <a href="index.html" class="transition hover:text-brand-gold">Home</a>
+          <div class="group relative">
+            <a href="product.html" class="inline-flex items-center gap-1 text-brand-gold">Product <span class="text-xs">▾</span></a>
+            <div class="invisible absolute right-0 mt-2 w-56 rounded-2xl border border-white/10 bg-slate-950/95 p-2 opacity-0 transition group-hover:visible group-hover:opacity-100">
+              <a href="product.html" class="block rounded-lg px-3 py-2 hover:bg-white/5 hover:text-brand-gold">Overview</a>
+              <a href="prototype.html" class="block rounded-lg px-3 py-2 hover:bg-white/5 hover:text-brand-gold">Prototype Development</a>
+              <a href="partners.html" class="block rounded-lg px-3 py-2 hover:bg-white/5 hover:text-brand-gold">Development Partners</a>
+            </div>
+          </div>
+          <div class="group relative">
+            <a href="about.html" class="inline-flex items-center gap-1 transition hover:text-brand-gold">About <span class="text-xs">▾</span></a>
+            <div class="invisible absolute right-0 mt-2 w-52 rounded-2xl border border-white/10 bg-slate-950/95 p-2 opacity-0 transition group-hover:visible group-hover:opacity-100">
+              <a href="about.html#company" class="block rounded-lg px-3 py-2 hover:bg-white/5 hover:text-brand-gold">Brag &amp; Bev</a>
+              <a href="about.html#founders" class="block rounded-lg px-3 py-2 hover:bg-white/5 hover:text-brand-gold">Founders</a>
+            </div>
+          </div>
+          <a href="contact.html" class="transition hover:text-brand-gold">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="relative overflow-hidden border-b border-white/10 bg-gradient-to-br from-black via-slate-950 to-brand-dark px-6 py-14">
+        <div class="mx-auto max-w-7xl space-y-4">
+          <p class="text-xs uppercase tracking-[0.22em] text-brand-gold">Prototype Development</p>
+          <h1 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl">From CAD architecture to reusable build.</h1>
+          <p class="max-w-3xl text-sm text-slate-300 sm:text-base">Current development is focused on integration quality, activation reliability pathways, and validation readiness.</p>
+        </div>
+      </section>
+
+      <section class="border-b border-white/10 bg-slate-950/90 px-6 py-12">
+        <div class="mx-auto max-w-7xl">
+          <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <figure class="rounded-2xl border border-white/10 bg-slate-900/60 p-3"><img src="assets/prototype-1.png" alt="Prototype 1" class="lb-trigger h-48 w-full cursor-pointer rounded-lg object-contain transition duration-300 hover:scale-[1.02] hover:brightness-110" /><figcaption class="mt-2 text-xs text-slate-400">Pull-tab integration and safety handling concept.</figcaption></figure>
+            <figure class="rounded-2xl border border-white/10 bg-slate-900/60 p-3"><img src="assets/prototype-2.png" alt="Prototype 2" class="lb-trigger h-48 w-full cursor-pointer rounded-lg object-contain transition duration-300 hover:scale-[1.02] hover:brightness-110" /><figcaption class="mt-2 text-xs text-slate-400">Weighted base geometry for self-righting behavior.</figcaption></figure>
+            <figure class="rounded-2xl border border-white/10 bg-slate-900/60 p-3"><img src="assets/prototype-3.png" alt="Prototype 3" class="lb-trigger h-48 w-full cursor-pointer rounded-lg object-contain transition duration-300 hover:scale-[1.02] hover:brightness-110" /><figcaption class="mt-2 text-xs text-slate-400">Internal packaging and can-interface pathway.</figcaption></figure>
+            <figure class="rounded-2xl border border-white/10 bg-slate-900/60 p-3"><img src="assets/prototype-4.png" alt="Prototype 4" class="lb-trigger h-48 w-full cursor-pointer rounded-lg object-contain transition duration-300 hover:scale-[1.02] hover:brightness-110" /><figcaption class="mt-2 text-xs text-slate-400">Cross-section architecture review.</figcaption></figure>
+            <figure class="rounded-2xl border border-white/10 bg-slate-900/60 p-3"><img src="assets/prototype-5.png" alt="Prototype 5" class="lb-trigger h-48 w-full cursor-pointer rounded-lg object-contain transition duration-300 hover:scale-[1.02] hover:brightness-110" /><figcaption class="mt-2 text-xs text-slate-400">One-handed form factor and diameter targeting.</figcaption></figure>
+            <figure class="rounded-2xl border border-white/10 bg-slate-900/60 p-3"><img src="assets/prototype-6.png" alt="Prototype 6" class="lb-trigger h-48 w-full cursor-pointer rounded-lg object-contain transition duration-300 hover:scale-[1.02] hover:brightness-110" /><figcaption class="mt-2 text-xs text-slate-400">Assembly and mechanism alignment pass.</figcaption></figure>
+            <figure class="rounded-2xl border border-white/10 bg-slate-900/60 p-3 sm:col-span-2 lg:col-span-1"><img src="assets/prototype-7.png" alt="Prototype 7" class="lb-trigger h-48 w-full cursor-pointer rounded-lg object-contain transition duration-300 hover:scale-[1.02] hover:brightness-110" /><figcaption class="mt-2 text-xs text-slate-400">Pre-validation build snapshot.</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-slate-950/85 px-6 py-12">
+        <div class="mx-auto max-w-5xl">
+          <h2 class="text-2xl font-semibold tracking-tight text-white sm:text-3xl">Development SITREP</h2>
+          <div class="mt-6 rounded-2xl border border-brand-gold/40 bg-slate-900/70 p-6">
+            <ul class="space-y-3 text-sm text-slate-200">
+              <li><span class="font-semibold text-brand-gold">Status:</span> CAD architecture mapped.</li>
+              <li><span class="font-semibold text-brand-gold">Next:</span> Reusable prototype build.</li>
+              <li><span class="font-semibold text-brand-gold">Validation:</span> ARE Labs preparing for drop testing.</li>
+              <li><span class="font-semibold text-brand-gold">Program Alignment:</span> Mechanical, formulation, and validation workstreams are coordinated across partners.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="border-t border-white/10 bg-slate-950/80 px-6 py-12">
+        <div class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-4 rounded-2xl border border-white/10 bg-slate-900/55 p-6 md:flex-row md:items-center">
+          <div>
+            <h2 class="text-xl font-semibold text-white">Need full partner context for the validation path?</h2>
+            <p class="mt-1 text-sm text-slate-300">Review mechanical, formulation, and testing collaborators.</p>
+          </div>
+          <div class="flex gap-3">
+            <a href="partners.html" class="rounded-full bg-brand-gold px-5 py-2.5 text-sm font-semibold text-black">View Partners</a>
+            <a href="contact.html" class="rounded-full border border-white/20 px-5 py-2.5 text-sm font-semibold hover:border-brand-gold hover:text-brand-gold">Contact</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="border-t border-white/10 bg-black/40 px-6 py-10">
+      <div class="mx-auto flex max-w-7xl flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <div class="space-y-2"><img src="assets/BragAndBev_Transparent.png" alt="Brag and Bev" class="h-8 w-auto" /><p class="text-xs text-slate-400">Brag &amp; Bev L.L.C. — engineering practical sanitation innovation.</p></div>
+        <div class="flex flex-wrap gap-5 text-sm text-slate-300"><a href="index.html" class="transition hover:text-brand-gold">Home</a><a href="product.html" class="transition hover:text-brand-gold">Product</a><a href="prototype.html" class="transition hover:text-brand-gold">Prototype</a><a href="about.html" class="transition hover:text-brand-gold">About</a><a href="partners.html" class="transition hover:text-brand-gold">Partners</a><a href="contact.html" class="transition hover:text-brand-gold">Contact</a></div>
+      </div>
+      <div class="mx-auto mt-6 max-w-7xl border-t border-white/10 pt-4 text-xs text-slate-500">© 2026 Brag &amp; Bev L.L.C. All rights reserved.</div>
+    </footer>
+    <div id="lightbox" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 px-4 py-8 opacity-0 transition-opacity duration-300">
+      <button id="lightbox-close" type="button" class="absolute right-4 top-4 rounded-full border border-white/20 bg-black/40 px-3 py-1 text-sm text-white transition hover:border-brand-gold hover:text-brand-gold">✕</button>
+      <img id="lightbox-image" src="" alt="" class="max-h-[88vh] w-auto max-w-[92vw] rounded-2xl object-contain shadow-2xl shadow-black/70" />
+    </div>
+    <script>
+      (() => {
+        const modal = document.getElementById('lightbox');
+        const image = document.getElementById('lightbox-image');
+        const closeBtn = document.getElementById('lightbox-close');
+        const triggers = document.querySelectorAll('.lb-trigger');
+        const open = (src, alt) => {
+          image.src = src;
+          image.alt = alt || 'Expanded image';
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+          requestAnimationFrame(() => modal.classList.remove('opacity-0'));
+        };
+        const close = () => {
+          modal.classList.add('opacity-0');
+          setTimeout(() => {
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+            image.src = '';
+          }, 200);
+        };
+        triggers.forEach((el) => el.addEventListener('click', () => open(el.src, el.alt)));
+        closeBtn.addEventListener('click', close);
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) close();
+        });
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && !modal.classList.contains('hidden')) close();
+        });
+      })();
+    </script>
+  </body>
+</html>

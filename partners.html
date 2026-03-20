@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Development Partners — Brag &amp; Bev</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { theme: { extend: { colors: { brand: { gold: '#d4af37', dark: '#050816' } } } } };
+    </script>
+  </head>
+  <body class="min-h-screen bg-brand-dark text-slate-100 antialiased">
+    <header class="sticky top-0 z-50 border-b border-white/10 bg-brand-dark/75 backdrop-blur-xl">
+      <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+        <a href="index.html"><img src="assets/BragAndBev_Transparent.png" alt="Brag and Bev" class="h-9 w-auto sm:h-10" /></a>
+        <div class="hidden items-center gap-7 text-sm font-medium sm:flex">
+          <a href="index.html" class="transition hover:text-brand-gold">Home</a>
+          <div class="group relative">
+            <a href="product.html" class="inline-flex items-center gap-1 text-brand-gold">Product <span class="text-xs">▾</span></a>
+            <div class="invisible absolute right-0 mt-2 w-56 rounded-2xl border border-white/10 bg-slate-950/95 p-2 opacity-0 transition group-hover:visible group-hover:opacity-100">
+              <a href="product.html" class="block rounded-lg px-3 py-2 hover:bg-white/5 hover:text-brand-gold">Overview</a>
+              <a href="prototype.html" class="block rounded-lg px-3 py-2 hover:bg-white/5 hover:text-brand-gold">Prototype Development</a>
+              <a href="partners.html" class="block rounded-lg px-3 py-2 hover:bg-white/5 hover:text-brand-gold">Development Partners</a>
+            </div>
+          </div>
+          <div class="group relative">
+            <a href="about.html" class="inline-flex items-center gap-1 transition hover:text-brand-gold">About <span class="text-xs">▾</span></a>
+            <div class="invisible absolute right-0 mt-2 w-52 rounded-2xl border border-white/10 bg-slate-950/95 p-2 opacity-0 transition group-hover:visible group-hover:opacity-100">
+              <a href="about.html#company" class="block rounded-lg px-3 py-2 hover:bg-white/5 hover:text-brand-gold">Brag &amp; Bev</a>
+              <a href="about.html#founders" class="block rounded-lg px-3 py-2 hover:bg-white/5 hover:text-brand-gold">Founders</a>
+            </div>
+          </div>
+          <a href="contact.html" class="transition hover:text-brand-gold">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="border-b border-white/10 bg-gradient-to-br from-black via-slate-950 to-brand-dark px-6 py-14">
+        <div class="mx-auto max-w-6xl space-y-4">
+          <p class="text-xs uppercase tracking-[0.22em] text-brand-gold">Engineering &amp; R&amp;D Partners</p>
+          <h1 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl">Technical collaborators driving validation-ready development.</h1>
+          <p class="max-w-3xl text-sm text-slate-300">These partners support development, test readiness, and manufacturing feasibility. They are not founders of Brag &amp; Bev L.L.C. Mechanical, formulation, and validation efforts are coordinated as one aligned program.</p>
+        </div>
+      </section>
+
+      <section class="bg-slate-950/90 px-6 py-12">
+        <div class="mx-auto grid max-w-6xl gap-6 md:grid-cols-3">
+          <article class="rounded-2xl border border-white/10 bg-slate-900/60 p-6">
+            <h2 class="text-lg font-semibold text-white">Mike Johnston</h2>
+            <p class="mt-1 text-xs uppercase tracking-[0.18em] text-brand-gold/85">Lead Mechanical Design Engineer, Rabbit Product Design</p>
+            <p class="mt-4 text-sm text-slate-300">Supports CAD assembly, mechanism refinement, and reusable prototype engineering to improve reliability through build cycles.</p>
+          </article>
+          <article class="rounded-2xl border border-white/10 bg-slate-900/60 p-6">
+            <h2 class="text-lg font-semibold text-white">Weston Schaper</h2>
+            <p class="mt-1 text-xs uppercase tracking-[0.18em] text-brand-gold/85">Director of Aerosol Testing &amp; Validation, ARE Labs</p>
+            <p class="mt-4 text-sm text-slate-300">Leads test planning and validation setup, including deposition and coverage analysis, with drop testing preparation underway.</p>
+          </article>
+          <article class="rounded-2xl border border-white/10 bg-slate-900/60 p-6">
+            <h2 class="text-lg font-semibold text-white">Jim Johnson</h2>
+            <p class="mt-1 text-xs uppercase tracking-[0.18em] text-brand-gold/85">Lead Formulation &amp; Aerosol Systems Chemist, Spray Products Corporation</p>
+            <p class="mt-4 text-sm text-slate-300">Guides formulation strategy, aerosol systems integration, and valve/manufacturing feasibility as the program approaches production planning.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="border-t border-white/10 bg-slate-950/80 px-6 py-12">
+        <div class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-4 rounded-2xl border border-white/10 bg-slate-900/55 p-6 md:flex-row md:items-center">
+          <div>
+            <h2 class="text-xl font-semibold text-white">Ready to discuss partnership pathways?</h2>
+            <p class="mt-1 text-sm text-slate-300">Connect with Brag &amp; Bev to coordinate pilot and development conversations.</p>
+          </div>
+          <div class="flex gap-3">
+            <a href="contact.html" class="rounded-full bg-brand-gold px-5 py-2.5 text-sm font-semibold text-black">Contact Team</a>
+            <a href="about.html" class="rounded-full border border-white/20 px-5 py-2.5 text-sm font-semibold hover:border-brand-gold hover:text-brand-gold">View Company</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="border-t border-white/10 bg-black/40 px-6 py-10">
+      <div class="mx-auto flex max-w-7xl flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <div class="space-y-2"><img src="assets/BragAndBev_Transparent.png" alt="Brag and Bev" class="h-8 w-auto" /><p class="text-xs text-slate-400">Brag &amp; Bev L.L.C. — engineering practical sanitation innovation.</p></div>
+        <div class="flex flex-wrap gap-5 text-sm text-slate-300"><a href="index.html" class="transition hover:text-brand-gold">Home</a><a href="product.html" class="transition hover:text-brand-gold">Product</a><a href="prototype.html" class="transition hover:text-brand-gold">Prototype</a><a href="about.html" class="transition hover:text-brand-gold">About</a><a href="partners.html" class="transition hover:text-brand-gold">Partners</a><a href="contact.html" class="transition hover:text-brand-gold">Contact</a></div>
+      </div>
+      <div class="mx-auto mt-6 max-w-7xl border-t border-white/10 pt-4 text-xs text-slate-500">© 2026 Brag &amp; Bev L.L.C. All rights reserved.</div>
+    </footer>
+  </body>
+</html>

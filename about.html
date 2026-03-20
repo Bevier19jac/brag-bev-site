@@ -22,278 +22,124 @@
     </script>
   </head>
   <body class="min-h-screen bg-brand-dark text-slate-100 antialiased">
-    <!-- Sticky Navigation -->
-    <header
-      class="sticky top-0 z-50 border-b border-white/10 bg-brand-dark/80 backdrop-blur-md"
-    >
-      <nav
-        class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8"
-        aria-label="Primary"
-      >
-        <a href="index.html" class="flex items-center gap-3">
-          <img
-            src="assets/BragAndBev_Transparent.png"
-            alt="Brag &amp; Bev"
-            class="h-9 w-auto sm:h-10 lg:h-11"
-          />
-        </a>
-        <div class="hidden items-center gap-8 text-sm font-medium sm:flex">
-          <a
-            href="index.html#dumpster-diver"
-            class="transition-colors hover:text-brand-gold"
-            >Dumpster Diver</a
-          >
-          <a
-            href="index.html#brag-bev"
-            class="transition-colors hover:text-brand-gold"
-            >Brag &amp; Bev</a
-          >
-          <div class="relative group">
-            <a
-              href="about.html"
-              class="inline-flex items-center gap-1 transition-colors hover:text-brand-gold"
-            >
-              <span>About Us</span>
-              <span
-                class="text-xs leading-none text-slate-300 group-hover:text-brand-gold"
-                >▾</span
-              >
-            </a>
-            <div
-              class="invisible absolute right-0 mt-2 w-52 rounded-xl border border-white/10 bg-brand-dark/95 py-1 text-sm shadow-lg opacity-0 transition group-hover:visible group-hover:opacity-100"
-            >
-              <a
-                href="about.html#founders"
-                class="block px-4 py-2 text-slate-100 hover:bg-white/5 hover:text-brand-gold"
-                >Founders</a
-              >
-              <a
-                href="about.html#braganini-bevier"
-                class="block px-4 py-2 text-slate-100 hover:bg-white/5 hover:text-brand-gold"
-                >Braganini &amp; Bevier</a
-              >
+    <header class="sticky top-0 z-50 border-b border-white/10 bg-brand-dark/75 backdrop-blur-xl">
+      <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+        <a href="index.html"><img src="assets/BragAndBev_Transparent.png" alt="Brag and Bev" class="h-9 w-auto sm:h-10" /></a>
+        <div class="hidden items-center gap-7 text-sm font-medium sm:flex">
+          <a href="index.html" class="transition hover:text-brand-gold">Home</a>
+          <div class="group relative">
+            <a href="product.html" class="inline-flex items-center gap-1 transition hover:text-brand-gold">Product <span class="text-xs">▾</span></a>
+            <div class="invisible absolute right-0 mt-2 w-56 rounded-2xl border border-white/10 bg-slate-950/95 p-2 opacity-0 transition group-hover:visible group-hover:opacity-100">
+              <a href="product.html" class="block rounded-lg px-3 py-2 hover:bg-white/5 hover:text-brand-gold">Overview</a>
+              <a href="prototype.html" class="block rounded-lg px-3 py-2 hover:bg-white/5 hover:text-brand-gold">Prototype Development</a>
+              <a href="partners.html" class="block rounded-lg px-3 py-2 hover:bg-white/5 hover:text-brand-gold">Development Partners</a>
             </div>
           </div>
-          <a
-            href="index.html#contact"
-            class="transition-colors hover:text-brand-gold"
-            >Contact</a
-          >
+          <div class="group relative">
+            <a href="about.html" class="inline-flex items-center gap-1 text-brand-gold">About <span class="text-xs">▾</span></a>
+            <div class="invisible absolute right-0 mt-2 w-52 rounded-2xl border border-white/10 bg-slate-950/95 p-2 opacity-0 transition group-hover:visible group-hover:opacity-100">
+              <a href="#company" class="block rounded-lg px-3 py-2 hover:bg-white/5 hover:text-brand-gold">Brag &amp; Bev</a>
+              <a href="#founders" class="block rounded-lg px-3 py-2 hover:bg-white/5 hover:text-brand-gold">Founders</a>
+            </div>
+          </div>
+          <a href="contact.html" class="transition hover:text-brand-gold">Contact</a>
         </div>
       </nav>
     </header>
 
     <main>
-      <!-- About hero: Braganini & Bevier -->
-      <section class="border-b border-white/10 bg-slate-950/90">
-        <div class="mx-auto max-w-7xl px-6 pt-16 pb-10 text-center">
-          <!-- Big Braganini & Bevier Logo -->
-          <img
-            src="assets/BraganiniAndBevier_Transparent.png"
-            alt="Braganini &amp; Bevier"
-            class="mx-auto h-[120px] sm:h-[160px] md:h-[200px] lg:h-[240px] xl:h-[280px] w-auto object-contain"
-          />
+      <section id="company" class="relative overflow-hidden border-b border-white/10 bg-gradient-to-br from-black via-slate-950 to-brand-dark">
+        <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(212,175,55,0.2),_transparent_55%)]"></div>
+        <div class="relative mx-auto grid max-w-7xl gap-8 px-6 py-14 md:grid-cols-[1.05fr_0.95fr] md:items-center">
+          <div class="space-y-5">
+            <p class="text-xs font-semibold uppercase tracking-[0.24em] text-brand-gold">Brag &amp; Bev L.L.C.</p>
+            <h1 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">Innovation-first sanitation systems for real-world use.</h1>
+            <p class="text-sm text-slate-300 sm:text-base">Headquartered in Kalamazoo, Michigan, Brag &amp; Bev L.L.C. bridges manual cleaning and professional sanitation outcomes through practical, patent-pending technology.</p>
+            <p class="text-sm text-slate-300">Mission: To revolutionize waste management by offering convenient, sustainable, and affordable cleaning solutions for households, businesses, and municipalities.</p>
+          </div>
+          <div class="flex items-center justify-center"><img src="assets/BraganiniAndBevier_Transparent.png" alt="Braganini and Bevier" class="h-[180px] w-auto object-contain sm:h-[220px] lg:h-[280px]" /></div>
+        </div>
+      </section>
 
-          <!-- Story Copy -->
-          <div
-            class="mt-8 mx-auto max-w-3xl text-sm leading-relaxed text-slate-300"
-          >
-            <p>
-              This page is a placeholder for the full Braganini &amp; Bevier
-              story. Final copy will introduce the partners, the work behind
-              Dumpster Diver, and the broader family of products.
-            </p>
+      <section class="border-b border-white/10 bg-slate-950/85 px-6 py-12">
+        <div class="mx-auto grid max-w-7xl gap-6 md:grid-cols-3">
+          <article class="rounded-2xl border border-white/10 bg-slate-900/60 p-6"><h2 class="text-lg font-semibold text-white">Sustainability</h2><p class="mt-3 text-sm text-slate-300">Design choices aim to reduce avoidable waste, excessive rework, and unnecessary cleanup cycles.</p></article>
+          <article class="rounded-2xl border border-white/10 bg-slate-900/60 p-6"><h2 class="text-lg font-semibold text-white">User-Centric Engineering</h2><p class="mt-3 text-sm text-slate-300">One-handed handling, controlled activation, and practical field use remain key engineering constraints.</p></article>
+          <article class="rounded-2xl border border-white/10 bg-slate-900/60 p-6"><h2 class="text-lg font-semibold text-white">Environmental Responsibility</h2><p class="mt-3 text-sm text-slate-300">Development decisions prioritize responsible deployment and realistic operating conditions.</p></article>
+        </div>
+      </section>
+
+      <section id="founders" class="bg-slate-950/90 px-6 py-12">
+        <div class="mx-auto max-w-7xl">
+          <div class="mb-8 max-w-3xl space-y-3">
+            <h2 class="text-2xl font-semibold tracking-tight text-white sm:text-3xl">Founders</h2>
+            <p class="text-sm text-slate-300">Leadership across AI systems, creative direction, company execution, operations, and long-range strategy.</p>
+          </div>
+          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+            <article class="rounded-2xl border border-white/10 bg-slate-900/70 p-5"><img src="assets/Jacob_Headshot.png" alt="Jacob Bevier" class="lb-trigger mx-auto h-28 w-28 cursor-pointer rounded-2xl object-cover transition duration-300 hover:scale-[1.03] hover:brightness-110" /><h3 class="mt-4 text-sm font-semibold">Jacob Bevier</h3><p class="text-xs uppercase tracking-[0.18em] text-brand-gold/85">Co-Founder &amp; Chief AI Officer</p><p class="mt-3 text-xs text-slate-300">Leads AI-driven systems strategy and technical coordination across product architecture and validation planning.</p></article>
+            <article class="rounded-2xl border border-white/10 bg-slate-900/70 p-5"><img src="assets/Candice_Headshot.png" alt="Candice Aaron" class="lb-trigger mx-auto h-28 w-28 cursor-pointer rounded-2xl object-cover transition duration-300 hover:scale-[1.03] hover:brightness-110" /><h3 class="mt-4 text-sm font-semibold">Candice Aaron</h3><p class="text-xs uppercase tracking-[0.18em] text-brand-gold/85">Co-Founder &amp; Chief Creative Officer</p><p class="mt-3 text-xs text-slate-300">Directs creative strategy, brand expression, and visual clarity for partner and market communications.</p></article>
+            <article class="rounded-2xl border border-white/10 bg-slate-900/70 p-5"><img src="assets/JB_Headshot.png" alt="John Braganini" class="lb-trigger mx-auto h-28 w-28 cursor-pointer rounded-2xl object-cover transition duration-300 hover:scale-[1.03] hover:brightness-110" /><h3 class="mt-4 text-sm font-semibold">John Braganini</h3><p class="text-xs uppercase tracking-[0.18em] text-brand-gold/85">Co-Founder &amp; Chief Executive Officer</p><p class="mt-3 text-xs text-slate-300">Leads executive direction, commercialization planning, and cross-partner alignment as the product progresses.</p></article>
+            <article class="rounded-2xl border border-white/10 bg-slate-900/70 p-5"><img src="assets/Sarah_Headshot.png" alt="Sarah Braganini" class="lb-trigger mx-auto h-28 w-28 cursor-pointer rounded-2xl object-cover transition duration-300 hover:scale-[1.03] hover:brightness-110" /><h3 class="mt-4 text-sm font-semibold">Sarah Braganini</h3><p class="text-xs uppercase tracking-[0.18em] text-brand-gold/85">Co-Founder &amp; Chief Operating Officer</p><p class="mt-3 text-xs text-slate-300">Owns execution cadence and operational workflow alignment across design, testing, and business workstreams.</p></article>
+            <article class="rounded-2xl border border-white/10 bg-slate-900/70 p-5"><img src="assets/Apollo_Headshot.png" alt="Apollo Braganini" class="lb-trigger mx-auto h-28 w-28 cursor-pointer rounded-2xl object-cover transition duration-300 hover:scale-[1.03] hover:brightness-110" /><h3 class="mt-4 text-sm font-semibold">Apollo Braganini</h3><p class="text-xs uppercase tracking-[0.18em] text-brand-gold/85">Co-Founder &amp; Chief Strategy Officer</p><p class="mt-3 text-xs text-slate-300">Guides strategic planning, market positioning, and long-range business direction across the development program.</p></article>
           </div>
         </div>
       </section>
 
-      <!-- Founders section -->
-      <section
-        id="founders"
-        class="border-t border-white/10 bg-slate-950/90"
-      >
-        <div class="mx-auto max-w-7xl px-6 py-12">
-          <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <div class="space-y-3">
-              <h2 class="text-2xl font-semibold tracking-tight sm:text-3xl">
-                Founders
-              </h2>
-              <p class="text-sm text-slate-300 sm:max-w-xl">
-                A small founding group of operators, builders, and collaborators
-                shaping Dumpster Diver and the work around it. Copy here will be
-                updated with full bios later.
-              </p>
-            </div>
+      <section class="border-t border-white/10 bg-slate-950/80 px-6 py-12">
+        <div class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-4 rounded-2xl border border-white/10 bg-slate-900/55 p-6 md:flex-row md:items-center">
+          <div>
+            <h2 class="text-xl font-semibold text-white">Next step: explore the product and current build status.</h2>
+            <p class="mt-1 text-sm text-slate-300">Review technical direction, prototype progress, and partner alignment.</p>
           </div>
-
-          <div class="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            <!-- Candice -->
-            <article
-              class="flex flex-col rounded-2xl border border-white/10 bg-slate-900/70 p-5 shadow-sm"
-            >
-              <div class="mx-auto mb-4 h-28 w-28 overflow-hidden rounded-2xl bg-slate-800">
-                <img
-                  src="assets/Candice_Headshot.png"
-                  alt="Candice"
-                  class="h-full w-full object-cover"
-                />
-              </div>
-              <h3 class="text-sm font-semibold text-slate-50">Candice</h3>
-              <p
-                class="mt-1 text-[11px] font-medium uppercase tracking-[0.22em] text-brand-gold/80"
-              >
-                Co-Founder
-              </p>
-              <div
-                class="mt-4 rounded-xl border border-white/5 bg-slate-950/60 p-3"
-              >
-                <p class="text-xs text-slate-300">
-                  Background placeholder copy for Candice. This will eventually
-                  highlight experience, point of view on operations, and how
-                  that shapes the Dumpster Diver system.
-                </p>
-              </div>
-            </article>
-
-            <!-- Jacob -->
-            <article
-              class="flex flex-col rounded-2xl border border-white/10 bg-slate-900/70 p-5 shadow-sm"
-            >
-              <div class="mx-auto mb-4 h-28 w-28 overflow-hidden rounded-2xl bg-slate-800">
-                <img
-                  src="assets/Jacob_Headshot.png"
-                  alt="Jacob"
-                  class="h-full w-full object-cover"
-                />
-              </div>
-              <h3 class="text-sm font-semibold text-slate-50">Jacob</h3>
-              <p
-                class="mt-1 text-[11px] font-medium uppercase tracking-[0.22em] text-brand-gold/80"
-              >
-                Co-Founder
-              </p>
-              <div
-                class="mt-4 rounded-xl border border-white/5 bg-slate-950/60 p-3"
-              >
-                <p class="text-xs text-slate-300">
-                  Background placeholder copy for Jacob. Final text will speak
-                  to lived experience, the problems being solved, and why this
-                  work matters personally.
-                </p>
-              </div>
-            </article>
-
-            <!-- John Braganini -->
-            <article
-              class="flex flex-col rounded-2xl border border-white/10 bg-slate-900/70 p-5 shadow-sm"
-            >
-              <div class="mx-auto mb-4 h-28 w-28 overflow-hidden rounded-2xl bg-slate-800">
-                <img
-                  src="assets/JB_Headshot.png"
-                  alt="John Braganini"
-                  class="h-full w-full object-cover"
-                />
-              </div>
-              <h3 class="text-sm font-semibold text-slate-50">
-                John Braganini
-              </h3>
-              <p
-                class="mt-1 text-[11px] font-medium uppercase tracking-[0.22em] text-brand-gold/80"
-              >
-                Co-Founder
-              </p>
-              <div
-                class="mt-4 rounded-xl border border-white/5 bg-slate-950/60 p-3"
-              >
-                <p class="text-xs text-slate-300">
-                  Background placeholder copy for John Braganini. This will
-                  eventually cover craft, domain expertise, and contributions to
-                  the Braganini &amp; Bevier collaboration.
-                </p>
-              </div>
-            </article>
-
-            <!-- Apollo -->
-            <article
-              class="flex flex-col rounded-2xl border border-white/10 bg-slate-900/70 p-5 shadow-sm"
-            >
-              <div class="mx-auto mb-4 h-28 w-28 overflow-hidden rounded-2xl bg-slate-800">
-                <img
-                  src="assets/Apollo_Headshot.png"
-                  alt="Apollo"
-                  class="h-full w-full object-cover"
-                />
-              </div>
-              <h3 class="text-sm font-semibold text-slate-50">Apollo</h3>
-              <p
-                class="mt-1 text-[11px] font-medium uppercase tracking-[0.22em] text-brand-gold/80"
-              >
-                Co-Founder
-              </p>
-              <div
-                class="mt-4 rounded-xl border border-white/5 bg-slate-950/60 p-3"
-              >
-                <p class="text-xs text-slate-300">
-                  Background placeholder copy for Apollo. Future copy will
-                  outline story, perspective, and how they help keep the work
-                  grounded and real.
-                </p>
-              </div>
-            </article>
-
-            <!-- Sarah -->
-            <article
-              class="flex flex-col rounded-2xl border border-white/10 bg-slate-900/70 p-5 shadow-sm"
-            >
-              <div class="mx-auto mb-4 h-28 w-28 overflow-hidden rounded-2xl bg-slate-800">
-                <img
-                  src="assets/Sarah_Headshot.png"
-                  alt="Sarah"
-                  class="h-full w-full object-cover"
-                />
-              </div>
-              <h3 class="text-sm font-semibold text-slate-50">Sarah</h3>
-              <p
-                class="mt-1 text-[11px] font-medium uppercase tracking-[0.22em] text-brand-gold/80"
-              >
-                Co-Founder
-              </p>
-              <div
-                class="mt-4 rounded-xl border border-white/5 bg-slate-950/60 p-3"
-              >
-                <p class="text-xs text-slate-300">
-                  Background placeholder copy for Sarah. This will eventually
-                  outline experience, hospitality instincts, and her role in
-                  shaping how Dumpster Diver shows up in the field.
-                </p>
-              </div>
-            </article>
+          <div class="flex gap-3">
+            <a href="product.html" class="rounded-full bg-brand-gold px-5 py-2.5 text-sm font-semibold text-black">View Product</a>
+            <a href="contact.html" class="rounded-full border border-white/20 px-5 py-2.5 text-sm font-semibold hover:border-brand-gold hover:text-brand-gold">Contact</a>
           </div>
         </div>
       </section>
 
-      <!-- Braganini & Bevier section -->
-      <section
-        id="braganini-bevier"
-        class="border-t border-white/5 bg-slate-950/80 px-4 py-16 sm:px-6 lg:px-8 lg:py-20"
-      >
-        <div class="mx-auto max-w-4xl space-y-4">
-          <h2 class="text-2xl font-semibold tracking-tight sm:text-3xl">
-            Braganini &amp; Bevier
-          </h2>
-          <p class="text-sm text-slate-300">
-            This is placeholder text for the Braganini &amp; Bevier story.
-            Final content will explain how the partnership came together, the
-            history behind the name, and how it connects to Brag &amp; Bev and
-            Dumpster Diver.
-          </p>
-          <p class="text-sm text-slate-300">
-            Use this section for the deeper origin story, philosophy, and any
-            details that deserve a dedicated anchor from the navigation. The
-            structure is intentionally simple and can be expanded later.
-          </p>
+      <footer class="border-t border-white/10 bg-black/40 px-6 py-10">
+        <div class="mx-auto flex max-w-7xl flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+          <div class="space-y-2"><img src="assets/BragAndBev_Transparent.png" alt="Brag and Bev" class="h-8 w-auto" /><p class="text-xs text-slate-400">Brag &amp; Bev L.L.C. — engineering practical sanitation innovation.</p></div>
+          <div class="flex flex-wrap gap-5 text-sm text-slate-300"><a href="index.html" class="transition hover:text-brand-gold">Home</a><a href="product.html" class="transition hover:text-brand-gold">Product</a><a href="prototype.html" class="transition hover:text-brand-gold">Prototype</a><a href="about.html" class="transition hover:text-brand-gold">About</a><a href="partners.html" class="transition hover:text-brand-gold">Partners</a><a href="contact.html" class="transition hover:text-brand-gold">Contact</a></div>
         </div>
-      </section>
+        <div class="mx-auto mt-6 max-w-7xl border-t border-white/10 pt-4 text-xs text-slate-500">© 2026 Brag &amp; Bev L.L.C. All rights reserved.</div>
+      </footer>
     </main>
+    <div id="lightbox" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 px-4 py-8 opacity-0 transition-opacity duration-300">
+      <button id="lightbox-close" type="button" class="absolute right-4 top-4 rounded-full border border-white/20 bg-black/40 px-3 py-1 text-sm text-white transition hover:border-brand-gold hover:text-brand-gold">✕</button>
+      <img id="lightbox-image" src="" alt="" class="max-h-[88vh] w-auto max-w-[92vw] rounded-2xl object-contain shadow-2xl shadow-black/70" />
+    </div>
+    <script>
+      (() => {
+        const modal = document.getElementById('lightbox');
+        const image = document.getElementById('lightbox-image');
+        const closeBtn = document.getElementById('lightbox-close');
+        const triggers = document.querySelectorAll('.lb-trigger');
+        const open = (src, alt) => {
+          image.src = src;
+          image.alt = alt || 'Expanded image';
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+          requestAnimationFrame(() => modal.classList.remove('opacity-0'));
+        };
+        const close = () => {
+          modal.classList.add('opacity-0');
+          setTimeout(() => {
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+            image.src = '';
+          }, 200);
+        };
+        triggers.forEach((el) => el.addEventListener('click', () => open(el.src, el.alt)));
+        closeBtn.addEventListener('click', close);
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) close();
+        });
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && !modal.classList.contains('hidden')) close();
+        });
+      })();
+    </script>
   </body>
 </html>
