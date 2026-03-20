@@ -38,9 +38,14 @@
     <main>
       <section class="relative overflow-hidden border-b border-white/10 bg-gradient-to-br from-black via-slate-950 to-brand-dark">
         <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(212,175,55,0.22),transparent_45%)]"></div>
-        <div class="mx-auto grid max-w-7xl gap-8 px-6 py-16 md:grid-cols-[1.05fr_0.95fr] md:items-center lg:py-20">
-          <div class="space-y-7">
-            <img src="assets/DumpsterDiver_Horizontal_Transparent.png" alt="Dumpster Diver" class="h-14 w-auto object-contain sm:h-16 md:h-20" />
+        <div class="pointer-events-none absolute inset-y-0 right-0 w-1/2 max-w-xl bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.08),transparent_70%)]"></div>
+        <div class="relative mx-auto grid min-h-[min(78vh,920px)] max-w-7xl items-center gap-8 px-6 py-12 sm:py-14 md:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] md:gap-10 lg:min-h-[min(82vh,960px)] lg:gap-12 lg:py-16">
+          <div class="space-y-5 sm:space-y-6 lg:space-y-7">
+            <img
+              src="assets/DumpsterDiver_Horizontal_Transparent.png"
+              alt="Dumpster Diver"
+              class="block w-full max-w-[min(100%,320px)] object-contain sm:max-w-[400px] md:max-w-[460px] lg:max-w-[540px] xl:max-w-[600px] h-auto"
+            />
             <h1 class="text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">Reengineering Waste Sanitation.</h1>
             <p class="max-w-2xl text-sm text-slate-300 sm:text-base">Brag &amp; Bev L.L.C. is developing Dumpster Diver, a patent-pending sanitation innovation designed to simplify cleaning workflows for outdoor bins up to 96 gallons.</p>
             <div class="flex flex-col gap-3 sm:flex-row">
@@ -48,8 +53,15 @@
               <a href="prototype.html" class="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-2.5 text-sm font-semibold text-slate-100 transition hover:border-brand-gold hover:text-brand-gold">Track Development</a>
             </div>
           </div>
-          <div class="flex items-center justify-center">
-            <img src="assets/DumpsterDiver_Stacked_Transparent.png" alt="Dumpster Diver stacked logo" class="h-[320px] w-auto object-contain sm:h-[420px] lg:h-[520px]" />
+          <div class="flex min-h-[240px] items-center justify-center md:min-h-[min(60vh,640px)]">
+            <div class="relative flex w-full max-w-[min(100%,520px)] items-center justify-center md:max-w-none">
+              <div class="pointer-events-none absolute inset-0 scale-110 bg-[radial-gradient(circle_at_50%_45%,rgba(212,175,55,0.18),transparent_62%)] blur-2xl"></div>
+              <img
+                src="assets/DumpsterDiver_Stacked_Transparent.png"
+                alt="Dumpster Diver stacked logo"
+                class="relative z-[1] h-[min(68vw,300px)] w-auto max-h-[min(68vh,720px)] object-contain drop-shadow-[0_0_48px_rgba(0,0,0,0.55)] sm:h-[min(52vw,380px)] md:h-[min(52vh,560px)] lg:h-[min(58vh,640px)] xl:h-[min(62vh,720px)]"
+              />
+            </div>
           </div>
         </div>
       </section>
