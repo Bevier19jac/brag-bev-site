@@ -46,28 +46,209 @@
 
       <section class="border-b border-white/10 bg-slate-950/90 px-6 py-12">
         <div class="mx-auto max-w-7xl">
-          <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            <figure class="rounded-2xl border border-white/10 bg-slate-900/60 p-3"><img src="assets/prototype-1.png" alt="Prototype 1" class="lb-trigger h-48 w-full cursor-pointer rounded-lg object-contain transition duration-300 hover:scale-[1.02] hover:brightness-110" /><figcaption class="mt-2 text-xs text-slate-400">Pull-tab integration and safety handling concept.</figcaption></figure>
-            <figure class="rounded-2xl border border-white/10 bg-slate-900/60 p-3"><img src="assets/prototype-2.png" alt="Prototype 2" class="lb-trigger h-48 w-full cursor-pointer rounded-lg object-contain transition duration-300 hover:scale-[1.02] hover:brightness-110" /><figcaption class="mt-2 text-xs text-slate-400">Weighted base geometry for self-righting behavior.</figcaption></figure>
-            <figure class="rounded-2xl border border-white/10 bg-slate-900/60 p-3"><img src="assets/prototype-3.png" alt="Prototype 3" class="lb-trigger h-48 w-full cursor-pointer rounded-lg object-contain transition duration-300 hover:scale-[1.02] hover:brightness-110" /><figcaption class="mt-2 text-xs text-slate-400">Internal packaging and can-interface pathway.</figcaption></figure>
-            <figure class="rounded-2xl border border-white/10 bg-slate-900/60 p-3"><img src="assets/prototype-4.png" alt="Prototype 4" class="lb-trigger h-48 w-full cursor-pointer rounded-lg object-contain transition duration-300 hover:scale-[1.02] hover:brightness-110" /><figcaption class="mt-2 text-xs text-slate-400">Cross-section architecture review.</figcaption></figure>
-            <figure class="rounded-2xl border border-white/10 bg-slate-900/60 p-3"><img src="assets/prototype-5.png" alt="Prototype 5" class="lb-trigger h-48 w-full cursor-pointer rounded-lg object-contain transition duration-300 hover:scale-[1.02] hover:brightness-110" /><figcaption class="mt-2 text-xs text-slate-400">One-handed form factor and diameter targeting.</figcaption></figure>
-            <figure class="rounded-2xl border border-white/10 bg-slate-900/60 p-3"><img src="assets/prototype-6.png" alt="Prototype 6" class="lb-trigger h-48 w-full cursor-pointer rounded-lg object-contain transition duration-300 hover:scale-[1.02] hover:brightness-110" /><figcaption class="mt-2 text-xs text-slate-400">Assembly and mechanism alignment pass.</figcaption></figure>
-            <figure class="rounded-2xl border border-white/10 bg-slate-900/60 p-3 sm:col-span-2 lg:col-span-1"><img src="assets/prototype-7.png" alt="Prototype 7" class="lb-trigger h-48 w-full cursor-pointer rounded-lg object-contain transition duration-300 hover:scale-[1.02] hover:brightness-110" /><figcaption class="mt-2 text-xs text-slate-400">Pre-validation build snapshot.</figcaption></figure>
+          <div class="space-y-6">
+            <p class="max-w-4xl rounded-2xl border border-white/10 bg-slate-900/55 px-4 py-3 text-xs text-slate-300 sm:text-sm">
+              Prototype states shown below include <span class="font-semibold text-brand-gold">safe</span> (clip installed),
+              <span class="font-semibold text-brand-gold">armed</span> (clip removed with visible base-to-housing gap), and
+              <span class="font-semibold text-brand-gold">triggered</span> (housing fully seated against base after impact).
+            </p>
+
+            <div class="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+              <figure class="flex h-full flex-col rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+                <div class="flex h-56 w-full items-center justify-center rounded-xl border border-white/10 bg-slate-950/65 p-4">
+                  <img src="assets/prototype-1.png" alt="Prototype 1" class="lb-trigger h-full w-full cursor-pointer object-contain transition duration-300 hover:scale-[1.02] hover:brightness-110" />
+                </div>
+                <figcaption class="mt-3 text-xs text-slate-400">Prototype 1 — early pull-tab and retaining concept exploration.</figcaption>
+              </figure>
+
+              <figure class="flex h-full flex-col rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+                <div class="flex h-56 w-full items-center justify-center rounded-xl border border-white/10 bg-slate-950/65 p-4">
+                  <img src="assets/prototype-2.png" alt="Prototype 2" class="lb-trigger h-full w-full cursor-pointer object-contain transition duration-300 hover:scale-[1.02] hover:brightness-110" />
+                </div>
+                <figcaption class="mt-3 text-xs text-slate-400">Prototype 2 — base geometry iteration for self-righting and stable landing.</figcaption>
+              </figure>
+
+              <figure class="flex h-full flex-col rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+                <div class="flex h-56 w-full items-center justify-center rounded-xl border border-white/10 bg-slate-950/65 p-4">
+                  <img src="assets/prototype-3.png" alt="Prototype 3" class="lb-trigger h-full w-full cursor-pointer object-contain transition duration-300 hover:scale-[1.02] hover:brightness-110" />
+                </div>
+                <figcaption class="mt-3 text-xs text-slate-400">Prototype 3 — internal packaging and can-interface pathway refinement.</figcaption>
+              </figure>
+
+              <figure class="flex h-full flex-col rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+                <div class="flex h-56 w-full items-center justify-center rounded-xl border border-white/10 bg-slate-950/65 p-4">
+                  <img src="assets/prototype-4.png" alt="Prototype 4" class="lb-trigger h-full w-full cursor-pointer object-contain transition duration-300 hover:scale-[1.02] hover:brightness-110" />
+                </div>
+                <figcaption class="mt-3 text-xs text-slate-400">Prototype 4 — cross-section architecture review for travel and force path.</figcaption>
+              </figure>
+
+              <figure class="flex h-full flex-col rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+                <div class="flex h-56 w-full items-center justify-center rounded-xl border border-white/10 bg-slate-950/65 p-4">
+                  <img src="assets/prototype-5.png" alt="Prototype 5" class="lb-trigger h-full w-full cursor-pointer object-contain transition duration-300 hover:scale-[1.02] hover:brightness-110" />
+                </div>
+                <figcaption class="mt-3 text-xs text-slate-400">Prototype 5 — one-handed handling and diameter targeting updates.</figcaption>
+              </figure>
+
+              <figure class="flex h-full flex-col rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+                <div class="flex h-56 w-full items-center justify-center rounded-xl border border-white/10 bg-slate-950/65 p-4">
+                  <img src="assets/prototype-6.png" alt="Prototype 6" class="lb-trigger h-full w-full cursor-pointer object-contain transition duration-300 hover:scale-[1.02] hover:brightness-110" />
+                </div>
+                <figcaption class="mt-3 text-xs text-slate-400">Prototype 6 — mechanism alignment pass before state validation.</figcaption>
+              </figure>
+
+              <figure class="flex h-full flex-col rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+                <div class="flex h-56 w-full items-center justify-center rounded-xl border border-white/10 bg-slate-950/65 p-4">
+                  <img src="assets/prototype-7.png" alt="Prototype 7" class="lb-trigger h-full w-full cursor-pointer object-contain transition duration-300 hover:scale-[1.02] hover:brightness-110" />
+                </div>
+                <figcaption class="mt-3 text-xs text-slate-400">Prototype 7 — pre-validation build snapshot before current state-sequenced revisions.</figcaption>
+              </figure>
+
+              <figure class="flex h-full flex-col rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+                <div class="flex h-56 w-full items-center justify-center rounded-xl border border-white/10 bg-slate-950/65 p-4">
+                  <img src="assets/prototype-8.png" alt="Prototype 8" class="lb-trigger h-full w-full cursor-pointer object-contain transition duration-300 hover:scale-[1.02] hover:brightness-110" />
+                </div>
+                <figcaption class="mt-3 text-xs text-slate-400">Prototype 8 — transition build used to tune retaining clip fit and housing travel alignment.</figcaption>
+              </figure>
+
+              <figure class="flex h-full flex-col rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+                <div class="flex h-56 w-full items-center justify-center rounded-xl border border-white/10 bg-slate-950/65 p-4">
+                  <img src="assets/prototype-9.png" alt="Prototype 9" class="lb-trigger h-full w-full cursor-pointer object-contain transition duration-300 hover:scale-[1.02] hover:brightness-110" />
+                </div>
+                <figcaption class="mt-3 text-xs text-slate-400">Prototype 9 — C-clamp installed: safety on for handling and shipping (safe, pre-activation state).</figcaption>
+              </figure>
+
+              <figure class="flex h-full flex-col rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+                <div class="flex h-56 w-full items-center justify-center rounded-xl border border-white/10 bg-slate-950/65 p-4">
+                  <img src="assets/prototype-11.png" alt="Prototype 11" class="lb-trigger h-full w-full cursor-pointer object-contain transition duration-300 hover:scale-[1.02] hover:brightness-110" />
+                </div>
+                <figcaption class="mt-3 text-xs text-slate-400">Prototype 11 — C-clamp removed: device armed. Visible gap between base and housing indicates activated, impact-ready state.</figcaption>
+              </figure>
+
+              <figure class="flex h-full flex-col rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+                <div class="flex h-56 w-full items-center justify-center rounded-xl border border-white/10 bg-slate-950/65 p-4">
+                  <img src="assets/prototype-10.png" alt="Prototype 10" class="lb-trigger h-full w-full cursor-pointer object-contain transition duration-300 hover:scale-[1.02] hover:brightness-110" />
+                </div>
+                <figcaption class="mt-3 text-xs text-slate-400">Prototype 10 — housing seated against base: post-trigger activation and completed actuation travel after impact.</figcaption>
+              </figure>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="bg-slate-950/85 px-6 py-12">
-        <div class="mx-auto max-w-5xl">
-          <h2 class="text-2xl font-semibold tracking-tight text-white sm:text-3xl">Development SITREP</h2>
-          <div class="mt-6 rounded-2xl border border-brand-gold/40 bg-slate-900/70 p-6">
-            <ul class="space-y-3 text-sm text-slate-200">
-              <li><span class="font-semibold text-brand-gold">Status:</span> CAD architecture mapped.</li>
-              <li><span class="font-semibold text-brand-gold">Next:</span> Reusable prototype build.</li>
-              <li><span class="font-semibold text-brand-gold">Validation:</span> ARE Labs preparing for drop testing.</li>
-              <li><span class="font-semibold text-brand-gold">Program Alignment:</span> Mechanical, formulation, and validation workstreams are coordinated across partners.</li>
-            </ul>
+      <section class="border-t border-white/10 bg-slate-950/85 px-6 py-12">
+        <div class="mx-auto max-w-7xl grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:items-start">
+          <div class="space-y-4">
+            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-brand-gold">How the Prototype Works</p>
+            <h2 class="text-2xl font-semibold tracking-tight text-white sm:text-3xl">Current Actuation Concept</h2>
+            <p class="text-sm text-slate-300 sm:text-base">
+              This describes the current prototype mechanism under development. The design is intended to remain safe before deployment, be simple to arm, and
+              then activate on impact after landing inside the bin. The specific travel distances, force transfer consistency, and discharge reliability are
+              being validated through ongoing prototype cycles.
+            </p>
+
+            <div class="grid gap-4 sm:grid-cols-2">
+              <figure class="rounded-2xl border border-white/10 bg-slate-900/60 p-3">
+                <img src="assets/prototype-8.png" alt="Prototype 8 arming state" class="lb-trigger h-48 w-full cursor-pointer rounded-lg object-contain transition duration-300 hover:scale-[1.02] hover:brightness-110 sm:h-56" />
+                <figcaption class="mt-2 text-xs text-slate-400">Retaining clip / arming state reference.</figcaption>
+              </figure>
+              <figure class="rounded-2xl border border-white/10 bg-slate-900/60 p-3">
+                <img src="assets/prototype-10.png" alt="Prototype 10 impact-actuation path" class="lb-trigger h-48 w-full cursor-pointer rounded-lg object-contain transition duration-300 hover:scale-[1.02] hover:brightness-110 sm:h-56" />
+                <figcaption class="mt-2 text-xs text-slate-400">Impact-driven top-piece travel into the actuator.</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="space-y-5">
+            <ol class="space-y-4">
+              <li class="flex gap-4 rounded-2xl border border-white/10 bg-slate-900/60 p-5">
+                <div class="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-brand-gold text-sm font-semibold text-black">1</div>
+                <div>
+                  <h3 class="text-sm font-semibold text-white">C-clamp / safety clip</h3>
+                  <p class="mt-1 text-sm text-slate-300">
+                    The prototype uses a C-clamp style retaining piece to hold the top assembly in the safe position. This piece is removed before use.
+                    Removing the clamp arms the device.
+                  </p>
+                </div>
+              </li>
+
+              <li class="flex gap-4 rounded-2xl border border-white/10 bg-slate-900/60 p-5">
+                <div class="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-brand-gold text-sm font-semibold text-black">2</div>
+                <div>
+                  <h3 class="text-sm font-semibold text-white">Armed state</h3>
+                  <p class="mt-1 text-sm text-slate-300">
+                    Once the clamp is removed, the mechanism is set and ready. The device can then be dropped into the trash can after pickup.
+                  </p>
+                </div>
+              </li>
+
+              <li class="flex gap-4 rounded-2xl border border-white/10 bg-slate-900/60 p-5">
+                <div class="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-brand-gold text-sm font-semibold text-black">3</div>
+                <div>
+                  <h3 class="text-sm font-semibold text-white">Impact event</h3>
+                  <p class="mt-1 text-sm text-slate-300">
+                    When the prototype impacts the bottom of the trash can, the top piece drives downward. That downward motion transfers force into
+                    the actuator path.
+                  </p>
+                </div>
+              </li>
+
+              <li class="flex gap-4 rounded-2xl border border-white/10 bg-slate-900/60 p-5">
+                <div class="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-brand-gold text-sm font-semibold text-black">4</div>
+                <div>
+                  <h3 class="text-sm font-semibold text-white">Actuation</h3>
+                  <p class="mt-1 text-sm text-slate-300">
+                    The top piece slamming down actuates the internal mechanism. This actuation is intended to trigger the can to discharge.
+                  </p>
+                </div>
+              </li>
+
+              <li class="flex gap-4 rounded-2xl border border-white/10 bg-slate-900/60 p-5">
+                <div class="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-brand-gold text-sm font-semibold text-black">5</div>
+                <div>
+                  <h3 class="text-sm font-semibold text-white">Purpose of the design</h3>
+                  <p class="mt-1 text-sm text-slate-300">
+                    The concept is engineered to keep the device safe before deployment, make arming straightforward, and use impact activation upon landing
+                    inside the bin.
+                  </p>
+                </div>
+              </li>
+            </ol>
+
+            <p class="text-xs text-slate-400">
+              The mechanism shown here is a current prototype concept. Final reliability outcomes depend on test matrix results and iterative build tuning.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-slate-950/80 px-6 py-12">
+        <div class="mx-auto max-w-7xl">
+          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-brand-gold">Engineering &amp; Prototype Development</p>
+          <h2 class="mt-2 text-2xl font-semibold tracking-tight text-white sm:text-3xl">Active Development Questions</h2>
+          <p class="mt-3 max-w-3xl text-sm text-slate-300 sm:text-base">
+            The program is actively working through the questions below to tighten trigger reliability, actuator consistency, and end-to-end
+            performance under realistic drop conditions.
+          </p>
+
+          <div class="mt-6 grid gap-6 lg:grid-cols-2">
+            <div class="rounded-2xl border border-white/10 bg-slate-900/60 p-6">
+              <h3 class="text-lg font-semibold text-white">Test Matrix Planning</h3>
+              <ul class="mt-4 space-y-2 text-sm text-slate-200">
+                <li><span class="font-semibold text-brand-gold">How many prototypes?</span> How many prototypes should be manufactured for testing?</li>
+                <li><span class="font-semibold text-brand-gold">Configurations:</span> Should different prototypes use different configurations?</li>
+                <li><span class="font-semibold text-brand-gold">Drop targets:</span> How many cans are needed for drop testing?</li>
+                <li><span class="font-semibold text-brand-gold">Conditions:</span> What drop heights and impact angles should be tested?</li>
+              </ul>
+            </div>
+
+            <div class="rounded-2xl border border-white/10 bg-slate-900/60 p-6">
+              <h3 class="text-lg font-semibold text-white">Trigger &amp; Actuation Refinements</h3>
+              <ul class="mt-4 space-y-2 text-sm text-slate-200">
+                <li><span class="font-semibold text-brand-gold">Reliability:</span> How do we improve trigger reliability?</li>
+                <li><span class="font-semibold text-brand-gold">Flow path:</span> What nozzle / valve / internal geometry changes should be evaluated?</li>
+                <li><span class="font-semibold text-brand-gold">Dynamics:</span> What weight distribution best supports self-righting and reliable actuation?</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>

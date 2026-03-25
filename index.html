@@ -12,7 +12,7 @@
   <body class="min-h-screen bg-brand-dark text-slate-100 antialiased">
     <header class="sticky top-0 z-50 border-b border-white/10 bg-brand-dark/75 backdrop-blur-xl">
       <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 sm:px-6 sm:py-4 lg:px-8">
-        <a href="index.html" class="flex shrink-0 items-center"><img src="assets/BragAndBev_Transparent.png" alt="Brag and Bev" class="h-12 w-auto sm:h-14 lg:h-16" /></a>
+        <a href="index.html" class="flex shrink-0 items-center"><img src="assets/BragAndBev_Transparent.png" class="h-12 sm:h-14 lg:h-16 w-auto" alt="Brag and Bev" /></a>
         <div class="hidden items-center gap-7 text-sm font-medium sm:flex">
           <a href="index.html" class="text-brand-gold">Home</a>
           <div class="group relative">
@@ -41,11 +41,9 @@
         <div class="pointer-events-none absolute inset-y-0 right-0 w-1/2 max-w-xl bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.08),transparent_70%)]"></div>
         <div class="relative mx-auto grid min-h-[min(78vh,920px)] max-w-7xl items-center gap-8 px-6 py-12 sm:py-14 md:grid-cols-[minmax(0,0.92fr)_minmax(0,1.12fr)] md:gap-10 lg:min-h-[min(82vh,960px)] lg:gap-12 lg:py-16">
           <div class="space-y-5 sm:space-y-6 lg:space-y-7">
-            <img
-              src="assets/DumpsterDiver_Horizontal_Transparent.png"
-              alt="Dumpster Diver"
-              class="block w-full max-w-[min(100%,300px)] object-contain sm:max-w-[380px] md:max-w-[420px] lg:max-w-[480px] xl:max-w-[520px] h-auto"
-            />
+            <div class="mb-6">
+              <img src="assets/DumpsterDiver_Horizontal_Transparent.png" alt="Dumpster Diver" class="w-full max-w-[500px] object-contain" />
+            </div>
             <h1 class="text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">Reengineering Waste Sanitation.</h1>
             <p class="max-w-2xl text-sm text-slate-300 sm:text-base">Brag &amp; Bev L.L.C. is developing Dumpster Diver, a patent-pending sanitation innovation designed to simplify cleaning workflows for outdoor bins up to 96 gallons.</p>
             <div class="flex flex-col gap-3 sm:flex-row">
@@ -54,13 +52,11 @@
             </div>
           </div>
           <div class="flex min-h-[240px] items-center justify-center md:min-h-[min(60vh,640px)]">
-            <div class="relative flex w-full max-w-[min(100%,520px)] items-center justify-center md:max-w-none">
+            <div class="relative w-full max-w-[min(100%,520px)] md:max-w-none">
               <div class="pointer-events-none absolute inset-0 scale-110 bg-[radial-gradient(circle_at_50%_45%,rgba(212,175,55,0.18),transparent_62%)] blur-2xl"></div>
-              <img
-                src="assets/DumpsterDiver_Stacked_Transparent.png"
-                alt="Dumpster Diver stacked logo"
-                class="relative z-[1] h-[min(68vw,300px)] w-auto max-h-[min(74vh,800px)] object-contain drop-shadow-[0_0_52px_rgba(0,0,0,0.58)] sm:h-[min(56vw,400px)] md:h-[min(56vh,620px)] lg:h-[min(64vh,720px)] xl:h-[min(68vh,800px)]"
-              />
+              <div class="relative z-[1] flex justify-center md:justify-end">
+                <img src="assets/DumpsterDiver_Stacked_Transparent.png" alt="Dumpster Diver stacked logo" class="h-[min(65vh,720px)] w-auto max-w-full object-contain drop-shadow-[0_0_60px_rgba(0,0,0,0.7)]" />
+              </div>
             </div>
           </div>
         </div>
@@ -105,7 +101,10 @@
 
       <footer class="border-t border-white/10 bg-black/40 px-6 py-10">
         <div class="mx-auto flex max-w-7xl flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-          <div class="space-y-3"><img src="assets/BragAndBev_Transparent.png" alt="Brag and Bev" class="h-12 w-auto sm:h-14 lg:h-16" /><p class="text-xs text-slate-400">Brag &amp; Bev L.L.C. — engineering practical sanitation innovation.</p></div>
+          <div class="space-y-3">
+            <img src="assets/BragAndBev_Transparent.png" class="h-12 w-auto sm:h-14 lg:h-16" alt="Brag and Bev" />
+            <p class="text-xs text-slate-400">Brag &amp; Bev L.L.C. — engineering practical sanitation innovation.</p>
+          </div>
           <div class="flex flex-wrap gap-5 text-sm text-slate-300">
             <a href="index.html" class="transition hover:text-brand-gold">Home</a><a href="product.html" class="transition hover:text-brand-gold">Product</a><a href="prototype.html" class="transition hover:text-brand-gold">Prototype</a><a href="about.html" class="transition hover:text-brand-gold">About</a><a href="partners.html" class="transition hover:text-brand-gold">Partners</a><a href="contact.html" class="transition hover:text-brand-gold">Contact</a>
           </div>
