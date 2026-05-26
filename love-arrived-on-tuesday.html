@@ -1,0 +1,765 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tuesday Flowers for Babe</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #22302f;
+      --muted: #63716b;
+      --paper: #fff9f1;
+      --rose: #e75f78;
+      --coral: #f08a6d;
+      --gold: #f6c85f;
+      --leaf: #3f8f68;
+      --leaf-dark: #276b52;
+      --sky: #d6eef4;
+      --night: #23394a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.86), transparent 28rem),
+        linear-gradient(160deg, var(--sky), #f7ebdf 52%, #f9d8c6);
+    }
+
+    body:not(.opened) .scene {
+      filter: blur(10px) saturate(0.86);
+      transform: scale(1.015);
+      pointer-events: none;
+      user-select: none;
+    }
+
+    body.opened .opener {
+      opacity: 0;
+      pointer-events: none;
+      transform: scale(1.03);
+    }
+
+    .scene,
+    .opener {
+      transition: filter 0.7s ease, transform 0.7s ease, opacity 0.45s ease;
+    }
+
+    .opener {
+      position: fixed;
+      inset: 0;
+      z-index: 10;
+      display: grid;
+      place-items: center;
+      padding: 1rem;
+      background:
+        radial-gradient(circle at 50% 42%, rgba(255, 249, 241, 0.86), rgba(255, 249, 241, 0.54) 34%, rgba(214, 238, 244, 0.74));
+      backdrop-filter: blur(4px);
+    }
+
+    .seal {
+      display: grid;
+      place-items: center;
+      width: min(76vw, 19rem);
+      aspect-ratio: 1;
+      border: 0;
+      border-radius: 50%;
+      padding: 1.2rem;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 42% 32%, #ffffff 0 14%, #fff9f1 15% 42%, #f8d7c5 43% 66%, #e75f78 67% 69%, #fff9f1 70%);
+      box-shadow:
+        0 1.6rem 4rem rgba(34, 48, 47, 0.22),
+        inset 0 0 0 0.75rem rgba(255, 255, 255, 0.56);
+      cursor: pointer;
+    }
+
+    .seal span {
+      display: block;
+      max-width: 8rem;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.1rem, 8vw, 3.35rem);
+      line-height: 0.95;
+      text-align: center;
+    }
+
+    .seal small {
+      display: block;
+      margin-top: 0.5rem;
+      font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.84rem;
+      font-weight: 750;
+      line-height: 1.1;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      color: var(--rose);
+    }
+
+    .baby-breath-field {
+      position: fixed;
+      inset: 0;
+      z-index: 4;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .floating-sprig {
+      position: absolute;
+      left: var(--x);
+      top: var(--y);
+      width: var(--w);
+      height: calc(var(--w) * 1.45);
+      opacity: 0;
+      transform: translate(-50%, -50%) rotate(var(--r)) scale(0.35);
+      animation: sprigReveal 1.4s ease forwards;
+      animation-delay: var(--delay);
+    }
+
+    .floating-sprig i {
+      position: absolute;
+      left: 50%;
+      bottom: 10%;
+      width: 3px;
+      height: 76%;
+      border-radius: 99px;
+      background: rgba(63, 143, 104, 0.74);
+      transform-origin: 50% 100%;
+      transform: translateX(-50%) rotate(var(--a));
+    }
+
+    .floating-sprig b {
+      position: absolute;
+      left: var(--bx);
+      top: var(--by);
+      width: var(--bs);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: radial-gradient(circle at 34% 30%, #ffffff 0 30%, #fffaf0 31% 74%, #e8dcc7 75%);
+      box-shadow: 0 0.12rem 0.25rem rgba(70, 58, 45, 0.13);
+    }
+
+    .scene {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(17rem, 27rem);
+      gap: clamp(1rem, 3vw, 3.25rem);
+      align-items: center;
+      min-height: 100vh;
+      padding: clamp(1rem, 3vw, 3rem);
+    }
+
+    .sun {
+      position: absolute;
+      top: clamp(1.5rem, 7vw, 4.5rem);
+      right: clamp(1.5rem, 7vw, 6rem);
+      width: clamp(4.5rem, 10vw, 7rem);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: radial-gradient(circle, #fff5b2 0 34%, #ffd773 35% 68%, rgba(255, 215, 115, 0) 69%);
+      opacity: 0.82;
+      animation: glow 5s ease-in-out infinite;
+    }
+
+    .skyline {
+      position: absolute;
+      inset: auto 0 0;
+      height: 22vh;
+      min-height: 8rem;
+      background:
+        linear-gradient(transparent, rgba(35, 57, 74, 0.12)),
+        linear-gradient(90deg, rgba(35, 57, 74, 0.18) 0 7%, transparent 7% 11%, rgba(35, 57, 74, 0.14) 11% 18%, transparent 18% 25%, rgba(35, 57, 74, 0.2) 25% 31%, transparent 31% 38%, rgba(35, 57, 74, 0.16) 38% 49%, transparent 49% 56%, rgba(35, 57, 74, 0.19) 56% 64%, transparent 64% 70%, rgba(35, 57, 74, 0.15) 70% 83%, transparent 83%);
+      clip-path: polygon(0 45%, 8% 44%, 8% 25%, 14% 25%, 14% 39%, 24% 39%, 24% 13%, 31% 13%, 31% 42%, 41% 42%, 41% 27%, 47% 27%, 47% 50%, 58% 50%, 58% 20%, 66% 20%, 66% 41%, 76% 41%, 76% 29%, 83% 29%, 83% 48%, 92% 48%, 92% 35%, 100% 35%, 100% 100%, 0 100%);
+      pointer-events: none;
+    }
+
+    .copy {
+      position: relative;
+      z-index: 2;
+      max-width: 46rem;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      margin: 0 0 1rem;
+      padding: 0.5rem 0.7rem;
+      border: 1px solid rgba(34, 48, 47, 0.14);
+      border-radius: 999px;
+      background: rgba(255, 249, 241, 0.64);
+      backdrop-filter: blur(10px);
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .tag span {
+      width: 0.56rem;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: var(--rose);
+      box-shadow: 0 0 0 0.35rem rgba(231, 95, 120, 0.14);
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 13ch;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3.2rem, 7.4vw, 6.8rem);
+      line-height: 0.92;
+      letter-spacing: 0;
+      color: var(--ink);
+    }
+
+    .note {
+      max-width: 39rem;
+      margin: 1rem 0 0;
+      font-size: clamp(1.04rem, 1.6vw, 1.26rem);
+      line-height: 1.48;
+      color: #36423f;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.15rem;
+    }
+
+    button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 2.75rem;
+      border: 0;
+      border-radius: 999px;
+      padding: 0.82rem 1rem;
+      font: inherit;
+      font-weight: 750;
+      color: #fff;
+      background: var(--ink);
+      box-shadow: 0 0.8rem 1.8rem rgba(34, 48, 47, 0.18);
+      cursor: pointer;
+    }
+
+    button.secondary {
+      color: var(--ink);
+      background: rgba(255, 249, 241, 0.78);
+      border: 1px solid rgba(34, 48, 47, 0.14);
+      box-shadow: none;
+    }
+
+    button:focus-visible {
+      outline: 3px solid rgba(231, 95, 120, 0.34);
+      outline-offset: 4px;
+    }
+
+    .garden {
+      position: relative;
+      z-index: 1;
+      min-height: min(72vh, 39rem);
+      display: grid;
+      place-items: end center;
+    }
+
+    .bouquet {
+      position: relative;
+      width: min(88vw, 31rem);
+      height: min(72vh, 38rem);
+      min-height: 28rem;
+      transform-origin: 50% 100%;
+      animation: breathe 5s ease-in-out infinite;
+    }
+
+    .stem {
+      position: absolute;
+      bottom: 5.9rem;
+      left: 50%;
+      width: 0.45rem;
+      height: var(--h);
+      border-radius: 99px;
+      background: linear-gradient(var(--leaf), var(--leaf-dark));
+      transform-origin: 50% 100%;
+      transform: translateX(-50%) rotate(var(--r));
+    }
+
+    .stem::before,
+    .stem::after {
+      content: "";
+      position: absolute;
+      width: 3.8rem;
+      height: 1.45rem;
+      border-radius: 100% 0 100% 0;
+      background: linear-gradient(135deg, #76b783, #2f7f5f);
+      opacity: 0.82;
+    }
+
+    .stem::before {
+      top: 38%;
+      right: 0.2rem;
+      transform: rotate(-30deg);
+    }
+
+    .stem::after {
+      top: 58%;
+      left: 0.2rem;
+      transform: scaleX(-1) rotate(-28deg);
+    }
+
+    .flower {
+      position: absolute;
+      left: 50%;
+      bottom: calc(5.6rem + var(--h));
+      width: var(--s);
+      aspect-ratio: 1;
+      transform: translate(-50%, 50%) rotate(calc(var(--r) * -0.25));
+    }
+
+    .sprig {
+      position: absolute;
+      left: 50%;
+      bottom: calc(5.9rem + var(--h));
+      width: var(--s);
+      height: calc(var(--s) * 1.1);
+      transform: translate(-50%, 46%) rotate(calc(var(--r) * -0.22));
+    }
+
+    .sprig-line {
+      position: absolute;
+      left: 50%;
+      bottom: 18%;
+      width: 0.18rem;
+      height: 62%;
+      border-radius: 99px;
+      background: rgba(63, 143, 104, 0.78);
+      transform-origin: 50% 100%;
+      transform: translateX(-50%) rotate(var(--a));
+    }
+
+    .bud {
+      position: absolute;
+      left: var(--x);
+      top: var(--y);
+      width: var(--b);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: radial-gradient(circle at 34% 30%, #ffffff 0 28%, #fffaf0 29% 72%, #e8dcc7 73%);
+      box-shadow:
+        0 0.14rem 0.25rem rgba(70, 58, 45, 0.13),
+        0 0 0 0.08rem rgba(255, 255, 255, 0.7);
+    }
+
+    .petal {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 42%;
+      height: 62%;
+      border-radius: 70% 70% 46% 46%;
+      background: var(--c);
+      transform-origin: 50% 96%;
+      transform: translate(-50%, -96%) rotate(var(--a));
+      box-shadow: inset 0 -0.55rem 1rem rgba(120, 32, 55, 0.12);
+    }
+
+    .center {
+      position: absolute;
+      inset: 34%;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, #fff2a4, var(--gold) 65%, #d9953a);
+      box-shadow: 0 0.18rem 0.55rem rgba(90, 70, 30, 0.18);
+    }
+
+    .wrap {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 15.5rem;
+      height: 12.2rem;
+      transform: translateX(-50%);
+      background: linear-gradient(145deg, #fff4e1, #eac797);
+      clip-path: polygon(8% 8%, 50% 34%, 92% 8%, 72% 100%, 28% 100%);
+      box-shadow: 0 1.4rem 2.5rem rgba(51, 45, 36, 0.18);
+    }
+
+    .wrap::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 2.7rem;
+      width: 6.6rem;
+      height: 2.2rem;
+      border-radius: 999px;
+      background: var(--rose);
+      transform: translateX(-50%) rotate(-4deg);
+      box-shadow: 0.1rem 0.1rem 0 rgba(120, 32, 55, 0.18);
+    }
+
+    .ribbon {
+      position: absolute;
+      left: 50%;
+      bottom: 3.2rem;
+      width: 2.2rem;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: #f8adb8;
+      transform: translateX(-50%);
+      box-shadow: -3.3rem 0.2rem 0 -0.45rem var(--rose), 3.3rem 0.15rem 0 -0.45rem var(--rose);
+    }
+
+    .milestone {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.75rem;
+      align-items: center;
+      max-width: 34rem;
+      margin-top: 0.9rem;
+      padding: 0.7rem 0.85rem;
+      border-top: 1px solid rgba(34, 48, 47, 0.14);
+      border-bottom: 1px solid rgba(34, 48, 47, 0.14);
+      color: #36423f;
+      background: rgba(255, 249, 241, 0.36);
+    }
+
+    .milestone strong {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 4.2vw, 3.1rem);
+      line-height: 1;
+      color: var(--rose);
+    }
+
+    .milestone span {
+      font-size: 0.98rem;
+      line-height: 1.35;
+    }
+
+    .plane {
+      position: absolute;
+      left: -8rem;
+      top: 15vh;
+      width: 5.2rem;
+      color: rgba(35, 57, 74, 0.65);
+      animation: fly 14s linear infinite;
+    }
+
+    .plane svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .plane::after {
+      content: "";
+      position: absolute;
+      right: 4.2rem;
+      top: 50%;
+      width: 7rem;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, currentColor);
+      opacity: 0.34;
+    }
+
+    .petal-fall {
+      position: fixed;
+      top: -2rem;
+      left: var(--x);
+      width: 0.8rem;
+      height: 1.2rem;
+      border-radius: 80% 0 80% 0;
+      background: var(--c);
+      pointer-events: none;
+      animation: fall var(--d) linear forwards;
+      z-index: 5;
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 1rem;
+      z-index: 6;
+      max-width: min(92vw, 34rem);
+      padding: 0.8rem 1rem;
+      border-radius: 999px;
+      color: #fff;
+      background: rgba(34, 48, 47, 0.9);
+      box-shadow: 0 1rem 2rem rgba(34, 48, 47, 0.24);
+      transform: translate(-50%, 140%);
+      transition: transform 0.28s ease;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .toast.show {
+      transform: translate(-50%, 0);
+    }
+
+    @keyframes breathe {
+      0%, 100% { transform: rotate(-0.8deg) scale(1); }
+      50% { transform: rotate(0.8deg) scale(1.012); }
+    }
+
+    @keyframes glow {
+      0%, 100% { transform: scale(1); opacity: 0.76; }
+      50% { transform: scale(1.06); opacity: 0.92; }
+    }
+
+    @keyframes fly {
+      from { transform: translateX(0) translateY(0) rotate(4deg); }
+      48% { transform: translateX(58vw) translateY(1.2rem) rotate(2deg); }
+      to { transform: translateX(calc(100vw + 12rem)) translateY(-0.3rem) rotate(4deg); }
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(560deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes sprigReveal {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(var(--r)) scale(0.35);
+      }
+      65% {
+        opacity: 0.92;
+      }
+      100% {
+        opacity: 0.8;
+        transform: translate(-50%, -50%) rotate(var(--r)) scale(1);
+      }
+    }
+
+    @media (max-width: 820px) {
+      .scene {
+        grid-template-columns: 1fr;
+        align-items: start;
+        padding-bottom: 0;
+      }
+
+      .copy {
+        padding-top: 3.5rem;
+      }
+
+      h1 {
+        max-width: 8ch;
+      }
+
+      .garden {
+        min-height: 35rem;
+        margin-top: -1rem;
+      }
+
+      .bouquet {
+        min-height: 32rem;
+        height: 35rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="opener" id="opener">
+    <button class="seal" id="openButton" type="button" aria-label="Open the Tuesday flowers">
+      <span>open<br>here<small>for Babe</small></span>
+    </button>
+  </div>
+  <div class="baby-breath-field" id="babyBreathField" aria-hidden="true"></div>
+
+  <main class="scene">
+    <div class="sun" aria-hidden="true"></div>
+    <div class="plane" aria-hidden="true">
+      <svg viewBox="0 0 120 72" role="img">
+        <path fill="currentColor" d="M111.3 32.2c2.8 1.2 2.8 5.2 0 6.4L9.9 67.9c-3.6 1-6.5-2.9-4.6-6.1l16-25.8-16-25.8C3.4 7 6.3 3.1 9.9 4.1l101.4 28.1ZM29.6 39.7 16 61.7l77.1-22H29.6Zm0-7.4h63.5L16 10.3l13.6 22Z"/>
+      </svg>
+    </div>
+
+    <section class="copy" aria-label="A Tuesday flower note">
+      <p class="tag"><span></span> New Orleans delay. Tuesday delivery.</p>
+      <h1>Babe, your flowers refused to miss you.</h1>
+      <p class="note">
+        Babe, I thought I had the timing perfect today, but New Orleans
+        kept you a little longer. So I made the baby&apos;s breath travel first:
+        soft, stubborn, and very much trying to flirt its way through the airport.
+      </p>
+      <div class="milestone" aria-label="146 Tuesdays">
+        <strong>146</strong>
+        <span>Tuesdays since August 9, 2023, and I still want to be the place your shoulders drop when the day gets too loud.</span>
+      </div>
+      <div class="actions">
+        <button id="bloomButton" type="button">Send more baby&apos;s breath</button>
+        <button class="secondary" id="noteButton" type="button">Open the private note</button>
+      </div>
+    </section>
+
+    <section class="garden" aria-label="Digital bouquet">
+      <div class="bouquet" id="bouquet" aria-hidden="true"></div>
+    </section>
+
+    <div class="skyline" aria-hidden="true"></div>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    const bouquet = document.querySelector("#bouquet");
+    const toast = document.querySelector("#toast");
+    const field = document.querySelector("#babyBreathField");
+    const colors = ["#fffaf0", "#ffffff", "#f8ead3", "#e75f78"];
+    const flowers = [
+      { h: 20, r: -34, s: 7.8, c: "#ffffff" },
+      { h: 23, r: -22, s: 8.5, c: "#ffffff" },
+      { h: 26, r: -10, s: 9.1, c: "#ffffff" },
+      { h: 29, r: 0, s: 9.8, c: "#ffffff" },
+      { h: 27, r: 12, s: 9.1, c: "#ffffff" },
+      { h: 24, r: 24, s: 8.4, c: "#ffffff" },
+      { h: 21, r: 36, s: 7.6, c: "#ffffff" }
+    ];
+
+    function makeFlower({ h, r, s, c }, index) {
+      const stem = document.createElement("div");
+      stem.className = "stem";
+      stem.style.setProperty("--h", `${h}rem`);
+      stem.style.setProperty("--r", `${r}deg`);
+
+      const sprig = document.createElement("div");
+      sprig.className = "sprig";
+      sprig.style.setProperty("--h", `${h}rem`);
+      sprig.style.setProperty("--r", `${r}deg`);
+      sprig.style.setProperty("--s", `${s}rem`);
+      sprig.style.filter = `drop-shadow(0 ${0.22 + index * 0.02}rem 0.32rem rgba(70, 45, 45, 0.12))`;
+
+      [-36, -18, 0, 18, 36].forEach((angle) => {
+        const line = document.createElement("span");
+        line.className = "sprig-line";
+        line.style.setProperty("--a", `${angle}deg`);
+        sprig.appendChild(line);
+      });
+
+      const buds = [
+        [50, 4, 0.78], [34, 12, 0.66], [64, 12, 0.66], [24, 27, 0.58],
+        [76, 27, 0.58], [42, 31, 0.62], [58, 31, 0.62], [18, 46, 0.52],
+        [82, 46, 0.52], [31, 52, 0.56], [69, 52, 0.56], [50, 58, 0.6]
+      ];
+
+      buds.forEach(([x, y, size], budIndex) => {
+        const bud = document.createElement("span");
+        bud.className = "bud";
+        bud.style.setProperty("--x", `${x + (index % 2 ? 1 : -1) * (budIndex % 3)}%`);
+        bud.style.setProperty("--y", `${y}%`);
+        bud.style.setProperty("--b", `${size}rem`);
+        sprig.appendChild(bud);
+      });
+
+      bouquet.append(stem, sprig);
+    }
+
+    function shade(hex, percent) {
+      if (hex === "#ffffff") return "#fff7df";
+      const value = hex.replace("#", "");
+      const num = parseInt(value, 16);
+      const amt = Math.round(2.55 * percent);
+      const r = Math.min(255, (num >> 16) + amt);
+      const g = Math.min(255, ((num >> 8) & 0xff) + amt);
+      const b = Math.min(255, (num & 0xff) + amt);
+      return `#${(0x1000000 + r * 0x10000 + g * 0x100 + b).toString(16).slice(1)}`;
+    }
+
+    function finishBouquet() {
+      const wrap = document.createElement("div");
+      wrap.className = "wrap";
+      const ribbon = document.createElement("div");
+      ribbon.className = "ribbon";
+      bouquet.append(wrap, ribbon);
+    }
+
+    function petalBurst(count = 42) {
+      for (let i = 0; i < count; i += 1) {
+        const petal = document.createElement("span");
+        petal.className = "petal-fall";
+        petal.style.setProperty("--x", `${Math.random() * 100}vw`);
+        petal.style.setProperty("--d", `${4 + Math.random() * 4}s`);
+        petal.style.setProperty("--c", colors[Math.floor(Math.random() * colors.length)]);
+        petal.style.animationDelay = `${Math.random() * 0.7}s`;
+        document.body.appendChild(petal);
+        window.setTimeout(() => petal.remove(), 8500);
+      }
+    }
+
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add("show");
+      window.clearTimeout(showToast.timer);
+      showToast.timer = window.setTimeout(() => toast.classList.remove("show"), 5200);
+    }
+
+    function makeFloatingSprig(index) {
+      const sprig = document.createElement("span");
+      sprig.className = "floating-sprig";
+      sprig.style.setProperty("--x", `${6 + Math.random() * 88}vw`);
+      sprig.style.setProperty("--y", `${8 + Math.random() * 84}vh`);
+      sprig.style.setProperty("--w", `${3.5 + Math.random() * 4.4}rem`);
+      sprig.style.setProperty("--r", `${-42 + Math.random() * 84}deg`);
+      sprig.style.setProperty("--delay", `${index * 0.035}s`);
+
+      [-30, -12, 8, 26].forEach((angle) => {
+        const line = document.createElement("i");
+        line.style.setProperty("--a", `${angle}deg`);
+        sprig.appendChild(line);
+      });
+
+      for (let i = 0; i < 10; i += 1) {
+        const bud = document.createElement("b");
+        bud.style.setProperty("--bx", `${24 + Math.random() * 52}%`);
+        bud.style.setProperty("--by", `${5 + Math.random() * 58}%`);
+        bud.style.setProperty("--bs", `${0.34 + Math.random() * 0.34}rem`);
+        sprig.appendChild(bud);
+      }
+
+      field.appendChild(sprig);
+    }
+
+    flowers.forEach(makeFlower);
+    finishBouquet();
+
+    function openCard() {
+      document.body.classList.add("opened");
+      field.textContent = "";
+      for (let i = 0; i < 82; i += 1) makeFloatingSprig(i);
+      window.setTimeout(() => petalBurst(30), 420);
+      window.setTimeout(() => showToast("Your Tuesday baby's breath made it to you first."), 850);
+    }
+
+    document.querySelector("#openButton").addEventListener("click", openCard);
+
+    if (window.location.hash === "#open") {
+      openCard();
+    }
+
+    document.querySelector("#bloomButton").addEventListener("click", () => {
+      petalBurst(64);
+      for (let i = 0; i < 26; i += 1) makeFloatingSprig(i);
+      showToast("A cloud of baby's breath for Babe, now boarding toward home.");
+    });
+
+    document.querySelector("#noteButton").addEventListener("click", () => {
+      showToast("I can't wait to kiss your forehead, pull the anxiety off your shoulders, and be your safe place again.");
+    });
+  </script>
+</body>
+</html>
