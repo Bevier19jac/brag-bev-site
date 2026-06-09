@@ -9,7 +9,7 @@
       tailwind.config = { theme: { extend: { colors: { brand: { gold: '#d4af37', dark: '#050816' } } } } };
     </script>
   </head>
-  <body class="min-h-screen bg-brand-dark text-slate-100 antialiased">
+  <body class="min-h-screen w-full max-w-[100vw] overflow-x-hidden bg-brand-dark text-slate-100 antialiased">
     <header class="sticky top-0 z-50 border-b border-white/10 bg-brand-dark/75 backdrop-blur-xl">
       <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3.5 sm:px-6 sm:py-4 lg:px-8" aria-label="Primary">
         <a href="index.html" class="flex shrink-0 items-center"><img src="assets/BragAndBev_Transparent.png" class="h-12 sm:h-14 lg:h-16 w-auto" alt="Brag and Bev" /></a>
@@ -47,11 +47,16 @@
             <div class="mb-6">
               <img src="assets/DumpsterDiver_Horizontal_Transparent.png" alt="Dumpster Diver" class="w-full max-w-[500px] object-contain" />
             </div>
-            <h1 class="text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">Reengineering Waste Sanitation.</h1>
-            <p class="max-w-2xl text-sm text-slate-300 sm:text-base">Brag &amp; Bev L.L.C. is developing Dumpster Diver, a patent-pending sanitation innovation designed to simplify cleaning workflows for outdoor bins up to 96 gallons.</p>
+            <h1 class="text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">Cleaner bins. Smarter sanitation. Built for the weekly reality of outdoor waste.</h1>
+            <p class="max-w-2xl text-sm leading-6 text-slate-300 sm:text-base">Brag &amp; Bev L.L.C. is developing Dumpster Diver, a patent-pending sanitation system designed to simplify post-pickup bin care for outdoor trash cans up to 96 gallons.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="rounded-full border border-brand-gold/40 bg-brand-gold/10 px-3 py-1.5 text-xs font-semibold text-brand-gold">Patent Pending</span>
+              <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-semibold text-slate-200">Outdoor bins up to 96 gallons</span>
+              <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-semibold text-slate-200">Prototype validation in progress</span>
+            </div>
             <div class="flex flex-col gap-3 sm:flex-row">
               <a href="product.html" class="inline-flex items-center justify-center rounded-full bg-brand-gold px-6 py-2.5 text-sm font-semibold text-black transition hover:bg-brand-gold/90">View Product</a>
-              <a href="prototype.html" class="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-2.5 text-sm font-semibold text-slate-100 transition hover:border-brand-gold hover:text-brand-gold">Track Development</a>
+              <a href="prototype.html" class="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-2.5 text-sm font-semibold text-slate-100 transition hover:border-brand-gold hover:text-brand-gold">Track Prototype Progress</a>
             </div>
           </div>
           <div class="flex min-h-[240px] items-center justify-center md:min-h-[min(60vh,640px)]">
