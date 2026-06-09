@@ -47,6 +47,47 @@
         </div>
       </section>
 
+      <section class="border-b border-white/10 bg-slate-950/80 px-6 py-12">
+        <div class="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:items-start">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-brand-gold">June 2026 Development Milestone</p>
+            <h2 class="mt-2 text-2xl font-semibold tracking-tight text-white sm:text-3xl">Assembly-Ready Test System</h2>
+            <p class="mt-4 max-w-3xl text-sm leading-6 text-slate-300 sm:text-base">
+              Dumpster Diver has progressed into an assembly-ready test-system phase. The current build package supports controlled prototype assembly,
+              configurable weighting, can/nozzle alignment, and repeatable preparation for drop-test validation.
+            </p>
+
+            <div class="mt-6 grid gap-3 sm:grid-cols-2">
+              <div class="rounded-xl border border-white/10 bg-slate-900/55 px-4 py-3 text-sm text-slate-200">Two-piece housing/case assembly</div>
+              <div class="rounded-xl border border-white/10 bg-slate-900/55 px-4 py-3 text-sm text-slate-200">Configurable internal and base weighting</div>
+              <div class="rounded-xl border border-white/10 bg-slate-900/55 px-4 py-3 text-sm text-slate-200">Can/nozzle alignment features</div>
+              <div class="rounded-xl border border-white/10 bg-slate-900/55 px-4 py-3 text-sm text-slate-200">Secured base plate</div>
+              <div class="rounded-xl border border-white/10 bg-slate-900/55 px-4 py-3 text-sm text-slate-200">Safety handle/clip concept</div>
+              <div class="rounded-xl border border-white/10 bg-slate-900/55 px-4 py-3 text-sm text-slate-200">Repeatable preparation for controlled testing</div>
+            </div>
+
+            <p class="mt-5 text-sm text-slate-400">
+              The assembly process supports test-configuration changes without disclosing proprietary assembly steps. Detailed assembly documentation is
+              maintained internally with development partners.
+            </p>
+          </div>
+
+          <aside class="rounded-2xl border border-brand-gold/30 bg-gradient-to-br from-brand-gold/10 via-slate-900/70 to-slate-950 p-6">
+            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-brand-gold">What This Means</p>
+            <ul class="mt-4 space-y-3 text-sm leading-6 text-slate-200">
+              <li>Prototype development is moving from concept iteration into structured physical testing.</li>
+              <li>Weight distribution can be tuned to evaluate drop behavior.</li>
+              <li>Nozzle and housing alignment are now part of the controlled build procedure.</li>
+              <li>The test system can be prepared consistently for drop-test validation.</li>
+              <li>Next focus: actuation reliability, drop-height testing, and performance consistency.</li>
+            </ul>
+            <p class="mt-5 border-t border-white/10 pt-4 text-xs text-slate-400">
+              This milestone reflects validation readiness; testing is ongoing and the design is not a final production product.
+            </p>
+          </aside>
+        </div>
+      </section>
+
       <section class="border-b border-white/10 bg-slate-950/90 px-6 py-12">
         <div class="mx-auto max-w-7xl">
           <div class="space-y-6">
@@ -229,29 +270,19 @@
           <p class="text-xs font-semibold uppercase tracking-[0.22em] text-brand-gold">Engineering &amp; Prototype Development</p>
           <h2 class="mt-2 text-2xl font-semibold tracking-tight text-white sm:text-3xl">Active Development Questions</h2>
           <p class="mt-3 max-w-3xl text-sm text-slate-300 sm:text-base">
-            The program is actively working through the questions below to tighten trigger reliability, actuator consistency, and end-to-end
-            performance under realistic drop conditions.
+            The assembly-ready test system creates a repeatable starting point for the next validation cycle. Testing will focus on the questions below
+            before further design refinements are made.
           </p>
 
-          <div class="mt-6 grid gap-6 lg:grid-cols-2">
-            <div class="rounded-2xl border border-white/10 bg-slate-900/60 p-6">
-              <h3 class="text-lg font-semibold text-white">Test Matrix Planning</h3>
-              <ul class="mt-4 space-y-2 text-sm text-slate-200">
-                <li><span class="font-semibold text-brand-gold">How many prototypes?</span> How many prototypes should be manufactured for testing?</li>
-                <li><span class="font-semibold text-brand-gold">Configurations:</span> Should different prototypes use different configurations?</li>
-                <li><span class="font-semibold text-brand-gold">Drop targets:</span> How many cans are needed for drop testing?</li>
-                <li><span class="font-semibold text-brand-gold">Conditions:</span> What drop heights and impact angles should be tested?</li>
-              </ul>
-            </div>
-
-            <div class="rounded-2xl border border-white/10 bg-slate-900/60 p-6">
-              <h3 class="text-lg font-semibold text-white">Trigger &amp; Actuation Refinements</h3>
-              <ul class="mt-4 space-y-2 text-sm text-slate-200">
-                <li><span class="font-semibold text-brand-gold">Reliability:</span> How do we improve trigger reliability?</li>
-                <li><span class="font-semibold text-brand-gold">Flow path:</span> What nozzle / valve / internal geometry changes should be evaluated?</li>
-                <li><span class="font-semibold text-brand-gold">Dynamics:</span> What weight distribution best supports self-righting and reliable actuation?</li>
-              </ul>
-            </div>
+          <div class="mt-6 rounded-2xl border border-white/10 bg-slate-900/60 p-6">
+            <h3 class="text-lg font-semibold text-white">Next Testing Priorities</h3>
+            <ul class="mt-4 grid gap-3 text-sm text-slate-200 md:grid-cols-2">
+              <li class="rounded-xl border border-white/10 bg-slate-950/50 p-4"><span class="font-semibold text-brand-gold">Actuation reliability:</span> Does the device actuate reliably from controlled drop heights?</li>
+              <li class="rounded-xl border border-white/10 bg-slate-950/50 p-4"><span class="font-semibold text-brand-gold">Weight configuration:</span> Which weight configuration performs best?</li>
+              <li class="rounded-xl border border-white/10 bg-slate-950/50 p-4"><span class="font-semibold text-brand-gold">Drop-height sequence:</span> What drop heights should be validated first?</li>
+              <li class="rounded-xl border border-white/10 bg-slate-950/50 p-4"><span class="font-semibold text-brand-gold">Assembly alignment:</span> Does can/nozzle alignment remain consistent through assembly and impact?</li>
+              <li class="rounded-xl border border-white/10 bg-slate-950/50 p-4 md:col-span-2"><span class="font-semibold text-brand-gold">Design refinement:</span> What design refinements are needed after initial tests?</li>
+            </ul>
           </div>
         </div>
       </section>
