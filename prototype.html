@@ -9,7 +9,7 @@
       tailwind.config = { theme: { extend: { colors: { brand: { gold: '#d4af37', dark: '#050816' } } } } };
     </script>
   </head>
-  <body class="min-h-screen bg-brand-dark text-slate-100 antialiased">
+  <body class="min-h-screen w-full max-w-[100vw] overflow-x-hidden bg-brand-dark text-slate-100 antialiased">
     <header class="sticky top-0 z-50 border-b border-white/10 bg-brand-dark/75 backdrop-blur-xl">
       <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3.5 sm:px-6 sm:py-4 lg:px-8" aria-label="Primary">
         <a href="index.html" class="flex shrink-0 items-center"><img src="assets/BragAndBev_Transparent.png" alt="Brag and Bev" class="h-12 w-auto sm:h-14 lg:h-16" /></a>
@@ -39,11 +39,51 @@
     </header>
 
     <main>
-      <section class="relative overflow-hidden border-b border-white/10 bg-gradient-to-br from-black via-slate-950 to-brand-dark px-6 py-14">
-        <div class="mx-auto max-w-7xl space-y-4">
-          <p class="text-xs uppercase tracking-[0.22em] text-brand-gold">Prototype Development</p>
-          <h1 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl">From CAD architecture to reusable build.</h1>
-          <p class="max-w-3xl text-sm text-slate-300 sm:text-base">Current development is focused on integration quality, activation reliability pathways, and validation readiness.</p>
+      <section class="relative overflow-hidden border-b border-white/10 bg-gradient-to-br from-black via-slate-950 to-brand-dark px-6 py-14 sm:py-16">
+        <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(212,175,55,0.2),transparent_48%)]"></div>
+        <div class="relative mx-auto grid max-w-7xl gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-end">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-brand-gold">Prototype Development | First-Pass Validation</p>
+            <h1 class="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">Assembly-ready and moving into first-pass validation.</h1>
+            <p class="mt-4 max-w-3xl text-sm leading-6 text-slate-300 sm:text-base">
+              The current Dumpster Diver test system is transitioning from prototype build work into controlled drop testing. The test unit is en route to ARE Labs,
+              with an initial 10-can cleaner shipment from Spray Products planned for first-pass actuation checks before expanding the test matrix.
+            </p>
+            <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+              <a href="#validation-transit" class="inline-flex items-center justify-center rounded-full bg-brand-gold px-6 py-2.5 text-sm font-semibold text-black transition hover:bg-brand-gold/90">View Validation Status</a>
+              <a href="#testing-priorities" class="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-2.5 text-sm font-semibold text-slate-100 transition hover:border-brand-gold hover:text-brand-gold">Review Testing Priorities</a>
+            </div>
+          </div>
+          <div class="grid gap-3 sm:grid-cols-2">
+            <div class="rounded-xl border border-brand-gold/35 bg-brand-gold/10 px-4 py-3 text-sm font-semibold text-brand-gold">Assembly-ready test system</div>
+            <div class="rounded-xl border border-white/10 bg-slate-900/60 px-4 py-3 text-sm text-slate-200">Initial 10-can validation set</div>
+            <div class="rounded-xl border border-white/10 bg-slate-900/60 px-4 py-3 text-sm text-slate-200">ARE Labs first-pass testing</div>
+            <div class="rounded-xl border border-white/10 bg-slate-900/60 px-4 py-3 text-sm text-slate-200">Broader test matrix pending first results</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="validation-transit" class="border-b border-white/10 bg-slate-950/90 px-6 py-12">
+        <div class="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-brand-gold">Current Logistics Status</p>
+            <h2 class="mt-2 text-2xl font-semibold tracking-tight text-white sm:text-3xl">Validation Materials In Transit</h2>
+            <p class="mt-4 text-sm leading-6 text-slate-300 sm:text-base">
+              Prototype validation has moved into the logistics phase. The current test system is en route to ARE Labs, and an initial set of 10 cleaner cans
+              is en route from Spray Products to support first-pass drop testing.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-brand-gold/30 bg-gradient-to-br from-brand-gold/10 via-slate-900/70 to-slate-950 p-6">
+            <h3 class="text-lg font-semibold text-white">Why begin with 10 cans?</h3>
+            <p class="mt-3 text-sm leading-6 text-slate-300">
+              The first test quantity is intentionally limited. Early controlled drops may quickly show whether the system actuates as intended or whether the
+              design needs adjustment before expanding the test matrix.
+            </p>
+            <p class="mt-3 text-sm leading-6 text-slate-300">
+              If first-pass actuation is confirmed, additional cans can be sent from Spray Products for broader testing across drop heights, impact angles,
+              weight configurations, and repeatability.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -265,7 +305,7 @@
         </div>
       </section>
 
-      <section class="bg-slate-950/80 px-6 py-12">
+      <section id="testing-priorities" class="bg-slate-950/80 px-6 py-12">
         <div class="mx-auto max-w-7xl">
           <p class="text-xs font-semibold uppercase tracking-[0.22em] text-brand-gold">Engineering &amp; Prototype Development</p>
           <h2 class="mt-2 text-2xl font-semibold tracking-tight text-white sm:text-3xl">Active Development Questions</h2>
@@ -277,11 +317,11 @@
           <div class="mt-6 rounded-2xl border border-white/10 bg-slate-900/60 p-6">
             <h3 class="text-lg font-semibold text-white">Next Testing Priorities</h3>
             <ul class="mt-4 grid gap-3 text-sm text-slate-200 md:grid-cols-2">
-              <li class="rounded-xl border border-white/10 bg-slate-950/50 p-4"><span class="font-semibold text-brand-gold">Actuation reliability:</span> Does the device actuate reliably from controlled drop heights?</li>
-              <li class="rounded-xl border border-white/10 bg-slate-950/50 p-4"><span class="font-semibold text-brand-gold">Weight configuration:</span> Which weight configuration performs best?</li>
-              <li class="rounded-xl border border-white/10 bg-slate-950/50 p-4"><span class="font-semibold text-brand-gold">Drop-height sequence:</span> What drop heights should be validated first?</li>
-              <li class="rounded-xl border border-white/10 bg-slate-950/50 p-4"><span class="font-semibold text-brand-gold">Assembly alignment:</span> Does can/nozzle alignment remain consistent through assembly and impact?</li>
-              <li class="rounded-xl border border-white/10 bg-slate-950/50 p-4 md:col-span-2"><span class="font-semibold text-brand-gold">Design refinement:</span> What design refinements are needed after initial tests?</li>
+              <li class="rounded-xl border border-white/10 bg-slate-950/50 p-4"><span class="font-semibold text-brand-gold">First-pass actuation:</span> Confirm whether controlled drops actuate the current system as intended.</li>
+              <li class="rounded-xl border border-white/10 bg-slate-950/50 p-4"><span class="font-semibold text-brand-gold">Limited starting set:</span> Begin with the intentionally limited 10-can validation quantity.</li>
+              <li class="rounded-xl border border-white/10 bg-slate-950/50 p-4"><span class="font-semibold text-brand-gold">Conditional expansion:</span> Add cans only after first results indicate whether the current configuration supports broader testing.</li>
+              <li class="rounded-xl border border-white/10 bg-slate-950/50 p-4"><span class="font-semibold text-brand-gold">Expanded variables:</span> If supported, evaluate drop heights, impact angles, weight configurations, and repeatability.</li>
+              <li class="rounded-xl border border-white/10 bg-slate-950/50 p-4 md:col-span-2"><span class="font-semibold text-brand-gold">Design refinement:</span> Capture required design changes before scaling the test plan.</li>
             </ul>
           </div>
         </div>
