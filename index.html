@@ -234,7 +234,7 @@
           <div class="reveal mb-10 text-center">
             <p class="text-xs font-bold uppercase tracking-[0.3em] text-emerald2">Real Hardware · Real Testing</p>
             <h2 class="mt-2 font-serif text-4xl font-bold text-white sm:text-5xl">Proven at <span class="gold-shimmer">ARE Labs</span></h2>
-            <p class="mx-auto mt-3 max-w-2xl text-sm leading-6 text-emerald-100/80">Assembled prototypes are in independent drop and actuation testing right now in Overland Park, Kansas, with pressurized cleaner cans from Spray Products Corporation.</p>
+            <p class="mx-auto mt-3 max-w-2xl text-sm leading-6 text-emerald-100/80">Machined prototypes completed independent drop and actuation testing at ARE Labs in Overland Park, Kansas, using pressurized cleaner cans from Spray Products Corporation. Actuation fired on every drop.</p>
           </div>
           <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             <div class="reveal rounded-2xl border border-gold/25 bg-gradient-to-b from-emerald2-darker to-ink p-6 text-center">
@@ -254,6 +254,30 @@
               <p class="mt-2 text-xs font-bold uppercase tracking-[0.2em] text-emerald-100/70">Times you touch the inside of the bin</p>
             </div>
           </div>
+          <!-- ARE LABS FOOTAGE: when Weston's clip arrives, save it as assets/arelabs-drop-test.mp4 and this player goes live automatically -->
+          <div class="reveal mt-8 overflow-hidden rounded-3xl border border-gold/30 bg-black shadow-[0_40px_80px_rgba(0,0,0,0.6)]">
+            <div id="lab-footage-slot" class="relative">
+              <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3F5HdjQhOnyB0kWRi8OozAtEPlL/hf_20260703_192851_8fb3cd7f-d395-4936-943c-b984ebba54e8.png" alt="Dumpster Diver prototype" class="aspect-video w-full object-cover opacity-60" />
+              <div class="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-gradient-to-t from-ink/90 via-ink/40 to-transparent p-6 text-center">
+                <span class="rounded-full border border-gold/60 bg-ink/80 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-gold">Lab Drop-Test Footage</span>
+                <p class="max-w-xl text-sm font-semibold text-emerald-50">Independent test footage from ARE Labs is on its way from the lab — available today on request through the investor packet.</p>
+              </div>
+            </div>
+          </div>
+          <script>
+            (function(){
+              var v = document.createElement('video');
+              fetch('assets/arelabs-drop-test.mp4', {method:'HEAD'}).then(function(r){
+                if (!r.ok) return;
+                var slot = document.getElementById('lab-footage-slot');
+                slot.innerHTML = '';
+                v.controls = true; v.playsInline = true; v.preload = 'metadata';
+                v.className = 'aspect-video w-full bg-black';
+                v.src = 'assets/arelabs-drop-test.mp4';
+                slot.appendChild(v);
+              }).catch(function(){});
+            })();
+          </script>
           <div class="reveal mt-8 grid grid-cols-3 gap-4">
             <img src="assets/prototype-1.png" alt="Dumpster Diver CAD — housing" class="h-44 w-full rounded-2xl border border-emerald2-deep/60 bg-white object-cover sm:h-56" />
             <img src="assets/prototype-9.png" alt="Dumpster Diver CAD — safety clamp installed" class="h-44 w-full rounded-2xl border border-emerald2-deep/60 bg-white object-cover sm:h-56" />
@@ -274,45 +298,6 @@
             <video controls playsinline preload="metadata" class="aspect-video w-full bg-black">
               <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3F5HdjQhOnyB0kWRi8OozAtEPlL/hf_20260703_193045_c61e0f4c-677d-4dff-a8cc-421857ed144e.mp4" type="video/mp4" />
             </video>
-          </div>
-        </div>
-      </section>
-
-      <!-- COMMERCIALS -->
-      <section class="border-b border-emerald2-deep/40 bg-ink px-6 py-14">
-        <div class="mx-auto max-w-7xl">
-          <div class="reveal mb-10 text-center">
-            <p class="text-xs font-bold uppercase tracking-[0.3em] text-emerald2">The Spots</p>
-            <h2 class="mt-2 font-serif text-4xl font-bold text-white sm:text-5xl">"Time for a <span class="gold-shimmer">refresh.</span>"</h2>
-            <p class="mx-auto mt-3 max-w-2xl text-sm leading-6 text-emerald-100/80">The animated campaign — starring the founder himself.</p>
-          </div>
-          <div class="reveal d1 vid-card mx-auto max-w-4xl overflow-hidden rounded-3xl border border-gold/20 bg-black shadow-[0_40px_80px_rgba(0,0,0,0.6)]">
-            <video controls playsinline preload="metadata" class="aspect-video w-full bg-black">
-              <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3F5HdjQhOnyB0kWRi8OozAtEPlL/hf_20260704_140149_d6a99e34-5037-4fdc-bd14-d7cdebaad53e.mp4" type="video/mp4" />
-            </video>
-          </div>
-          <p class="reveal mt-3 text-center text-xs font-bold uppercase tracking-[0.25em] text-gold/80">"FRAG OUT!" — the featured spot</p>
-          <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <div class="reveal vid-card overflow-hidden rounded-2xl border border-emerald2-deep/60 bg-black">
-              <video controls playsinline preload="metadata" class="aspect-video w-full bg-black">
-                <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3F5HdjQhOnyB0kWRi8OozAtEPlL/hf_20260704_135510_961065f3-e6bf-4ff2-b5a7-53135d5192c2.mp4" type="video/mp4" />
-              </video>
-            </div>
-            <div class="reveal d1 vid-card overflow-hidden rounded-2xl border border-emerald2-deep/60 bg-black">
-              <video controls playsinline preload="metadata" class="aspect-video w-full bg-black">
-                <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3F5HdjQhOnyB0kWRi8OozAtEPlL/hf_20260704_112727_fed0a355-6eb2-461c-bae0-ef9e506d8653.mp4" type="video/mp4" />
-              </video>
-            </div>
-            <div class="reveal d2 vid-card overflow-hidden rounded-2xl border border-emerald2-deep/60 bg-black">
-              <video controls playsinline preload="metadata" class="aspect-video w-full bg-black">
-                <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3F5HdjQhOnyB0kWRi8OozAtEPlL/hf_20260704_110827_8acefa3f-679a-4ea3-967b-78861ba88331.mp4" type="video/mp4" />
-              </video>
-            </div>
-            <div class="reveal d3 vid-card overflow-hidden rounded-2xl border border-emerald2-deep/60 bg-black">
-              <video controls playsinline preload="metadata" class="aspect-video w-full bg-black">
-                <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3F5HdjQhOnyB0kWRi8OozAtEPlL/hf_20260704_110615_2aaa75ba-cd22-400d-8744-c4f32324d8b3.mp4" type="video/mp4" />
-              </video>
-            </div>
           </div>
         </div>
       </section>
@@ -394,6 +379,7 @@
             <a href="about.html" class="transition hover:text-gold">About</a>
             <a href="partners.html" class="transition hover:text-gold">Partners</a>
             <a href="future-products.html" class="transition hover:text-gold">Future Products</a>
+            <a href="media.html" class="transition hover:text-gold">Media</a>
             <a href="investors.html" class="font-semibold text-gold transition hover:text-gold-light">Investors</a>
             <a href="contact.html" class="transition hover:text-gold">Contact</a>
           </div>
