@@ -3,123 +3,466 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Brag &amp; Bev — Dumpster Diver</title>
+    <title>Dumpster Diver — Toss It In. Your Bin Cleans Itself.</title>
+    <meta name="description" content="Dumpster Diver is a self-righting foam pod you toss into your empty trash bin after pickup. Impact-activated. Lab tested. Patent pending. SDVOSB." />
+    <link rel="icon" href="assets/favicon.ico" />
+    <link rel="apple-touch-icon" href="assets/favicon-180.png" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <script>
-      tailwind.config = { theme: { extend: { colors: { brand: { gold: '#d4af37', dark: '#050816' } } } } };
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              gold: { DEFAULT: '#d4af37', light: '#e9cc6a', dark: '#a8862a' },
+              emerald2: { DEFAULT: '#10b981', deep: '#0e5c3f', darker: '#07281c' },
+              ink: '#040f0a'
+            },
+            fontFamily: { serif: ['Fraunces', 'serif'], sans: ['Inter', 'system-ui', 'sans-serif'] }
+          }
+        }
+      };
     </script>
+    <style>
+      html { scroll-behavior: smooth; }
+      body { background: #040f0a; }
+      /* scroll reveal */
+      .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s ease, transform .8s ease; }
+      .reveal.in { opacity: 1; transform: none; }
+      .reveal-left { opacity: 0; transform: translateX(-36px); transition: opacity .8s ease, transform .8s ease; }
+      .reveal-left.in { opacity: 1; transform: none; }
+      .reveal-right { opacity: 0; transform: translateX(36px); transition: opacity .8s ease, transform .8s ease; }
+      .reveal-right.in { opacity: 1; transform: none; }
+      .d1 { transition-delay: .12s } .d2 { transition-delay: .24s } .d3 { transition-delay: .36s }
+      /* floating pod */
+      @keyframes floaty { 0%,100% { transform: translateY(0) rotate(-2deg);} 50% { transform: translateY(-16px) rotate(2deg);} }
+      .floaty { animation: floaty 6s ease-in-out infinite; }
+      /* rising foam bubbles */
+      @keyframes bubble { 0% { transform: translateY(0) scale(.6); opacity: 0; } 15% { opacity: .7; } 100% { transform: translateY(-110vh) scale(1.15); opacity: 0; } }
+      .bubble { position: absolute; bottom: -40px; border-radius: 9999px; background: radial-gradient(circle at 30% 30%, rgba(233,204,106,.5), rgba(16,185,129,.14)); animation: bubble linear infinite; pointer-events: none; }
+      /* marquee */
+      @keyframes marquee { from { transform: translateX(0);} to { transform: translateX(-50%);} }
+      .marquee-track { animation: marquee 26s linear infinite; }
+      /* gold shimmer on headings */
+      @keyframes shimmer { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
+      .gold-shimmer { background: linear-gradient(110deg, #d4af37 20%, #f4e2a0 40%, #d4af37 60%); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; color: transparent; animation: shimmer 5s linear infinite; }
+      /* video card hover */
+      .vid-card { transition: transform .45s cubic-bezier(.2,.9,.3,1.2), box-shadow .45s ease, border-color .45s ease; }
+      .vid-card:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 30px 60px rgba(0,0,0,.55), 0 0 0 1px rgba(212,175,55,.35); border-color: rgba(212,175,55,.6); }
+      /* slam demo */
+      #slam-housing { transition: transform .18s cubic-bezier(.6,.05,.9,.4); }
+      #slam-clamp { transition: transform .6s ease, opacity .6s ease; }
+      #slam-foam { opacity: 0; transition: opacity .3s ease .15s, transform .5s ease .15s; transform: scaleY(.2); transform-origin: bottom; }
+      .slam-armed #slam-clamp { transform: translateX(70px) rotate(18deg); opacity: 0; }
+      .slam-fired #slam-housing { transform: translateY(14px); }
+      .slam-fired #slam-foam { opacity: 1; transform: scaleY(1); }
+      ::selection { background: #d4af37; color: #04120c; }
+    </style>
   </head>
-  <body class="min-h-screen w-full max-w-[100vw] overflow-x-hidden bg-brand-dark text-slate-100 antialiased">
-    <header class="sticky top-0 z-50 border-b border-white/10 bg-brand-dark/75 backdrop-blur-xl">
-      <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3.5 sm:px-6 sm:py-4 lg:px-8" aria-label="Primary">
-        <a href="index.html" class="flex shrink-0 items-center"><img src="assets/BragAndBev_Transparent.png" class="h-12 sm:h-14 lg:h-16 w-auto" alt="Brag and Bev" /></a>
-        <div class="flex min-w-0 flex-1 justify-end sm:flex-none">
-          <div class="flex max-w-full items-center gap-5 overflow-x-auto pb-1 text-sm font-medium [-ms-overflow-style:none] [scrollbar-width:none] sm:gap-7 sm:overflow-visible sm:pb-0 [&::-webkit-scrollbar]:hidden">
-            <a href="index.html" class="shrink-0 text-brand-gold">Home</a>
-            <div class="group relative shrink-0">
-              <a href="product.html" class="inline-flex items-center gap-1 transition hover:text-brand-gold">Product <span class="text-xs" aria-hidden="true">▾</span></a>
-              <div class="invisible absolute right-0 mt-2 w-56 rounded-2xl border border-white/10 bg-slate-950/95 p-2 opacity-0 transition group-hover:visible group-hover:opacity-100">
-                <a href="product.html" class="block rounded-lg px-3 py-2 hover:bg-white/5 hover:text-brand-gold">Overview</a>
-                <a href="prototype.html" class="block rounded-lg px-3 py-2 hover:bg-white/5 hover:text-brand-gold">Prototype Development</a>
-                <a href="partners.html" class="block rounded-lg px-3 py-2 hover:bg-white/5 hover:text-brand-gold">Development Partners</a>
-              </div>
-            </div>
-            <div class="group relative shrink-0">
-              <a href="about.html" class="inline-flex items-center gap-1 transition hover:text-brand-gold">About <span class="text-xs" aria-hidden="true">▾</span></a>
-              <div class="invisible absolute right-0 mt-2 w-52 rounded-2xl border border-white/10 bg-slate-950/95 p-2 opacity-0 transition group-hover:visible group-hover:opacity-100">
-                <a href="about.html#company" class="block rounded-lg px-3 py-2 hover:bg-white/5 hover:text-brand-gold">Brag &amp; Bev</a>
-                <a href="about.html#founders" class="block rounded-lg px-3 py-2 hover:bg-white/5 hover:text-brand-gold">Founders</a>
-              </div>
-            </div>
-            <a href="future-products.html" class="shrink-0 transition hover:text-brand-gold">Future Products</a>
-            <a href="contact.html" class="shrink-0 transition hover:text-brand-gold">Contact</a>
-          </div>
+  <body class="min-h-screen w-full max-w-[100vw] overflow-x-hidden bg-ink font-sans text-emerald-50 antialiased">
+
+    <!-- NAV -->
+    <header class="sticky top-0 z-50 border-b border-gold/20 bg-ink/80 backdrop-blur-xl">
+      <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2 sm:px-6 lg:px-8" aria-label="Primary">
+        <a href="index.html" class="flex shrink-0 items-center">
+          <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3F5HdjQhOnyB0kWRi8OozAtEPlL/hf_20260703_192537_8153e128-f3e4-4826-8d67-9e98b9d7fe1d.png" class="h-16 w-auto sm:h-20 lg:h-24" alt="Brag &amp; Bev" />
+        </a>
+        <div class="flex items-center gap-5 text-sm font-semibold sm:gap-7">
+          <a href="index.html" class="text-gold">Home</a>
+          <a href="product.html" class="text-emerald-100/85 transition hover:text-gold">Product</a>
+          <a href="prototype.html" class="hidden text-emerald-100/85 transition hover:text-gold sm:inline">Testing</a>
+          <a href="about.html" class="hidden text-emerald-100/85 transition hover:text-gold sm:inline">About</a>
+          <a href="future-products.html" class="hidden text-emerald-100/85 transition hover:text-gold md:inline">Future</a>
+          <a href="investors.html" class="rounded-full bg-gold px-4 py-1.5 font-bold text-ink transition hover:bg-gold-light">Investors</a>
+          <a href="contact.html" class="rounded-full border border-gold/60 bg-gold/10 px-4 py-1.5 text-gold transition hover:bg-gold hover:text-ink">Contact</a>
         </div>
       </nav>
     </header>
 
     <main>
-      <section class="relative overflow-hidden border-b border-white/10 bg-gradient-to-br from-black via-slate-950 to-brand-dark">
-        <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(212,175,55,0.22),transparent_45%)]"></div>
-        <div class="pointer-events-none absolute inset-y-0 right-0 w-1/2 max-w-xl bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.08),transparent_70%)]"></div>
-        <div class="relative mx-auto grid min-h-[min(78vh,920px)] max-w-7xl items-center gap-8 px-6 py-12 sm:py-14 md:grid-cols-[minmax(0,0.92fr)_minmax(0,1.12fr)] md:gap-10 lg:min-h-[min(82vh,960px)] lg:gap-12 lg:py-16">
-          <div class="space-y-5 sm:space-y-6 lg:space-y-7">
-            <div class="mb-6">
-              <img src="assets/DumpsterDiver_Horizontal_Transparent.png" alt="Dumpster Diver" class="w-full max-w-[500px] object-contain" />
+      <!-- HERO -->
+      <section class="relative overflow-hidden">
+        <div class="absolute inset-0">
+          <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3F5HdjQhOnyB0kWRi8OozAtEPlL/hf_20260704_013344_335330a2-3a07-45b5-97ba-e851ed2515dd.png" alt="" class="h-full w-full object-cover object-right" id="hero-bg" />
+          <div class="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-ink/60"></div>
+        </div>
+        <div id="bubbles" class="pointer-events-none absolute inset-0 overflow-hidden"></div>
+
+        <div class="relative mx-auto grid max-w-7xl items-center gap-8 px-6 py-10 md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:py-14">
+          <div class="space-y-6">
+            <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3F5HdjQhOnyB0kWRi8OozAtEPlL/hf_20260704_013437_cff92540-fd92-4c06-b75c-a63db9821c98.png" alt="Dumpster Diver — Patent Pending · SDVOSB" class="reveal in w-full max-w-[400px] drop-shadow-[0_18px_50px_rgba(0,0,0,0.65)]" />
+            <h1 class="reveal in font-serif text-5xl font-bold leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-7xl">
+              Toss it in.<br /><span class="gold-shimmer">Your bin cleans itself.</span>
+            </h1>
+            <p class="reveal d1 max-w-xl text-base leading-7 text-emerald-100/90">
+              Pull the red clamp. Toss the pod into your empty bin after pickup. It self-rights, slams down on impact, and erupts in a wall-coating foam that cuts grime and kills odor. No scrubbing. No hose. No touching the bin.
+            </p>
+            <div class="reveal d2 flex flex-wrap items-center gap-3">
+              <a href="#demo" class="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-7 py-3 text-sm font-bold text-ink shadow-[0_10px_35px_rgba(212,175,55,0.35)] transition hover:bg-gold-light hover:shadow-[0_10px_45px_rgba(212,175,55,0.55)]">
+                ▶ Watch It Work
+              </a>
+              <a href="prototype.html" class="inline-flex items-center justify-center rounded-full border border-emerald2/70 bg-emerald2-deep/30 px-7 py-3 text-sm font-bold text-emerald-100 transition hover:border-gold hover:text-gold">Lab Testing Status</a>
             </div>
-            <h1 class="text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">Cleaner bins. Smarter sanitation. Built for the weekly reality of outdoor waste.</h1>
-            <p class="max-w-2xl text-sm leading-6 text-slate-300 sm:text-base">Brag &amp; Bev L.L.C. is developing Dumpster Diver, a patent-pending sanitation system designed to simplify post-pickup bin care for outdoor trash cans up to 96 gallons.</p>
-            <div class="flex flex-wrap gap-2">
-              <span class="rounded-full border border-brand-gold/40 bg-brand-gold/10 px-3 py-1.5 text-xs font-semibold text-brand-gold">Patent Pending</span>
-              <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-semibold text-slate-200">Outdoor bins up to 96 gallons</span>
-              <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-semibold text-slate-200">Prototype validation in progress</span>
-            </div>
-            <div class="flex flex-col gap-3 sm:flex-row">
-              <a href="product.html" class="inline-flex items-center justify-center rounded-full bg-brand-gold px-6 py-2.5 text-sm font-semibold text-black transition hover:bg-brand-gold/90">View Product</a>
-              <a href="prototype.html" class="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-2.5 text-sm font-semibold text-slate-100 transition hover:border-brand-gold hover:text-brand-gold">Track Prototype Progress</a>
+            <div class="reveal d3 flex flex-wrap gap-2 pt-1">
+              <a href="investors.html#ip" class="rounded-full border border-gold/50 bg-gold/10 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-gold transition hover:bg-gold hover:text-ink">Patent Pending ↗</a>
+              <span class="rounded-full border border-emerald2/50 bg-emerald2-deep/40 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-emerald-200">SDVOSB · Veteran Owned</span>
+              <span class="rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-emerald-50/80">Tyrone, Georgia</span>
             </div>
           </div>
-          <div class="flex min-h-[240px] items-center justify-center md:min-h-[min(60vh,640px)]">
-            <div class="relative w-full max-w-[min(100%,520px)] md:max-w-none">
-              <div class="pointer-events-none absolute inset-0 scale-110 bg-[radial-gradient(circle_at_50%_45%,rgba(212,175,55,0.18),transparent_62%)] blur-2xl"></div>
-              <div class="relative z-[1] flex justify-center md:justify-end">
-                <img src="assets/DumpsterDiver_Stacked_Transparent.png" alt="Dumpster Diver stacked logo" class="h-[min(65vh,720px)] w-auto max-w-full object-contain drop-shadow-[0_0_60px_rgba(0,0,0,0.7)]" />
+          <div class="relative hidden items-center justify-center md:flex">
+            <div class="pointer-events-none absolute inset-0 scale-110 bg-[radial-gradient(circle_at_50%_60%,rgba(212,175,55,0.22),transparent_60%)] blur-2xl"></div>
+            <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3F5HdjQhOnyB0kWRi8OozAtEPlL/hf_20260703_192851_8fb3cd7f-d395-4936-943c-b984ebba54e8.png" alt="The Dumpster Diver pod" class="floaty relative z-[1] w-full max-w-[400px] rounded-[2rem] border border-gold/25 shadow-[0_50px_100px_rgba(0,0,0,0.7)]" />
+          </div>
+        </div>
+      </section>
+
+      <!-- MARQUEE -->
+      <div class="overflow-hidden border-y border-gold/25 bg-emerald2-darker/80 py-3">
+        <div class="marquee-track flex w-max gap-10 whitespace-nowrap text-xs font-bold uppercase tracking-[0.3em] text-gold/90">
+          <span>Patent Pending</span><span class="text-emerald2">◆</span><span>SDVOSB · Veteran Owned</span><span class="text-emerald2">◆</span><span>Independently Lab Tested</span><span class="text-emerald2">◆</span><span>Impact Activated</span><span class="text-emerald2">◆</span><span>Self-Righting Design</span><span class="text-emerald2">◆</span><span>Bins Up To 96 Gallons</span><span class="text-emerald2">◆</span>
+          <span>Patent Pending</span><span class="text-emerald2">◆</span><span>SDVOSB · Veteran Owned</span><span class="text-emerald2">◆</span><span>Independently Lab Tested</span><span class="text-emerald2">◆</span><span>Impact Activated</span><span class="text-emerald2">◆</span><span>Self-Righting Design</span><span class="text-emerald2">◆</span><span>Bins Up To 96 Gallons</span><span class="text-emerald2">◆</span>
+        </div>
+      </div>
+
+      <!-- VIDEO DEMO -->
+      <section id="demo" class="relative border-b border-emerald2-deep/40 bg-gradient-to-b from-ink to-emerald2-darker/60 px-6 py-14">
+        <div class="mx-auto max-w-5xl space-y-6 text-center">
+          <p class="reveal text-xs font-bold uppercase tracking-[0.3em] text-emerald2">The 8-Second Pitch</p>
+          <h2 class="reveal font-serif text-4xl font-bold text-white sm:text-5xl">Watch it <span class="gold-shimmer">work</span></h2>
+          <div class="reveal d1 vid-card overflow-hidden rounded-3xl border border-gold/20 bg-black shadow-[0_40px_80px_rgba(0,0,0,0.6)]">
+            <video controls playsinline preload="metadata" class="aspect-video w-full bg-black" poster="https://d8j0ntlcm91z4.cloudfront.net/user_3F5HdjQhOnyB0kWRi8OozAtEPlL/hf_20260703_192851_8fb3cd7f-d395-4936-943c-b984ebba54e8.png">
+              <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3F5HdjQhOnyB0kWRi8OozAtEPlL/hf_20260703_193019_3e6e5e4d-7a8e-4be0-ae82-e1859fbe09d5.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section id="how-it-works" class="border-b border-emerald2-deep/40 bg-emerald2-darker/60 px-6 py-14">
+        <div class="mx-auto max-w-7xl">
+          <div class="reveal mb-10 text-center">
+            <p class="text-xs font-bold uppercase tracking-[0.3em] text-emerald2">How It Works</p>
+            <h2 class="mt-2 font-serif text-4xl font-bold text-white sm:text-5xl">Three steps. <span class="gold-shimmer">Ten seconds.</span></h2>
+          </div>
+          <div class="grid gap-6 md:grid-cols-3">
+            <article class="reveal vid-card overflow-hidden rounded-2xl border border-emerald2-deep/60 bg-ink/70">
+              <video autoplay muted loop playsinline preload="metadata" class="aspect-video w-full bg-black object-cover">
+                <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3F5HdjQhOnyB0kWRi8OozAtEPlL/hf_20260703_193033_67a3eb3e-42c4-4fa3-ba5f-5502ef9bee79.mp4" type="video/mp4" />
+              </video>
+              <div class="p-6">
+                <div class="flex items-center gap-3">
+                  <span class="flex h-9 w-9 items-center justify-center rounded-full bg-gold font-serif text-lg font-bold text-ink">1</span>
+                  <h3 class="text-lg font-bold text-white">Pull &amp; toss</h3>
+                </div>
+                <p class="mt-3 text-sm leading-6 text-emerald-100/80">Pull the red C-clamp off the base — that opens the arming gap — and toss the pod into your empty bin.</p>
+              </div>
+            </article>
+            <article class="reveal d1 vid-card overflow-hidden rounded-2xl border border-emerald2-deep/60 bg-ink/70">
+              <video autoplay muted loop playsinline preload="metadata" class="aspect-video w-full bg-black object-cover">
+                <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3F5HdjQhOnyB0kWRi8OozAtEPlL/hf_20260703_193037_4a0a0974-302d-49b2-9742-574eb81fca71.mp4" type="video/mp4" />
+              </video>
+              <div class="p-6">
+                <div class="flex items-center gap-3">
+                  <span class="flex h-9 w-9 items-center justify-center rounded-full bg-gold font-serif text-lg font-bold text-ink">2</span>
+                  <h3 class="text-lg font-bold text-white">Land &amp; slam</h3>
+                </div>
+                <p class="mt-3 text-sm leading-6 text-emerald-100/80">The weighted base self-rights the pod — and the landing slams the housing down through the gap, firing the actuator.</p>
+              </div>
+            </article>
+            <article class="reveal d2 vid-card overflow-hidden rounded-2xl border border-emerald2-deep/60 bg-ink/70">
+              <video autoplay muted loop playsinline preload="metadata" class="aspect-video w-full bg-black object-cover">
+                <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3F5HdjQhOnyB0kWRi8OozAtEPlL/hf_20260703_193041_1d5ef91f-765f-4b01-bb9e-e07e1ffe1d3e.mp4" type="video/mp4" />
+              </video>
+              <div class="p-6">
+                <div class="flex items-center gap-3">
+                  <span class="flex h-9 w-9 items-center justify-center rounded-full bg-gold font-serif text-lg font-bold text-ink">3</span>
+                  <h3 class="text-lg font-bold text-white">Foam takes over</h3>
+                </div>
+                <p class="mt-3 text-sm leading-6 text-emerald-100/80">High-expansion foam erupts upward and clings to the walls — dissolving grime and neutralizing odor while you walk away.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- MECHANISM / INTERACTIVE -->
+      <section class="border-b border-emerald2-deep/40 bg-gradient-to-b from-emerald2-darker/60 to-ink px-6 py-14">
+        <div class="mx-auto grid max-w-7xl items-center gap-10 md:grid-cols-2">
+          <div class="reveal-left space-y-5">
+            <p class="text-xs font-bold uppercase tracking-[0.3em] text-emerald2">The Mechanism</p>
+            <h2 class="font-serif text-4xl font-bold text-white sm:text-5xl">Armed by a clamp.<br /><span class="gold-shimmer">Fired by gravity.</span></h2>
+            <p class="text-sm leading-7 text-emerald-100/85">
+              A red C-clamp holds the housing locked to the weighted base — totally safe to handle and ship. Pull it off and a gap opens between housing and base. When the pod lands in your bin, the housing slams down through that gap and drives the actuator: the can fires. Simple physics, no batteries, no buttons.
+            </p>
+            <div class="flex gap-3">
+              <button id="btn-arm" class="rounded-full bg-gold px-6 py-2.5 text-sm font-bold text-ink transition hover:bg-gold-light">1 · Pull the clamp</button>
+              <button id="btn-drop" class="rounded-full border border-emerald2/70 px-6 py-2.5 text-sm font-bold text-emerald-100 transition hover:border-gold hover:text-gold" disabled>2 · Drop it</button>
+              <button id="btn-reset" class="rounded-full border border-white/20 px-4 py-2.5 text-sm font-bold text-emerald-50/70 transition hover:border-gold hover:text-gold">↺</button>
+            </div>
+            <p id="slam-caption" class="text-xs font-semibold uppercase tracking-[0.25em] text-gold/80">Safe — clamp installed</p>
+          </div>
+          <div class="reveal-right">
+            <div id="slam-stage" class="relative mx-auto flex h-[380px] max-w-md items-end justify-center overflow-hidden rounded-3xl border border-emerald2-deep/60 bg-[radial-gradient(circle_at_50%_20%,rgba(16,185,129,0.12),transparent_60%)] bg-ink/80 p-8">
+              <svg viewBox="0 0 240 300" class="h-full w-auto" aria-label="Arming and impact diagram">
+                <g id="slam-foam">
+                  <path d="M60 90 Q80 40 120 55 Q160 30 175 75 Q210 80 185 105 L55 105 Q30 95 60 90 Z" fill="#10b981" opacity="0.85"/>
+                  <circle cx="70" cy="55" r="7" fill="#e9cc6a"/><circle cx="150" cy="35" r="5" fill="#10b981"/><circle cx="185" cy="55" r="6" fill="#e9cc6a"/>
+                </g>
+                <g id="slam-housing">
+                  <path d="M120 70 C165 70 185 115 185 160 L185 205 C185 213 178 218 170 218 L70 218 C62 218 55 213 55 205 L55 160 C55 115 75 70 120 70 Z" fill="#1a1a1a" stroke="#d4af37" stroke-width="2"/>
+                  <circle cx="120" cy="84" r="6" fill="#040f0a" stroke="#d4af37" stroke-width="1.5"/>
+                  <rect x="55" y="170" width="130" height="6" rx="3" fill="#2b2b2b"/>
+                  <rect x="55" y="184" width="130" height="6" rx="3" fill="#2b2b2b"/>
+                  <rect x="55" y="198" width="130" height="6" rx="3" fill="#2b2b2b"/>
+                  <text x="120" y="140" text-anchor="middle" fill="#d4af37" font-size="11" font-family="serif" letter-spacing="2">DUMPSTER DIVER</text>
+                </g>
+                <path d="M62 238 C62 226 78 222 120 222 C162 222 178 226 178 238 C178 258 158 272 120 272 C82 272 62 258 62 238 Z" fill="#3d2f1a" stroke="#d4af37" stroke-width="2"/>
+                <g id="slam-clamp">
+                  <path d="M50 222 L190 222 L190 234 L50 234 Z M182 218 L200 218 L200 240 L182 240 Z" fill="#dc2626"/>
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- STATS -->
+      <section class="border-b border-emerald2-deep/40 bg-ink px-6 py-14">
+        <div class="mx-auto max-w-7xl">
+          <div class="reveal mb-10 text-center">
+            <p class="text-xs font-bold uppercase tracking-[0.3em] text-emerald2">Real Hardware · Real Testing</p>
+            <h2 class="mt-2 font-serif text-4xl font-bold text-white sm:text-5xl">Proven at <span class="gold-shimmer">ARE Labs</span></h2>
+            <p class="mx-auto mt-3 max-w-2xl text-sm leading-6 text-emerald-100/80">Assembled prototypes are in independent drop and actuation testing right now in Overland Park, Kansas, with pressurized cleaner cans from Spray Products Corporation.</p>
+          </div>
+          <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="reveal rounded-2xl border border-gold/25 bg-gradient-to-b from-emerald2-darker to-ink p-6 text-center">
+              <p class="font-serif text-5xl font-black text-gold"><span class="counter" data-target="3">0</span> ft</p>
+              <p class="mt-2 text-xs font-bold uppercase tracking-[0.2em] text-emerald-100/70">Drop height that fires the actuator</p>
+            </div>
+            <div class="reveal d1 rounded-2xl border border-gold/25 bg-gradient-to-b from-emerald2-darker to-ink p-6 text-center">
+              <p class="font-serif text-5xl font-black text-gold"><span class="counter" data-target="4">0</span> ft</p>
+              <p class="mt-2 text-xs font-bold uppercase tracking-[0.2em] text-emerald-100/70">Drops the housing survives</p>
+            </div>
+            <div class="reveal d2 rounded-2xl border border-gold/25 bg-gradient-to-b from-emerald2-darker to-ink p-6 text-center">
+              <p class="font-serif text-5xl font-black text-gold"><span class="counter" data-target="96">0</span> gal</p>
+              <p class="mt-2 text-xs font-bold uppercase tracking-[0.2em] text-emerald-100/70">Max bin size it's built for</p>
+            </div>
+            <div class="reveal d3 rounded-2xl border border-gold/25 bg-gradient-to-b from-emerald2-darker to-ink p-6 text-center">
+              <p class="font-serif text-5xl font-black text-gold"><span class="counter" data-target="0">0</span></p>
+              <p class="mt-2 text-xs font-bold uppercase tracking-[0.2em] text-emerald-100/70">Times you touch the inside of the bin</p>
+            </div>
+          </div>
+          <div class="reveal mt-8 grid grid-cols-3 gap-4">
+            <img src="assets/prototype-1.png" alt="Dumpster Diver CAD — housing" class="h-44 w-full rounded-2xl border border-emerald2-deep/60 bg-white object-cover sm:h-56" />
+            <img src="assets/prototype-9.png" alt="Dumpster Diver CAD — safety clamp installed" class="h-44 w-full rounded-2xl border border-emerald2-deep/60 bg-white object-cover sm:h-56" />
+            <img src="assets/prototype-4.png" alt="Dumpster Diver CAD — cross-section with weighted base" class="h-44 w-full rounded-2xl border border-emerald2-deep/60 bg-white object-cover sm:h-56" />
+          </div>
+          <div class="reveal mt-6 text-center">
+            <a href="prototype.html" class="inline-flex items-center gap-2 text-sm font-bold text-gold transition hover:text-gold-light">Follow the full testing program →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- LIFESTYLE -->
+      <section class="border-b border-emerald2-deep/40 bg-gradient-to-b from-ink to-emerald2-darker/50 px-6 py-14">
+        <div class="mx-auto max-w-5xl space-y-6 text-center">
+          <p class="reveal text-xs font-bold uppercase tracking-[0.3em] text-emerald2">Trash Day, Upgraded</p>
+          <h2 class="reveal font-serif text-4xl font-bold text-white sm:text-5xl">Toss it and <span class="gold-shimmer">walk away</span></h2>
+          <div class="reveal d1 vid-card overflow-hidden rounded-3xl border border-gold/20 bg-black shadow-[0_40px_80px_rgba(0,0,0,0.6)]">
+            <video controls playsinline preload="metadata" class="aspect-video w-full bg-black">
+              <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3F5HdjQhOnyB0kWRi8OozAtEPlL/hf_20260703_193045_c61e0f4c-677d-4dff-a8cc-421857ed144e.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <!-- COMMERCIALS -->
+      <section class="border-b border-emerald2-deep/40 bg-ink px-6 py-14">
+        <div class="mx-auto max-w-7xl">
+          <div class="reveal mb-10 text-center">
+            <p class="text-xs font-bold uppercase tracking-[0.3em] text-emerald2">The Spots</p>
+            <h2 class="mt-2 font-serif text-4xl font-bold text-white sm:text-5xl">"Time for a <span class="gold-shimmer">refresh.</span>"</h2>
+            <p class="mx-auto mt-3 max-w-2xl text-sm leading-6 text-emerald-100/80">The animated campaign — starring the founder himself.</p>
+          </div>
+          <div class="reveal d1 vid-card mx-auto max-w-4xl overflow-hidden rounded-3xl border border-gold/20 bg-black shadow-[0_40px_80px_rgba(0,0,0,0.6)]">
+            <video controls playsinline preload="metadata" class="aspect-video w-full bg-black">
+              <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3F5HdjQhOnyB0kWRi8OozAtEPlL/hf_20260704_140149_d6a99e34-5037-4fdc-bd14-d7cdebaad53e.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <p class="reveal mt-3 text-center text-xs font-bold uppercase tracking-[0.25em] text-gold/80">"FRAG OUT!" — the featured spot</p>
+          <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="reveal vid-card overflow-hidden rounded-2xl border border-emerald2-deep/60 bg-black">
+              <video controls playsinline preload="metadata" class="aspect-video w-full bg-black">
+                <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3F5HdjQhOnyB0kWRi8OozAtEPlL/hf_20260704_135510_961065f3-e6bf-4ff2-b5a7-53135d5192c2.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="reveal d1 vid-card overflow-hidden rounded-2xl border border-emerald2-deep/60 bg-black">
+              <video controls playsinline preload="metadata" class="aspect-video w-full bg-black">
+                <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3F5HdjQhOnyB0kWRi8OozAtEPlL/hf_20260704_112727_fed0a355-6eb2-461c-bae0-ef9e506d8653.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="reveal d2 vid-card overflow-hidden rounded-2xl border border-emerald2-deep/60 bg-black">
+              <video controls playsinline preload="metadata" class="aspect-video w-full bg-black">
+                <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3F5HdjQhOnyB0kWRi8OozAtEPlL/hf_20260704_110827_8acefa3f-679a-4ea3-967b-78861ba88331.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="reveal d3 vid-card overflow-hidden rounded-2xl border border-emerald2-deep/60 bg-black">
+              <video controls playsinline preload="metadata" class="aspect-video w-full bg-black">
+                <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3F5HdjQhOnyB0kWRi8OozAtEPlL/hf_20260704_110615_2aaa75ba-cd22-400d-8744-c4f32324d8b3.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- COMPANY / FUTURE -->
+      <section class="border-b border-emerald2-deep/40 bg-emerald2-darker/50 px-6 py-14">
+        <div class="mx-auto max-w-7xl">
+          <div class="reveal mb-10 flex flex-col items-center gap-4 text-center">
+            <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3F5HdjQhOnyB0kWRi8OozAtEPlL/hf_20260703_192537_8153e128-f3e4-4826-8d67-9e98b9d7fe1d.png" alt="Brag &amp; Bev" class="w-full max-w-md" />
+            <p class="max-w-2xl text-sm leading-6 text-emerald-100/80">Brag &amp; Bev L.L.C. is a service-disabled-veteran-owned product company based in Tyrone, Georgia. We find the chores everyone hates and engineer them away — real partners, real lab testing, no inflated claims.</p>
+          </div>
+          <div class="grid gap-5 sm:grid-cols-3">
+            <a href="about.html#founders" class="reveal vid-card group rounded-2xl border border-emerald2-deep/60 bg-ink/70 p-6">
+              <p class="font-serif text-2xl text-gold">01</p>
+              <h3 class="mt-2 text-lg font-bold text-white">The Founder</h3>
+              <p class="mt-2 text-sm text-emerald-100/75">Jacob Bevier — retired Army Sergeant First Class. Founder-led development across product, AI systems, and partner engineering.</p>
+              <p class="mt-4 text-xs font-bold uppercase tracking-[0.2em] text-gold">Meet the founder →</p>
+            </a>
+            <a href="partners.html" class="reveal d1 vid-card group rounded-2xl border border-emerald2-deep/60 bg-ink/70 p-6">
+              <p class="font-serif text-2xl text-gold">02</p>
+              <h3 class="mt-2 text-lg font-bold text-white">Development Partners</h3>
+              <p class="mt-2 text-sm text-emerald-100/75">Rabbit Product Design, Spray Products Corporation &amp; ARE Labs carry the engineering, formulation, and validation.</p>
+              <p class="mt-4 text-xs font-bold uppercase tracking-[0.2em] text-gold">See who builds it →</p>
+            </a>
+            <a href="future-products.html" class="reveal d2 vid-card group rounded-2xl border border-emerald2-deep/60 bg-ink/70 p-6">
+              <p class="font-serif text-2xl text-gold">03</p>
+              <h3 class="mt-2 text-lg font-bold text-white">What's Next</h3>
+              <p class="mt-2 text-sm text-emerald-100/75">No Splash No Streak and a pipeline of household products built on the same philosophy.</p>
+              <p class="mt-4 text-xs font-bold uppercase tracking-[0.2em] text-gold">Future products →</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- INVESTOR STRIP -->
+      <section id="invest" class="relative overflow-hidden border-b border-gold/25 bg-gradient-to-b from-emerald2-darker/70 to-ink px-6 py-14">
+        <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(212,175,55,0.14),transparent_55%)]"></div>
+        <div class="relative mx-auto max-w-7xl">
+          <div class="reveal grid items-center gap-8 rounded-3xl border border-gold/30 bg-ink/70 p-8 shadow-[0_30px_80px_rgba(0,0,0,0.5)] md:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] md:p-10">
+            <div class="space-y-4">
+              <p class="text-xs font-bold uppercase tracking-[0.3em] text-gold">Investor Opportunity</p>
+              <h2 class="font-serif text-3xl font-bold text-white sm:text-4xl">The concept is proven.<br /><span class="gold-shimmer">We're raising to finish it.</span></h2>
+              <p class="text-sm leading-7 text-emerald-100/85">Independent lab testing validated actuation, spray coverage, and housing durability. One scoped engineering refinement remains — with the fix already identified by our engineering partner. Patent pending, veteran owned, partner-backed.</p>
+              <div class="flex flex-wrap gap-3 pt-1">
+                <a href="investors.html" class="inline-flex items-center justify-center rounded-full bg-gold px-7 py-3 text-sm font-bold text-ink shadow-[0_10px_35px_rgba(212,175,55,0.35)] transition hover:bg-gold-light">View the Investor Brief</a>
+                <a href="investors.html#packet" class="inline-flex items-center justify-center rounded-full border border-emerald2/70 px-7 py-3 text-sm font-bold text-emerald-100 transition hover:border-gold hover:text-gold">Request the Full Packet</a>
               </div>
             </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="rounded-2xl border border-emerald2-deep/60 bg-emerald2-darker/50 p-5 text-center"><p class="font-serif text-3xl font-black text-gold">100%</p><p class="mt-1 text-[11px] font-bold uppercase tracking-[0.15em] text-emerald-100/70">Actuation success in lab drops</p></div>
+              <div class="rounded-2xl border border-emerald2-deep/60 bg-emerald2-darker/50 p-5 text-center"><p class="font-serif text-3xl font-black text-gold">1</p><p class="mt-1 text-[11px] font-bold uppercase tracking-[0.15em] text-emerald-100/70">Engineering item to finish</p></div>
+              <div class="rounded-2xl border border-emerald2-deep/60 bg-emerald2-darker/50 p-5 text-center"><p class="font-serif text-3xl font-black text-gold">3</p><p class="mt-1 text-[11px] font-bold uppercase tracking-[0.15em] text-emerald-100/70">Specialist partners engaged</p></div>
+              <div class="rounded-2xl border border-emerald2-deep/60 bg-emerald2-darker/50 p-5 text-center"><p class="font-serif text-3xl font-black text-gold">∞</p><p class="mt-1 text-[11px] font-bold uppercase tracking-[0.15em] text-emerald-100/70">Bins that need cleaning</p></div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="border-b border-white/10 bg-brand-dark">
-        <div class="mx-auto flex max-w-7xl flex-wrap items-center gap-x-5 gap-y-2 px-6 py-4 text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-300">
-          <span class="text-brand-gold">Brag &amp; Bev L.L.C.</span><span class="hidden h-3 w-px bg-white/10 sm:inline-block"></span><span>Patent Pending</span><span class="hidden h-3 w-px bg-white/10 sm:inline-block"></span><span>Kalamazoo, Michigan</span>
+      <!-- CTA -->
+      <section class="relative overflow-hidden px-6 py-16 text-center">
+        <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(212,175,55,0.18),transparent_60%)]"></div>
+        <div class="relative mx-auto max-w-2xl space-y-5">
+          <h2 class="reveal font-serif text-4xl font-bold text-white sm:text-5xl">Retail, investment,<br />or <span class="gold-shimmer">pilot interest?</span></h2>
+          <p class="reveal d1 text-sm leading-6 text-emerald-100/80">We're talking to retailers, investors, and testing collaborators right now.</p>
+          <a href="contact.html" class="reveal d2 inline-flex items-center justify-center rounded-full bg-gold px-9 py-3.5 text-sm font-bold text-ink shadow-[0_10px_40px_rgba(212,175,55,0.4)] transition hover:bg-gold-light">Start the Conversation</a>
         </div>
       </section>
 
-      <section class="bg-slate-950/90 px-6 py-14">
-        <div class="mx-auto max-w-7xl">
-          <div class="mb-8 max-w-3xl space-y-3">
-            <h2 class="text-2xl font-semibold tracking-tight text-white sm:text-3xl">Explore the Program</h2>
-            <p class="text-sm text-slate-300">A focused look at product strategy, technical progress, and team execution.</p>
-          </div>
-          <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            <a href="product.html" class="group rounded-2xl border border-white/10 bg-slate-900/55 p-6 transition hover:-translate-y-1 hover:border-brand-gold/60"><h3 class="text-lg font-semibold text-white">Product</h3><p class="mt-2 text-sm text-slate-300">Design intent, architecture concepts, and target specifications.</p><p class="mt-4 text-xs uppercase tracking-[0.2em] text-brand-gold">Explore →</p></a>
-            <a href="prototype.html" class="group rounded-2xl border border-white/10 bg-slate-900/55 p-6 transition hover:-translate-y-1 hover:border-brand-gold/60"><h3 class="text-lg font-semibold text-white">Prototype Development</h3><p class="mt-2 text-sm text-slate-300">CAD mapping, reusable build pathway, and validation milestones.</p><p class="mt-4 text-xs uppercase tracking-[0.2em] text-brand-gold">Explore →</p></a>
-            <a href="about.html#founders" class="group rounded-2xl border border-white/10 bg-slate-900/55 p-6 transition hover:-translate-y-1 hover:border-brand-gold/60"><h3 class="text-lg font-semibold text-white">Founders</h3><p class="mt-2 text-sm text-slate-300">Leadership across product, operations, and strategic direction.</p><p class="mt-4 text-xs uppercase tracking-[0.2em] text-brand-gold">Explore →</p></a>
-            <a href="partners.html" class="group rounded-2xl border border-white/10 bg-slate-900/55 p-6 transition hover:-translate-y-1 hover:border-brand-gold/60"><h3 class="text-lg font-semibold text-white">Development Partners</h3><p class="mt-2 text-sm text-slate-300">Mechanical, formulation, and validation contributors.</p><p class="mt-4 text-xs uppercase tracking-[0.2em] text-brand-gold">Explore →</p></a>
-            <a href="future-products.html" class="group rounded-2xl border border-white/10 bg-slate-900/55 p-6 transition hover:-translate-y-1 hover:border-brand-gold/60"><h3 class="text-lg font-semibold text-white">Future Products</h3><p class="mt-2 text-sm text-slate-300">Pipeline concepts under feasibility review, including No Splash No Streak.</p><p class="mt-4 text-xs uppercase tracking-[0.2em] text-brand-gold">Explore →</p></a>
-            <a href="contact.html" class="group rounded-2xl border border-white/10 bg-slate-900/55 p-6 transition hover:-translate-y-1 hover:border-brand-gold/60"><h3 class="text-lg font-semibold text-white">Contact</h3><p class="mt-2 text-sm text-slate-300">For pilot, partner, and retail conversations with Brag &amp; Bev.</p><p class="mt-4 text-xs uppercase tracking-[0.2em] text-brand-gold">Explore →</p></a>
-          </div>
-        </div>
-      </section>
-
-      <section class="border-t border-white/10 bg-slate-950/80 px-6 py-14">
-        <div class="mx-auto grid max-w-7xl gap-6 lg:grid-cols-2">
-          <article class="rounded-2xl border border-white/10 bg-slate-900/60 p-7">
-            <h3 class="text-xl font-semibold text-white">Dumpster Diver</h3>
-            <p class="mt-3 text-sm text-slate-300">A patent-pending sanitation innovation designed for outdoor residential bins up to 96 gallons, currently in prototype finalization.</p>
-            <a href="product.html" class="mt-5 inline-flex text-sm font-semibold text-brand-gold transition hover:text-amber-300">View product details →</a>
-          </article>
-          <article class="rounded-2xl border border-white/10 bg-slate-900/60 p-7">
-            <h3 class="text-xl font-semibold text-white">Brag &amp; Bev L.L.C.</h3>
-            <p class="mt-3 text-sm text-slate-300">An innovation-focused company in Kalamazoo, Michigan building practical sanitation solutions with premium execution.</p>
-            <a href="about.html" class="mt-5 inline-flex text-sm font-semibold text-brand-gold transition hover:text-amber-300">Read company profile →</a>
-          </article>
-        </div>
-      </section>
-
-      <footer class="border-t border-white/10 bg-black/40 px-6 py-10">
+      <footer class="border-t border-gold/20 bg-black/50 px-6 py-10">
         <div class="mx-auto flex max-w-7xl flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           <div class="space-y-3">
-            <img src="assets/BragAndBev_Transparent.png" class="h-12 w-auto sm:h-14 lg:h-16" alt="Brag and Bev" />
-            <p class="text-xs text-slate-400">Brag &amp; Bev L.L.C. — engineering practical sanitation innovation.</p>
+            <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3F5HdjQhOnyB0kWRi8OozAtEPlL/hf_20260703_192537_8153e128-f3e4-4826-8d67-9e98b9d7fe1d.png" class="h-14 w-auto" alt="Brag and Bev" />
+            <p class="text-xs text-emerald-100/60">Brag &amp; Bev L.L.C. — Tyrone, Georgia · Patent Pending · SDVOSB</p>
           </div>
-          <div class="flex flex-wrap gap-5 text-sm text-slate-300">
-            <a href="index.html" class="transition hover:text-brand-gold">Home</a><a href="product.html" class="transition hover:text-brand-gold">Product</a><a href="prototype.html" class="transition hover:text-brand-gold">Prototype</a><a href="about.html" class="transition hover:text-brand-gold">About</a><a href="partners.html" class="transition hover:text-brand-gold">Partners</a><a href="future-products.html" class="transition hover:text-brand-gold">Future Products</a><a href="contact.html" class="transition hover:text-brand-gold">Contact</a>
+          <div class="flex flex-wrap gap-5 text-sm text-emerald-100/80">
+            <a href="index.html" class="transition hover:text-gold">Home</a>
+            <a href="product.html" class="transition hover:text-gold">Product</a>
+            <a href="prototype.html" class="transition hover:text-gold">Testing</a>
+            <a href="about.html" class="transition hover:text-gold">About</a>
+            <a href="partners.html" class="transition hover:text-gold">Partners</a>
+            <a href="future-products.html" class="transition hover:text-gold">Future Products</a>
+            <a href="investors.html" class="font-semibold text-gold transition hover:text-gold-light">Investors</a>
+            <a href="contact.html" class="transition hover:text-gold">Contact</a>
           </div>
         </div>
-        <div class="mx-auto mt-6 max-w-7xl border-t border-white/10 pt-4 text-xs text-slate-500">© 2026 Brag &amp; Bev L.L.C. All rights reserved.</div>
+        <div class="mx-auto mt-6 max-w-7xl border-t border-white/10 pt-4 text-xs text-emerald-100/40">&copy; 2026 Brag &amp; Bev L.L.C. All rights reserved.</div>
       </footer>
     </main>
+
+    <script>
+      // Scroll reveal
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { threshold: 0.15 });
+      document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach((el) => io.observe(el));
+
+      // Animated counters
+      const cio = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          cio.unobserve(e.target);
+          const el = e.target, target = +el.dataset.target, dur = 1200, t0 = performance.now();
+          const tick = (t) => {
+            const p = Math.min((t - t0) / dur, 1);
+            el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+            if (p < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+        });
+      }, { threshold: 0.6 });
+      document.querySelectorAll('.counter').forEach((el) => cio.observe(el));
+
+      // Foam bubbles in hero
+      const wrap = document.getElementById('bubbles');
+      for (let i = 0; i < 18; i++) {
+        const b = document.createElement('div');
+        const s = 6 + Math.random() * 22;
+        b.className = 'bubble';
+        b.style.width = s + 'px'; b.style.height = s + 'px';
+        b.style.left = Math.random() * 100 + '%';
+        b.style.animationDuration = 9 + Math.random() * 14 + 's';
+        b.style.animationDelay = -Math.random() * 20 + 's';
+        wrap.appendChild(b);
+      }
+
+      // Hero parallax
+      const heroBg = document.getElementById('hero-bg');
+      addEventListener('scroll', () => { heroBg.style.transform = 'translateY(' + (scrollY * 0.25) + 'px) scale(1.05)'; }, { passive: true });
+
+      // Slam mechanism demo
+      const stage = document.getElementById('slam-stage'),
+            bArm = document.getElementById('btn-arm'),
+            bDrop = document.getElementById('btn-drop'),
+            bReset = document.getElementById('btn-reset'),
+            cap = document.getElementById('slam-caption');
+      bArm.addEventListener('click', () => {
+        stage.classList.add('slam-armed');
+        cap.textContent = 'Armed — clamp removed, gap open';
+        bDrop.disabled = false; bDrop.classList.add('border-gold','text-gold');
+      });
+      bDrop.addEventListener('click', () => {
+        if (!stage.classList.contains('slam-armed')) return;
+        stage.classList.add('slam-fired');
+        cap.textContent = 'Fired — housing slammed down, foam deployed';
+      });
+      bReset.addEventListener('click', () => {
+        stage.classList.remove('slam-armed','slam-fired');
+        cap.textContent = 'Safe — clamp installed';
+        bDrop.disabled = true; bDrop.classList.remove('border-gold','text-gold');
+      });
+    </script>
   </body>
 </html>

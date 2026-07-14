@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Invest — Dumpster Diver | Brag &amp; Bev</title>
+    <meta name="description" content="Invest in Dumpster Diver: independently lab-tested, patent-pending, veteran-owned. The concept is proven — we're raising to finish it." />
+    <link rel="icon" href="assets/favicon.ico" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              gold: { DEFAULT: '#d4af37', light: '#e9cc6a', dark: '#a8862a' },
+              emerald2: { DEFAULT: '#10b981', deep: '#0e5c3f', darker: '#07281c' },
+              ink: '#040f0a'
+            },
+            fontFamily: { serif: ['Fraunces', 'serif'], sans: ['Inter', 'system-ui', 'sans-serif'] }
+          }
+        }
+      };
+    </script>
+    <style>
+      html { scroll-behavior: smooth; }
+      body { background: #040f0a; }
+      .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s ease, transform .8s ease; }
+      .reveal.in { opacity: 1; transform: none; }
+      .d1 { transition-delay: .12s } .d2 { transition-delay: .24s } .d3 { transition-delay: .36s }
+      @keyframes shimmer { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
+      .gold-shimmer { background: linear-gradient(110deg, #d4af37 20%, #f4e2a0 40%, #d4af37 60%); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; color: transparent; animation: shimmer 5s linear infinite; }
+      @keyframes floaty { 0%,100% { transform: translateY(0) rotate(-2deg);} 50% { transform: translateY(-16px) rotate(2deg);} }
+      .floaty { animation: floaty 6s ease-in-out infinite; }
+      .vid-card { transition: transform .45s cubic-bezier(.2,.9,.3,1.2), box-shadow .45s ease, border-color .45s ease; }
+      .vid-card:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 30px 60px rgba(0,0,0,.55), 0 0 0 1px rgba(212,175,55,.35); border-color: rgba(212,175,55,.6); }
+      ::selection { background: #d4af37; color: #04120c; }
+    </style>
+  </head>
+  <body class="min-h-screen w-full max-w-[100vw] overflow-x-hidden bg-ink font-sans text-emerald-50 antialiased">
+
+    <!-- NAV -->
+    <header class="sticky top-0 z-50 border-b border-gold/20 bg-ink/80 backdrop-blur-xl">
+      <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2 sm:px-6 lg:px-8" aria-label="Primary">
+        <a href="index.html" class="flex shrink-0 items-center">
+          <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3F5HdjQhOnyB0kWRi8OozAtEPlL/hf_20260703_192537_8153e128-f3e4-4826-8d67-9e98b9d7fe1d.png" class="h-16 w-auto sm:h-20 lg:h-24" alt="Brag &amp; Bev" />
+        </a>
+        <div class="flex items-center gap-5 text-sm font-semibold sm:gap-7">
+          <a href="index.html" class="text-emerald-100/85 transition hover:text-gold">Home</a>
+          <a href="product.html" class="hidden text-emerald-100/85 transition hover:text-gold sm:inline">Product</a>
+          <a href="prototype.html" class="hidden text-emerald-100/85 transition hover:text-gold sm:inline">Testing</a>
+          <a href="about.html" class="hidden text-emerald-100/85 transition hover:text-gold md:inline">About</a>
+          <a href="investors.html" class="rounded-full bg-gold px-4 py-1.5 font-bold text-ink">Investors</a>
+          <a href="contact.html" class="rounded-full border border-gold/60 bg-gold/10 px-4 py-1.5 text-gold transition hover:bg-gold hover:text-ink">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="relative overflow-hidden border-b border-emerald2-deep/40">
+        <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(212,175,55,0.16),transparent_55%)]"></div>
+        <div class="relative mx-auto grid max-w-7xl items-center gap-10 px-6 py-14 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:py-20">
+          <div class="space-y-6">
+            <p class="reveal in text-xs font-bold uppercase tracking-[0.3em] text-emerald2">Investor Brief · Dumpster Diver</p>
+            <h1 class="reveal in font-serif text-5xl font-bold leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-7xl">
+              The concept is proven.<br /><span class="gold-shimmer">Help us finish it.</span>
+            </h1>
+            <p class="reveal d1 max-w-xl text-base leading-7 text-emerald-100/90">
+              Dumpster Diver is a self-righting, impact-activated foam pod that cleans a trash bin without hoses, scrubbing, or touching the bin. Independent lab testing has validated the actuation, the spray coverage, and the housing. One scoped engineering refinement stands between this prototype and a production-ready design.
+            </p>
+            <div class="reveal d2 flex flex-wrap items-center gap-3">
+              <a href="#packet" class="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-7 py-3 text-sm font-bold text-ink shadow-[0_10px_35px_rgba(212,175,55,0.35)] transition hover:bg-gold-light">Request the Investor Packet</a>
+              <a href="#proof" class="inline-flex items-center justify-center rounded-full border border-emerald2/70 bg-emerald2-deep/30 px-7 py-3 text-sm font-bold text-emerald-100 transition hover:border-gold hover:text-gold">See the Proof</a>
+            </div>
+            <div class="reveal d3 flex flex-wrap gap-2 pt-1">
+              <a href="#ip" class="rounded-full border border-gold/50 bg-gold/10 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-gold transition hover:bg-gold hover:text-ink">Patent Pending ↓</a>
+              <span class="rounded-full border border-emerald2/50 bg-emerald2-deep/40 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-emerald-200">SDVOSB · Veteran Owned</span>
+              <span class="rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-emerald-50/80">Independently Lab Tested</span>
+            </div>
+          </div>
+          <div class="relative hidden items-center justify-center md:flex">
+            <div class="pointer-events-none absolute inset-0 scale-110 bg-[radial-gradient(circle_at_50%_60%,rgba(212,175,55,0.22),transparent_60%)] blur-2xl"></div>
+            <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3F5HdjQhOnyB0kWRi8OozAtEPlL/hf_20260703_192851_8fb3cd7f-d395-4936-943c-b984ebba54e8.png" alt="The Dumpster Diver pod" class="floaty relative z-[1] w-full max-w-[380px] rounded-[2rem] border border-gold/25 shadow-[0_50px_100px_rgba(0,0,0,0.7)]" />
+          </div>
+        </div>
+      </section>
+
+      <!-- PROOF -->
+      <section id="proof" class="border-b border-emerald2-deep/40 bg-emerald2-darker/50 px-6 py-14">
+        <div class="mx-auto max-w-7xl">
+          <div class="reveal mb-10 text-center">
+            <p class="text-xs font-bold uppercase tracking-[0.3em] text-emerald2">What Independent Testing Showed</p>
+            <h2 class="mt-2 font-serif text-4xl font-bold text-white sm:text-5xl">De-risked by <span class="gold-shimmer">real hardware</span></h2>
+            <p class="mx-auto mt-3 max-w-2xl text-sm leading-6 text-emerald-100/80">Fabricated prototypes were tested independently at ARE Labs (Overland Park, Kansas) using pressurized cleaner cans supplied by Spray Products Corporation. This is not a render — it's machined hardware that fired on command.</p>
+          </div>
+          <div class="grid gap-5 sm:grid-cols-3">
+            <div class="reveal rounded-2xl border border-gold/25 bg-ink/70 p-6">
+              <p class="font-serif text-4xl font-black text-gold">100%</p>
+              <h3 class="mt-2 text-sm font-bold uppercase tracking-[0.15em] text-white">Actuation</h3>
+              <p class="mt-2 text-sm leading-6 text-emerald-100/75">The impact-fired actuator triggered on every lab drop test to date. The core mechanism works.</p>
+            </div>
+            <div class="reveal d1 rounded-2xl border border-gold/25 bg-ink/70 p-6">
+              <p class="font-serif text-4xl font-black text-gold">Exceeded</p>
+              <h3 class="mt-2 text-sm font-bold uppercase tracking-[0.15em] text-white">Spray Coverage</h3>
+              <p class="mt-2 text-sm leading-6 text-emerald-100/75">Wall-coating foam coverage outperformed expectations in independent spray-profile testing.</p>
+            </div>
+            <div class="reveal d2 rounded-2xl border border-gold/25 bg-ink/70 p-6">
+              <p class="font-serif text-4xl font-black text-gold">Survived</p>
+              <h3 class="mt-2 text-sm font-bold uppercase tracking-[0.15em] text-white">Housing Durability</h3>
+              <p class="mt-2 text-sm leading-6 text-emerald-100/75">The housing held up through repeated bin-height drops with a pressurized can inside.</p>
+            </div>
+          </div>
+
+          <div class="reveal mt-8 rounded-3xl border border-emerald2-deep/60 bg-ink/70 p-8">
+            <div class="grid items-center gap-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+              <div class="space-y-4">
+                <p class="text-xs font-bold uppercase tracking-[0.3em] text-gold">The Last Mile — Stated Plainly</p>
+                <h3 class="font-serif text-3xl font-bold text-white">One item left: self-righting geometry</h3>
+                <p class="text-sm leading-7 text-emerald-100/85">Testing isolated a single remaining refinement: the pod must settle upright consistently after the throw. Our mechanical engineering partner has already identified the correction — a fully rounded hemispherical base with a lowered center of gravity — and the next design iteration is scoped around solving and validating exactly that, with defined pass/fail drop-test criteria before any further lab spend.</p>
+                <p class="text-sm leading-7 text-emerald-100/85">We tell you this up front because that's how we run the company: real partners, real lab data, no inflated claims. An investor here isn't funding a question mark — they're funding a known fix with a validation gate.</p>
+              </div>
+              <div class="grid gap-4">
+                <div class="rounded-2xl border border-emerald2-deep/60 bg-emerald2-darker/50 p-5"><p class="text-xs font-bold uppercase tracking-[0.2em] text-gold">Step 1</p><p class="mt-1 text-sm text-emerald-100/85">Complete the scoped base-geometry redesign with our engineering partner.</p></div>
+                <div class="rounded-2xl border border-emerald2-deep/60 bg-emerald2-darker/50 p-5"><p class="text-xs font-bold uppercase tracking-[0.2em] text-gold">Step 2</p><p class="mt-1 text-sm text-emerald-100/85">Validate self-righting in-house with locked-actuation drop testing against pass/fail criteria.</p></div>
+                <div class="rounded-2xl border border-emerald2-deep/60 bg-emerald2-darker/50 p-5"><p class="text-xs font-bold uppercase tracking-[0.2em] text-gold">Step 3</p><p class="mt-1 text-sm text-emerald-100/85">Confirm with a focused independent lab round, then move to production-ready design.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHY IT WINS -->
+      <section class="border-b border-emerald2-deep/40 bg-ink px-6 py-14">
+        <div class="mx-auto max-w-7xl">
+          <div class="reveal mb-10 text-center">
+            <p class="text-xs font-bold uppercase tracking-[0.3em] text-emerald2">The Opportunity</p>
+            <h2 class="mt-2 font-serif text-4xl font-bold text-white sm:text-5xl">A chore everyone hates.<br /><span class="gold-shimmer">A product no one has.</span></h2>
+          </div>
+          <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <article class="reveal vid-card rounded-2xl border border-emerald2-deep/60 bg-emerald2-darker/40 p-6">
+              <p class="font-serif text-2xl text-gold">01</p>
+              <h3 class="mt-2 text-base font-bold text-white">Universal problem</h3>
+              <p class="mt-2 text-sm leading-6 text-emerald-100/75">Nearly every household owns a trash bin, and nearly none get cleaned — the job is disgusting, awkward, and easy to put off forever.</p>
+            </article>
+            <article class="reveal d1 vid-card rounded-2xl border border-emerald2-deep/60 bg-emerald2-darker/40 p-6">
+              <p class="font-serif text-2xl text-gold">02</p>
+              <h3 class="mt-2 text-base font-bold text-white">No shelf competitor</h3>
+              <p class="mt-2 text-sm leading-6 text-emerald-100/75">Today's options are truck-based cleaning services or a hose and a brush. There is no toss-in, walk-away consumer product on shelves.</p>
+            </article>
+            <article class="reveal d2 vid-card rounded-2xl border border-emerald2-deep/60 bg-emerald2-darker/40 p-6">
+              <p class="font-serif text-2xl text-gold">03</p>
+              <h3 class="mt-2 text-base font-bold text-white">Consumable revenue</h3>
+              <p class="mt-2 text-sm leading-6 text-emerald-100/75">Each pod is single-use by design. Regular bin maintenance means repeat purchase — a recurring-revenue consumer product, not a one-time gadget.</p>
+            </article>
+            <article class="reveal d3 vid-card rounded-2xl border border-emerald2-deep/60 bg-emerald2-darker/40 p-6">
+              <p class="font-serif text-2xl text-gold">04</p>
+              <h3 class="mt-2 text-base font-bold text-white">Simple by design</h3>
+              <p class="mt-2 text-sm leading-6 text-emerald-100/75">No batteries, no electronics, no moving parts beyond the mechanism itself. Armed by a clamp, fired by gravity — cheap to make, easy to ship.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- IP -->
+      <section id="ip" class="border-b border-emerald2-deep/40 bg-gradient-to-b from-ink to-emerald2-darker/60 px-6 py-14">
+        <div class="mx-auto max-w-7xl">
+          <div class="reveal mb-10 text-center">
+            <p class="text-xs font-bold uppercase tracking-[0.3em] text-emerald2">Intellectual Property</p>
+            <h2 class="mt-2 font-serif text-4xl font-bold text-white sm:text-5xl">What <span class="gold-shimmer">"Patent Pending"</span> means here</h2>
+          </div>
+          <div class="grid gap-6 md:grid-cols-3">
+            <article class="reveal rounded-2xl border border-gold/25 bg-ink/70 p-6">
+              <h3 class="text-base font-bold text-white">USPTO application on file</h3>
+              <p class="mt-2 text-sm leading-6 text-emerald-100/75">U.S. Provisional Patent Application No. 64/021,439, filed March 30, 2026, covers the Self-Righting Automatic Dumpster Cleaning Device — establishing a federal priority date with the United States Patent and Trademark Office. Full filing details are shared with serious investors in the investor packet.</p>
+            </article>
+            <article class="reveal d1 rounded-2xl border border-gold/25 bg-ink/70 p-6">
+              <h3 class="text-base font-bold text-white">What it covers</h3>
+              <p class="mt-2 text-sm leading-6 text-emerald-100/75">The filing describes the self-righting weighted-base architecture, the impact-fired actuation mechanism, and the 360° foam delivery system — the three elements that make Dumpster Diver work as a toss-in product.</p>
+            </article>
+            <article class="reveal d2 rounded-2xl border border-gold/25 bg-ink/70 p-6">
+              <h3 class="text-base font-bold text-white">Layered protection</h3>
+              <p class="mt-2 text-sm leading-6 text-emerald-100/75">Beyond the patent filing, the cleaning formulation and detailed engineering files are held as confidential business information and shared only under mutual NDA. What you see on this site is the pitch — the blueprints stay in the data room.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- COMPANY / PARTNERS -->
+      <section class="border-b border-emerald2-deep/40 bg-emerald2-darker/50 px-6 py-14">
+        <div class="mx-auto max-w-7xl">
+          <div class="reveal mb-10 text-center">
+            <p class="text-xs font-bold uppercase tracking-[0.3em] text-emerald2">Who's Behind It</p>
+            <h2 class="mt-2 font-serif text-4xl font-bold text-white sm:text-5xl">Founder-led. <span class="gold-shimmer">Partner-built.</span></h2>
+          </div>
+          <div class="grid gap-6 md:grid-cols-2">
+            <article class="reveal rounded-2xl border border-emerald2-deep/60 bg-ink/70 p-7">
+              <p class="text-xs font-bold uppercase tracking-[0.3em] text-gold">The Founder</p>
+              <h3 class="mt-2 font-serif text-2xl font-bold text-white">Jacob Bevier</h3>
+              <p class="mt-3 text-sm leading-7 text-emerald-100/80">Retired Army Sergeant First Class and the inventor of Dumpster Diver. Brag &amp; Bev L.L.C. is a service-disabled-veteran-owned small business based in Tyrone, Georgia — run with the same discipline as the missions that came before it.</p>
+              <a href="about.html" class="mt-4 inline-block text-xs font-bold uppercase tracking-[0.2em] text-gold transition hover:text-gold-light">About the company →</a>
+            </article>
+            <article class="reveal d1 rounded-2xl border border-emerald2-deep/60 bg-ink/70 p-7">
+              <p class="text-xs font-bold uppercase tracking-[0.3em] text-gold">The Partners</p>
+              <h3 class="mt-2 font-serif text-2xl font-bold text-white">Specialists at every stage</h3>
+              <p class="mt-3 text-sm leading-7 text-emerald-100/80"><span class="font-semibold text-white">Rabbit Product Design</span> — mechanical engineering and CAD. <span class="font-semibold text-white">Spray Products Corporation</span> — aerosol formulation and packaging. <span class="font-semibold text-white">ARE Labs</span> — independent testing and validation.</p>
+              <a href="partners.html" class="mt-4 inline-block text-xs font-bold uppercase tracking-[0.2em] text-gold transition hover:text-gold-light">Meet the partners →</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- PACKET / CONTACT -->
+      <section id="packet" class="relative overflow-hidden px-6 py-16">
+        <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(212,175,55,0.18),transparent_60%)]"></div>
+        <div class="relative mx-auto grid max-w-6xl items-start gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+          <div class="space-y-5">
+            <h2 class="reveal font-serif text-4xl font-bold text-white sm:text-5xl">Request the <span class="gold-shimmer">investor packet</span></h2>
+            <p class="reveal d1 text-sm leading-7 text-emerald-100/85">Serious inquiries receive the complete picture under mutual NDA: the business plan, independent lab reports, patent filing details, engineering roadmap, and financials. Tell us who you are and we'll follow up directly.</p>
+            <ul class="reveal d2 space-y-2 text-sm text-emerald-100/80">
+              <li class="flex items-start gap-2"><span class="text-gold">◆</span> Full business plan &amp; use of funds</li>
+              <li class="flex items-start gap-2"><span class="text-gold">◆</span> Independent lab testing reports</li>
+              <li class="flex items-start gap-2"><span class="text-gold">◆</span> Patent filing details &amp; IP summary</li>
+              <li class="flex items-start gap-2"><span class="text-gold">◆</span> Engineering roadmap with validation gates</li>
+            </ul>
+            <p class="reveal d3 text-xs text-emerald-100/60">Direct: <a href="mailto:bevier19jacob@gmail.com" class="text-gold hover:underline">bevier19jacob@gmail.com</a></p>
+          </div>
+          <form name="investor-packet" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="reveal d1 space-y-3 rounded-3xl border border-gold/30 bg-ink/80 p-7 shadow-[0_30px_80px_rgba(0,0,0,0.5)]">
+            <input type="hidden" name="form-name" value="investor-packet" />
+            <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
+            <div class="grid gap-3 sm:grid-cols-2">
+              <input required name="name" type="text" placeholder="Name" class="w-full rounded-xl border border-white/15 bg-emerald2-darker/60 px-4 py-3 text-sm text-emerald-50 placeholder-emerald-100/40 focus:border-gold focus:outline-none" />
+              <input required name="email" type="email" placeholder="Email" class="w-full rounded-xl border border-white/15 bg-emerald2-darker/60 px-4 py-3 text-sm text-emerald-50 placeholder-emerald-100/40 focus:border-gold focus:outline-none" />
+            </div>
+            <input name="firm" type="text" placeholder="Firm / organization (optional)" class="w-full rounded-xl border border-white/15 bg-emerald2-darker/60 px-4 py-3 text-sm text-emerald-50 placeholder-emerald-100/40 focus:border-gold focus:outline-none" />
+            <select name="interest" class="w-full rounded-xl border border-white/15 bg-emerald2-darker/60 px-4 py-3 text-sm text-emerald-50 focus:border-gold focus:outline-none">
+              <option>Investment</option>
+              <option>Retail</option>
+              <option>Pilot / Testing</option>
+              <option>Other</option>
+            </select>
+            <textarea required name="message" rows="4" placeholder="A sentence or two about your interest" class="w-full rounded-xl border border-white/15 bg-emerald2-darker/60 px-4 py-3 text-sm text-emerald-50 placeholder-emerald-100/40 focus:border-gold focus:outline-none"></textarea>
+            <button type="submit" class="w-full rounded-full bg-gold px-7 py-3 text-sm font-bold text-ink shadow-[0_10px_35px_rgba(212,175,55,0.35)] transition hover:bg-gold-light">Request the Packet</button>
+            <p class="text-[11px] leading-5 text-emerald-100/50">Detailed materials are provided under mutual NDA. Nothing on this page is an offer to sell securities.</p>
+          </form>
+        </div>
+      </section>
+
+      <footer class="border-t border-gold/20 bg-black/50 px-6 py-10">
+        <div class="mx-auto flex max-w-7xl flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+          <div class="space-y-3">
+            <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3F5HdjQhOnyB0kWRi8OozAtEPlL/hf_20260703_192537_8153e128-f3e4-4826-8d67-9e98b9d7fe1d.png" class="h-14 w-auto" alt="Brag and Bev" />
+            <p class="text-xs text-emerald-100/60">Brag &amp; Bev L.L.C. — Tyrone, Georgia · Patent Pending · SDVOSB</p>
+          </div>
+          <div class="flex flex-wrap gap-5 text-sm text-emerald-100/80">
+            <a href="index.html" class="transition hover:text-gold">Home</a>
+            <a href="product.html" class="transition hover:text-gold">Product</a>
+            <a href="prototype.html" class="transition hover:text-gold">Testing</a>
+            <a href="about.html" class="transition hover:text-gold">About</a>
+            <a href="partners.html" class="transition hover:text-gold">Partners</a>
+            <a href="investors.html" class="font-semibold text-gold">Investors</a>
+            <a href="contact.html" class="transition hover:text-gold">Contact</a>
+          </div>
+        </div>
+        <div class="mx-auto mt-6 max-w-7xl border-t border-white/10 pt-4 text-xs text-emerald-100/40">© 2026 Brag &amp; Bev L.L.C. All rights reserved.</div>
+      </footer>
+    </main>
+
+    <script>
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { threshold: 0.15 });
+      document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+    </script>
+  </bo

@@ -6,13 +6,13 @@
     <title>Prototype Development — Dumpster Diver</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-      tailwind.config = { theme: { extend: { colors: { brand: { gold: '#d4af37', dark: '#050816' } } } } };
+      tailwind.config = { theme: { extend: { colors: { brand: { gold: '#d4af37', dark: '#040f0a' } } } } };
     </script>
   </head>
   <body class="min-h-screen w-full max-w-[100vw] overflow-x-hidden bg-brand-dark text-slate-100 antialiased">
     <header class="sticky top-0 z-50 border-b border-white/10 bg-brand-dark/75 backdrop-blur-xl">
       <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3.5 sm:px-6 sm:py-4 lg:px-8" aria-label="Primary">
-        <a href="index.html" class="flex shrink-0 items-center"><img src="assets/BragAndBev_Transparent.png" alt="Brag and Bev" class="h-12 w-auto sm:h-14 lg:h-16" /></a>
+        <a href="index.html" class="flex shrink-0 items-center"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3F5HdjQhOnyB0kWRi8OozAtEPlL/hf_20260703_192537_8153e128-f3e4-4826-8d67-9e98b9d7fe1d.png" alt="Brag and Bev" class="h-12 w-auto sm:h-14 lg:h-16" /></a>
         <div class="flex min-w-0 flex-1 justify-end sm:flex-none">
           <div class="flex max-w-full items-center gap-5 overflow-x-auto pb-1 text-sm font-medium [-ms-overflow-style:none] [scrollbar-width:none] sm:gap-7 sm:overflow-visible sm:pb-0 [&::-webkit-scrollbar]:hidden">
             <a href="index.html" class="shrink-0 transition hover:text-brand-gold">Home</a>
@@ -32,6 +32,7 @@
               </div>
             </div>
             <a href="future-products.html" class="shrink-0 transition hover:text-brand-gold">Future Products</a>
+            <a href="investors.html" class="shrink-0 font-semibold text-brand-gold transition hover:text-brand-gold/70">Investors</a>
             <a href="contact.html" class="shrink-0 transition hover:text-brand-gold">Contact</a>
           </div>
         </div>
@@ -44,10 +45,11 @@
         <div class="relative mx-auto grid max-w-7xl gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-end">
           <div>
             <p class="text-xs font-semibold uppercase tracking-[0.22em] text-brand-gold">Prototype Development | First-Pass Validation</p>
-            <h1 class="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">Assembly-ready and moving into first-pass validation.</h1>
+            <h1 class="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">First-pass drop testing is underway — and it actuates.</h1>
             <p class="mt-4 max-w-3xl text-sm leading-6 text-slate-300 sm:text-base">
-              The current Dumpster Diver test system is transitioning from prototype build work into controlled drop testing. The test unit is en route to ARE Labs,
-              with an initial 10-can cleaner shipment from Spray Products planned for first-pass actuation checks before expanding the test matrix.
+              ARE Labs has tested the first 3 of 10 pressurized cans in the assembled prototype. The housing survives 3–4&nbsp;ft drops, the system actuates
+              from a 3&nbsp;ft drop with one weighted ring and plate, and the spray orifice stays unobstructed. Next design focus: a rounder, more bottom-weighted
+              base so the pod lands upright more consistently.
             </p>
             <div class="mt-6 flex flex-col gap-3 sm:flex-row">
               <a href="#validation-transit" class="inline-flex items-center justify-center rounded-full bg-brand-gold px-6 py-2.5 text-sm font-semibold text-black transition hover:bg-brand-gold/90">View Validation Status</a>
@@ -55,10 +57,10 @@
             </div>
           </div>
           <div class="grid gap-3 sm:grid-cols-2">
-            <div class="rounded-xl border border-brand-gold/35 bg-brand-gold/10 px-4 py-3 text-sm font-semibold text-brand-gold">Assembly-ready test system</div>
-            <div class="rounded-xl border border-white/10 bg-slate-900/60 px-4 py-3 text-sm text-slate-200">Initial 10-can validation set</div>
-            <div class="rounded-xl border border-white/10 bg-slate-900/60 px-4 py-3 text-sm text-slate-200">ARE Labs first-pass testing</div>
-            <div class="rounded-xl border border-white/10 bg-slate-900/60 px-4 py-3 text-sm text-slate-200">Broader test matrix pending first results</div>
+            <div class="rounded-xl border border-brand-gold/35 bg-brand-gold/10 px-4 py-3 text-sm font-semibold text-brand-gold">Actuates from a 3 ft drop</div>
+            <div class="rounded-xl border border-white/10 bg-slate-900/60 px-4 py-3 text-sm text-slate-200">Housing survives 3–4 ft drops</div>
+            <div class="rounded-xl border border-white/10 bg-slate-900/60 px-4 py-3 text-sm text-slate-200">Hemisphere base redesign with Rabbit PD</div>
+            <div class="rounded-xl border border-white/10 bg-slate-900/60 px-4 py-3 text-sm text-slate-200">In-house drop validation before next lab round</div>
           </div>
         </div>
       </section>
@@ -66,11 +68,13 @@
       <section id="validation-transit" class="border-b border-white/10 bg-slate-950/90 px-6 py-12">
         <div class="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center">
           <div>
-            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-brand-gold">Current Logistics Status</p>
-            <h2 class="mt-2 text-2xl font-semibold tracking-tight text-white sm:text-3xl">Validation Materials In Transit</h2>
+            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-brand-gold">Program Status — July 2026</p>
+            <h2 class="mt-2 text-2xl font-semibold tracking-tight text-white sm:text-3xl">Actuation Proven. Base Redesign Underway.</h2>
             <p class="mt-4 text-sm leading-6 text-slate-300 sm:text-base">
-              Prototype validation has moved into the logistics phase. The current test system is en route to ARE Labs, and an initial set of 10 cleaner cans
-              is en route from Spray Products to support first-pass drop testing.
+              First-pass drops at ARE Labs confirmed the core mechanism: actuation fired reliably and the housing survives 3–4&nbsp;ft drops. The one open
+              engineering issue is self-righting — the pod tends to land and stay on its side. Rabbit Product Design is now redesigning the base into a full
+              half-hemisphere with the center of gravity shifted as low as possible, and will validate self-righting in-house with controlled drop tests
+              (locked actuator, full can) before the next lab round — keeping lab costs down until the fix is proven. Two new base units are being fabricated.
             </p>
           </div>
           <div class="rounded-2xl border border-brand-gold/30 bg-gradient-to-br from-brand-gold/10 via-slate-900/70 to-slate-950 p-6">
@@ -342,8 +346,8 @@
     </main>
     <footer class="border-t border-white/10 bg-black/40 px-6 py-10">
       <div class="mx-auto flex max-w-7xl flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-        <div class="space-y-3"><img src="assets/BragAndBev_Transparent.png" alt="Brag and Bev" class="h-12 w-auto sm:h-14 lg:h-16" /><p class="text-xs text-slate-400">Brag &amp; Bev L.L.C. — engineering practical sanitation innovation.</p></div>
-        <div class="flex flex-wrap gap-5 text-sm text-slate-300"><a href="index.html" class="transition hover:text-brand-gold">Home</a><a href="product.html" class="transition hover:text-brand-gold">Product</a><a href="prototype.html" class="transition hover:text-brand-gold">Prototype</a><a href="about.html" class="transition hover:text-brand-gold">About</a><a href="partners.html" class="transition hover:text-brand-gold">Partners</a><a href="future-products.html" class="transition hover:text-brand-gold">Future Products</a><a href="contact.html" class="transition hover:text-brand-gold">Contact</a></div>
+        <div class="space-y-3"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3F5HdjQhOnyB0kWRi8OozAtEPlL/hf_20260703_192537_8153e128-f3e4-4826-8d67-9e98b9d7fe1d.png" alt="Brag and Bev" class="h-12 w-auto sm:h-14 lg:h-16" /><p class="text-xs text-slate-400">Brag &amp; Bev L.L.C. — engineering practical sanitation innovation.</p></div>
+        <div class="flex flex-wrap gap-5 text-sm text-slate-300"><a href="index.html" class="transition hover:text-brand-gold">Home</a><a href="product.html" class="transition hover:text-brand-gold">Product</a><a href="prototype.html" class="transition hover:text-brand-gold">Prototype</a><a href="about.html" class="transition hover:text-brand-gold">About</a><a href="partners.html" class="transition hover:text-brand-gold">Partners</a><a href="future-products.html" class="transition hover:text-brand-gold">Future Products</a><a href="investors.html" class="transition hover:text-brand-gold">Investors</a><a href="contact.html" class="transition hover:text-brand-gold">Contact</a></div>
       </div>
       <div class="mx-auto mt-6 max-w-7xl border-t border-white/10 pt-4 text-xs text-slate-500">© 2026 Brag &amp; Bev L.L.C. All rights reserved.</div>
     </footer>
