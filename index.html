@@ -395,4 +395,74 @@
             <a href="partners.html" class="transition hover:text-gold">Partners</a>
             <a href="future-products.html" class="transition hover:text-gold">Future Products</a>
             <a href="investors.html" class="font-semibold text-gold transition hover:text-gold-light">Investors</a>
-            <a href="contact.html" class="transition hover:text
+            <a href="contact.html" class="transition hover:text-gold">Contact</a>
+          </div>
+        </div>
+        <div class="mx-auto mt-6 max-w-7xl border-t border-white/10 pt-4 text-xs text-emerald-100/40">&copy; 2026 Brag &amp; Bev L.L.C. All rights reserved.</div>
+      </footer>
+    </main>
+
+    <script>
+      // Scroll reveal
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { threshold: 0.15 });
+      document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach((el) => io.observe(el));
+
+      // Animated counters
+      const cio = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          cio.unobserve(e.target);
+          const el = e.target, target = +el.dataset.target, dur = 1200, t0 = performance.now();
+          const tick = (t) => {
+            const p = Math.min((t - t0) / dur, 1);
+            el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+            if (p < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+        });
+      }, { threshold: 0.6 });
+      document.querySelectorAll('.counter').forEach((el) => cio.observe(el));
+
+      // Foam bubbles in hero
+      const wrap = document.getElementById('bubbles');
+      for (let i = 0; i < 18; i++) {
+        const b = document.createElement('div');
+        const s = 6 + Math.random() * 22;
+        b.className = 'bubble';
+        b.style.width = s + 'px'; b.style.height = s + 'px';
+        b.style.left = Math.random() * 100 + '%';
+        b.style.animationDuration = 9 + Math.random() * 14 + 's';
+        b.style.animationDelay = -Math.random() * 20 + 's';
+        wrap.appendChild(b);
+      }
+
+      // Hero parallax
+      const heroBg = document.getElementById('hero-bg');
+      addEventListener('scroll', () => { heroBg.style.transform = 'translateY(' + (scrollY * 0.25) + 'px) scale(1.05)'; }, { passive: true });
+
+      // Slam mechanism demo
+      const stage = document.getElementById('slam-stage'),
+            bArm = document.getElementById('btn-arm'),
+            bDrop = document.getElementById('btn-drop'),
+            bReset = document.getElementById('btn-reset'),
+            cap = document.getElementById('slam-caption');
+      bArm.addEventListener('click', () => {
+        stage.classList.add('slam-armed');
+        cap.textContent = 'Armed — clamp removed, gap open';
+        bDrop.disabled = false; bDrop.classList.add('border-gold','text-gold');
+      });
+      bDrop.addEventListener('click', () => {
+        if (!stage.classList.contains('slam-armed')) return;
+        stage.classList.add('slam-fired');
+        cap.textContent = 'Fired — housing slammed down, foam deployed';
+      });
+      bReset.addEventListener('click', () => {
+        stage.classList.remove('slam-armed','slam-fired');
+        cap.textContent = 'Safe — clamp installed';
+        bDrop.disabled = true; bDrop.classList.remove('border-gold','text-gold');
+      });
+    </script>
+  </body>
+</html>
