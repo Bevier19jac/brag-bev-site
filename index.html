@@ -254,30 +254,22 @@
               <p class="mt-2 text-xs font-bold uppercase tracking-[0.2em] text-emerald-100/70">Times you touch the inside of the bin</p>
             </div>
           </div>
-          <!-- ARE LABS FOOTAGE: when Weston's clip arrives, save it as assets/arelabs-drop-test.mp4 and this player goes live automatically -->
-          <div class="reveal mt-8 overflow-hidden rounded-3xl border border-gold/30 bg-black shadow-[0_40px_80px_rgba(0,0,0,0.6)]">
-            <div id="lab-footage-slot" class="relative">
-              <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3F5HdjQhOnyB0kWRi8OozAtEPlL/hf_20260703_192851_8fb3cd7f-d395-4936-943c-b984ebba54e8.png" alt="Dumpster Diver prototype" class="aspect-video w-full object-cover opacity-60" />
-              <div class="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-gradient-to-t from-ink/90 via-ink/40 to-transparent p-6 text-center">
-                <span class="rounded-full border border-gold/60 bg-ink/80 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-gold">Lab Drop-Test Footage</span>
-                <p class="max-w-xl text-sm font-semibold text-emerald-50">Independent test footage from ARE Labs is on its way from the lab — available today on request through the investor packet.</p>
-              </div>
+          <!-- Real ARE Labs drop-test footage -->
+          <div class="reveal mt-8 grid gap-6 md:grid-cols-2">
+            <div class="overflow-hidden rounded-3xl border border-gold/30 bg-black shadow-[0_40px_80px_rgba(0,0,0,0.6)]">
+              <video controls playsinline preload="metadata" class="aspect-video w-full bg-black">
+                <source src="assets/arelabs-drop-test.mp4" type="video/mp4" />
+              </video>
+              <p class="p-4 text-xs font-bold uppercase tracking-[0.2em] text-gold/85">ARE Labs Trial 2 &mdash; placement, impact actuation &amp; foam eruption</p>
+            </div>
+            <div class="overflow-hidden rounded-3xl border border-gold/30 bg-black shadow-[0_40px_80px_rgba(0,0,0,0.6)]">
+              <video controls playsinline preload="metadata" class="aspect-video w-full bg-black">
+                <source src="assets/arelabs-trial3.mp4" type="video/mp4" />
+              </video>
+              <p class="p-4 text-xs font-bold uppercase tracking-[0.2em] text-gold/85">ARE Labs Trial 3 &mdash; in-bin view of spray pattern &amp; wall coverage</p>
             </div>
           </div>
-          <script>
-            (function(){
-              var v = document.createElement('video');
-              fetch('assets/arelabs-drop-test.mp4', {method:'HEAD'}).then(function(r){
-                if (!r.ok) return;
-                var slot = document.getElementById('lab-footage-slot');
-                slot.innerHTML = '';
-                v.controls = true; v.playsInline = true; v.preload = 'metadata';
-                v.className = 'aspect-video w-full bg-black';
-                v.src = 'assets/arelabs-drop-test.mp4';
-                slot.appendChild(v);
-              }).catch(function(){});
-            })();
-          </script>
+          <p class="reveal mt-3 text-center text-xs font-semibold text-emerald-100/60">Unedited independent test footage &middot; ARE Labs, Overland Park, Kansas &middot; full-resolution originals available in the investor packet</p>
           <div class="reveal mt-8 grid grid-cols-3 gap-4">
             <img src="assets/prototype-1.png" alt="Dumpster Diver CAD — housing" class="h-44 w-full rounded-2xl border border-emerald2-deep/60 bg-white object-cover sm:h-56" />
             <img src="assets/prototype-9.png" alt="Dumpster Diver CAD — safety clamp installed" class="h-44 w-full rounded-2xl border border-emerald2-deep/60 bg-white object-cover sm:h-56" />
