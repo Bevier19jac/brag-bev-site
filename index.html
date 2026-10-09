@@ -39,7 +39,7 @@ nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:rgba(
 nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
 nav .brand img{height:34px;width:auto}
 nav ul{display:flex;gap:clamp(14px,3vw,32px);list-style:none;margin:0;padding:0}
-nav a{font:500 12px/1 var(--body);letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--mist)}
+nav a{white-space:nowrap;font:500 12px/1 var(--body);letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--mist)}
 nav a:hover{color:var(--cream)}
 @media (max-width:560px){nav li.opt{display:none}}
 
@@ -51,6 +51,23 @@ nav a:hover{color:var(--cream)}
 .hero h1{font:300 clamp(44px,8vw,104px)/.98 var(--display);color:var(--cream);margin:18px 0 18px;letter-spacing:-.02em;text-wrap:balance;max-width:12ch}
 .hero h1 em{font-style:italic;color:var(--gold)}
 .hero p{max-width:38ch;margin:0;color:var(--cream);opacity:.85;font-size:clamp(16px,1.6vw,19px)}
+
+
+/* the film */
+.film{padding-block:clamp(56px,8vw,110px) 0}
+.film .top{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 24px;margin-bottom:22px}
+.film h2{font:300 clamp(30px,4vw,52px)/1.05 var(--display);color:var(--cream);margin:10px 0 0;text-wrap:balance}
+.film .len{font:500 12px/1 var(--body);letter-spacing:.24em;text-transform:uppercase;color:var(--gold-soft)}
+.film .player{position:relative;display:block;width:100%;aspect-ratio:16/9;max-width:100%;background:#000;border:0;padding:0;border-radius:2px;overflow:hidden;cursor:pointer;box-shadow:0 0 0 1px var(--line),0 30px 80px rgba(0,0,0,.55)}
+.film .player img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s ease,filter .8s ease;filter:brightness(.82)}
+.film .player:hover img{transform:scale(1.02);filter:brightness(.92)}
+.film .player .play{position:absolute;left:50%;top:50%;width:clamp(64px,8vw,92px);aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;border:1.5px solid var(--gold);background:rgba(4,15,10,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);display:grid;place-items:center;transition:background .3s ease}
+.film .player:hover .play{background:rgba(212,175,55,.22)}
+.film .player .play::after{content:"";margin-left:8%;border-style:solid;border-width:clamp(11px,1.4vw,16px) 0 clamp(11px,1.4vw,16px) clamp(18px,2.3vw,26px);border-color:transparent transparent transparent var(--gold)}
+.film .player:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+.film iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.film .alt{margin-top:12px;font-size:13px;color:var(--gold-soft)}
+.film .alt a{color:var(--gold-soft)}
 
 /* chapters */
 .chapter{padding-block:clamp(72px,11vw,150px) 0}
@@ -165,8 +182,9 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Brag &amp; Bev home"><img src="img/logo-brag-bev.png" alt="Brag &amp; Bev" width="562" height="148"></a>
     <ul>
+      <li><a href="#film">Film</a></li>
       <li class="opt"><a href="#story">Story</a></li>
-      <li><a href="#how">How it works</a></li>
+      <li class="opt"><a href="#how">How it works</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -182,6 +200,21 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 
 </header>
 
 <main>
+
+<section class="film wrap" id="film" aria-label="The Dumpster Diver film">
+  <div class="top">
+    <div>
+      <div class="label">The film</div>
+      <h2>The whole story, start to finish.</h2>
+    </div>
+    <div class="len">2 min 43 s · sound on</div>
+  </div>
+  <button class="player" id="player" type="button" data-yt="xdGT6LNrh5g" aria-label="Play the Dumpster Diver film">
+    <img src="img/theone.webp" alt="" width="1600" height="900">
+    <span class="play" aria-hidden="true"></span>
+  </button>
+  <p class="alt">Or <a href="https://youtu.be/xdGT6LNrh5g" target="_blank" rel="noopener">watch it on YouTube</a>.</p>
+</section>
 <section class="chapter wrap" id="story">
   <div class="head">
     <div class="numeral">I</div>
@@ -307,7 +340,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 
   <div class="wrap">
     <span>© 2026 Braganini &amp; Bevier</span>
     <a class="doc" href="docs/Garbage-Can-Cleaner-EN-8505-SDS.pdf" target="_blank" rel="noopener">Safety Data Sheet (PDF)</a>
-    <span>Scenes are stills from the forthcoming Dumpster Diver film. Prototype photos are real.</span>
+    <span>Scenes are from the Dumpster Diver film. Prototype photos are real.</span>
   </div>
 </footer>
 
@@ -330,6 +363,15 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 
   }
   // play state keeps elements visible after the animation (fill-mode both)
 })();
+document.getElementById('player').addEventListener('click',function(){
+  var id=this.getAttribute('data-yt'), box=this;
+  var f=document.createElement('iframe');
+  f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+  f.title='Dumpster Diver film';
+  f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';
+  f.allowFullscreen=true;
+  var wrap=document.createElement('div'); wrap.className='player'; wrap.style.cursor='default'; wrap.appendChild(f); box.replaceWith(wrap);
+});
 document.getElementById('copy').addEventListener('click',function(){
   var b=this,t=document.getElementById('mail').textContent;
   var done=function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy email'},1800)};
