@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Real footage of the Dumpster Diver prototype v2 on a real bin: one camera outside, one inside. Patent pending.">
+<title>Real test · Dumpster Diver · Braganini &amp; Bevier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300;1,9..144,400&family=Inter:wght@400;500&display=swap">
+<style>
+/* Same ground, type and gold as the main page. One clip, nothing else competing with it. */
+:root{
+  --ink:#040f0a;
+  --cream:#f2efe8;
+  --mist:#b9b8ad;
+  --gold:#d4af37;
+  --gold-soft:#a8946a;
+  --line:rgba(212,175,55,.28);
+  --display:"Fraunces", "Iowan Old Style", Georgia, serif;
+  --body:"Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ink);color:var(--mist);font:400 17px/1.65 var(--body);-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--cream)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1180px;margin-inline:auto;padding-inline:clamp(16px,4vw,40px);width:100%}
+.label{font:500 12px/1 var(--body);letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+
+/* nav (matches the main page) */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:rgba(4,15,10,.78);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(212,175,55,.12)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+nav .brand img{height:34px;width:auto}
+nav ul{display:flex;gap:clamp(14px,3vw,32px);list-style:none;margin:0;padding:0}
+nav a{white-space:nowrap;font:500 12px/1 var(--body);letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--mist)}
+nav a:hover{color:var(--cream)}
+nav a[aria-current="page"]{color:var(--gold)}
+@media (max-width:560px){nav li.opt{display:none}}
+
+/* the clip */
+main{flex:1}
+.test{padding-block:clamp(48px,7vw,96px) clamp(56px,8vw,110px)}
+.test .top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:10px 24px;margin-bottom:24px}
+.test h1{font:300 clamp(34px,5vw,64px)/1.04 var(--display);color:var(--cream);margin:12px 0 10px;letter-spacing:-.015em;text-wrap:balance}
+.test .lede{margin:0;max-width:52ch}
+.test .len{font:500 12px/1 var(--body);letter-spacing:.24em;text-transform:uppercase;color:var(--gold-soft);padding-bottom:6px}
+.player{position:relative;display:block;width:100%;aspect-ratio:16/9;background:#000;border:0;padding:0;border-radius:2px;overflow:hidden;cursor:pointer;box-shadow:0 0 0 1px var(--line),0 30px 80px rgba(0,0,0,.55)}
+.player img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s ease,filter .8s ease;filter:brightness(.82)}
+.player:hover img{transform:scale(1.02);filter:brightness(.92)}
+.player .play{position:absolute;left:50%;top:50%;width:clamp(64px,8vw,92px);aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;border:1.5px solid var(--gold);background:rgba(4,15,10,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);display:grid;place-items:center;transition:background .3s ease}
+.player:hover .play{background:rgba(212,175,55,.22)}
+.player .play::after{content:"";margin-left:8%;border-style:solid;border-width:clamp(11px,1.4vw,16px) 0 clamp(11px,1.4vw,16px) clamp(18px,2.3vw,26px);border-color:transparent transparent transparent var(--gold)}
+.player video{position:absolute;inset:0;width:100%;height:100%;background:#000}
+.cap{font:500 11px/1.5 var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft);margin:14px 0 0}
+
+/* point back to the film, which stays the main event */
+.next{margin-top:clamp(40px,6vw,72px);padding-top:28px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px}
+.next p{margin:0;font:300 clamp(22px,2.6vw,30px)/1.25 var(--display);color:var(--cream)}
+.btn{display:inline-block;border:1px solid var(--gold);color:var(--gold);font:500 12px/1 var(--body);letter-spacing:.2em;text-transform:uppercase;text-decoration:none;padding:14px 20px;border-radius:2px;white-space:nowrap}
+.btn:hover{background:rgba(212,175,55,.12)}
+
+footer{border-top:1px solid rgba(212,175,55,.12)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px;padding-block:22px 32px;font-size:12.5px;color:var(--gold-soft)}
+footer .doc{color:var(--gold-soft);text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(168,148,106,.4)}
+footer .doc:hover{color:var(--gold)}
+@media (prefers-reduced-motion:reduce){.player img{transition:none}}
+</style>
+</head>
+<body>
+
+<nav aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Brag &amp; Bev home"><img src="img/logo-brag-bev.png" alt="Brag &amp; Bev" width="562" height="148"></a>
+    <ul>
+      <li><a href="index.html#film">Film</a></li>
+      <li class="opt"><a href="index.html#story">Story</a></li>
+      <li class="opt"><a href="index.html#how">How it works</a></li>
+      <li><a href="real-test.html" aria-current="page">Real test</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <section class="test wrap" aria-label="Real test footage">
+    <div class="top">
+      <div>
+        <div class="label">The real test</div>
+        <h1>Take one of one. Then, take two.</h1>
+        <p class="lede">Prototype v2 on a real bin. One camera outside, one inside.</p>
+      </div>
+      <div class="len">56 s · sound on</div>
+    </div>
+    <button class="player" id="test-player" type="button" data-mp4="film/real-test-take1-take2.mp4" aria-label="Play the real test footage">
+      <img src="img/realtest.webp" alt="" width="1280" height="720">
+      <span class="play" aria-hidden="true"></span>
+    </button>
+    <p class="cap">Real footage · Prototype v2</p>
+
+    <div class="next">
+      <p>Want the whole story?</p>
+      <a class="btn" href="index.html#film">Watch the film</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Braganini &amp; Bevier</span>
+    <a class="doc" href="docs/Garbage-Can-Cleaner-EN-8505-SDS.pdf" target="_blank" rel="noopener">Safety Data Sheet (PDF)</a>
+    <span>Real footage of prototype v2. Patent pending.</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('test-player').addEventListener('click',function(){
+  var v=document.createElement('video');
+  v.src=this.getAttribute('data-mp4');
+  v.poster=this.querySelector('img').getAttribute('src');
+  v.controls=true; v.autoplay=true; v.playsInline=true; v.setAttribute('playsinline','');
+  var wrap=document.createElement('div'); wrap.className='player'; wrap.style.cursor='default'; wrap.appendChild(v); this.replaceWith(wrap);
+  var pr=v.play(); if(pr&&pr.catch){pr.catch(function(){});}
+});
+</script>
+</body>
+</html>
