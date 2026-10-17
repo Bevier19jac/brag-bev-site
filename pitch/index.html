@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dumpster Diver · Pitch</title>
+<meta name="description" content="Dumpster Diver pitch deck: 2026 Fayette Pitch Contest. Brag & Bev LLC, Tyrone, GA.">
+<meta name="robots" content="noindex">
+<style>
+@font-face{font-family:"Fraunces";src:url(fonts/fraunces-latin-400-normal.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Fraunces";src:url(fonts/fraunces-latin-400-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Inter";src:url(fonts/inter-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Inter";src:url(fonts/inter-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Inter";src:url(fonts/inter-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
+:root{
+  --ink:#040f0a; --ink-2:#0a1a12; --ink-3:#10251a;
+  --cream:#f2efe8; --mist:#b9b8ad; --gold:#d4af37; --gold-soft:#a8946a;
+  --line:rgba(212,175,55,.28); --green:#7fc28e; --red:#e0262b;
+  --display:"Fraunces","Iowan Old Style",Georgia,serif;
+  --body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#000;color:var(--mist);font-family:var(--body);-webkit-font-smoothing:antialiased}
+a{color:var(--cream);text-decoration-color:var(--line);text-underline-offset:3px}
+a:hover{text-decoration-color:var(--gold)}
+
+/* Stage: every slide is designed at 1600x900 and scaled to fit the screen */
+#deck{position:fixed;inset:0;display:grid;place-items:center;overflow:hidden}
+.slide{position:absolute;width:1600px;height:900px;background:var(--ink);overflow:hidden;
+  transform-origin:center center;opacity:0;pointer-events:none;transition:opacity .35s ease}
+.slide.on{opacity:1;pointer-events:auto}
+.pad{position:absolute;inset:0;padding:70px 104px 100px;display:flex;flex-direction:column;justify-content:center}
+.pad[style*="grid"]{align-items:center}
+
+.eyebrow{font:600 15px/1 var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+h1,h2{font-family:var(--display);font-weight:400;color:var(--cream);margin:0;letter-spacing:-.01em}
+h1{font-size:112px;line-height:1}
+h2{font-size:64px;line-height:1.06;margin-top:22px;max-width:1150px}
+h2 em,h1 em{font-style:italic;color:var(--gold)}
+p{margin:0}
+.lede{font-size:27px;line-height:1.5;color:var(--mist);max-width:880px;margin-top:26px}
+.small{font-size:17px;line-height:1.5;color:var(--gold-soft)}
+.num{font-family:var(--display);color:var(--cream);font-size:76px;line-height:1}
+.num small{font-size:30px;color:var(--gold)}
+.lbl{font-size:18px;line-height:1.45;color:var(--mist);margin-top:10px}
+.foot{position:absolute;left:104px;right:104px;bottom:38px;display:flex;justify-content:space-between;
+  font:500 14px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft)}
+.rule{height:1px;background:var(--line);margin:34px 0}
+.grid{display:grid;gap:40px}
+.card{border:1px solid var(--line);border-radius:4px;padding:30px 32px;background:var(--ink-2)}
+.card h3{font:600 15px/1 var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin:0 0 14px}
+.card p{font-size:21px;line-height:1.5;color:var(--cream)}
+.card p.sub{font-size:17px;color:var(--mist);margin-top:8px}
+ul.clean{list-style:none;margin:0;padding:0}
+ul.clean li{font-size:22px;line-height:1.45;color:var(--cream);padding:13px 0;border-top:1px solid var(--line);display:flex;gap:18px}
+ul.clean li:last-child{border-bottom:1px solid var(--line)}
+ul.clean li b{color:var(--gold);font-weight:600;min-width:150px;font-size:16px;letter-spacing:.12em;text-transform:uppercase;padding-top:5px}
+.photo{position:absolute;object-fit:cover}
+.shade-l{position:absolute;inset:0;background:linear-gradient(90deg,var(--ink) 34%,rgba(4,15,10,.75) 55%,rgba(4,15,10,0) 80%)}
+.tag{display:inline-block;font:600 13px/1 var(--body);letter-spacing:.16em;text-transform:uppercase;padding:8px 11px;border-radius:3px}
+.tag.ok{color:#04130a;background:var(--green)}
+.tag.next{color:var(--ink);background:var(--gold)}
+.tag.lab{color:var(--gold);border:1px solid var(--gold)}
+.ev{font-size:16px;color:var(--gold-soft);margin-top:18px}
+.ev a{color:var(--gold-soft)}
+
+/* Validation chart */
+.bars{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;align-items:end;height:300px;margin-top:8px}
+.bars .col{display:flex;flex-direction:column;justify-content:flex-end;height:100%}
+.bars .pair{display:flex;gap:8px;align-items:flex-end;height:100%}
+.bars .b{flex:1;border-radius:3px 3px 0 0;position:relative}
+.bars .b span{position:absolute;top:-28px;left:0;right:0;text-align:center;font:600 16px/1 var(--body);color:var(--cream)}
+.bars .t1{background:var(--gold)}
+.bars .t2{background:#8a7a3e}
+.bars .x{text-align:center;font:600 15px/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--mist);margin-top:14px}
+.legend{display:flex;gap:26px;font-size:16px;color:var(--mist)}
+.legend i{display:inline-block;width:14px;height:14px;border-radius:2px;margin-right:8px;vertical-align:-2px}
+
+/* Timeline */
+.tl{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:54px;position:relative}
+.tl:before{content:"";position:absolute;left:0;right:0;top:11px;height:1px;background:var(--line)}
+.tl div{padding-right:26px;position:relative}
+.tl div:before{content:"";display:block;width:23px;height:23px;border-radius:50%;background:var(--ink);border:2px solid var(--gold);margin-bottom:22px}
+.tl div.done:before{background:var(--gold)}
+.tl b{display:block;font:600 15px/1 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.tl p{font-size:19px;line-height:1.45;color:var(--cream)}
+
+/* Video slot */
+.slot{position:absolute;border:2px dashed var(--gold);border-radius:6px;display:grid;place-items:center;text-align:center;background:var(--ink-2)}
+.slot video,.slot iframe{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:4px;background:#000}
+
+/* Notes + controls */
+#notes{position:fixed;left:0;right:0;bottom:0;max-height:34vh;overflow:auto;background:rgba(10,26,18,.97);
+  border-top:1px solid var(--line);padding:18px 26px 22px;font-size:17px;line-height:1.55;color:var(--cream);display:none;z-index:5}
+#notes.show{display:block}
+#notes b{color:var(--gold);font-weight:600}
+#hud{position:fixed;right:18px;top:14px;z-index:6;display:flex;gap:8px;align-items:center;font:500 13px/1 var(--body);color:var(--gold-soft);opacity:0;transition:opacity .3s}
+body.mouse #hud{opacity:1}
+#hud button{background:rgba(10,26,18,.8);color:var(--cream);border:1px solid var(--line);border-radius:4px;padding:9px 13px;font:500 13px/1 var(--body);cursor:pointer}
+#hud button:hover{border-color:var(--gold)}
+#bar{position:fixed;left:0;bottom:0;height:3px;background:var(--gold);z-index:6;transition:width .3s}
+.notes{display:none}
+
+/* Print / PDF: one slide per page */
+@media print{
+  @page{size:1600px 900px;margin:0}
+  html,body{background:var(--ink);height:auto}
+  #deck{position:static;display:block}
+  .slide{position:relative;opacity:1;transform:none!important;page-break-after:always;break-after:page}
+  #hud,#notes,#bar{display:none!important}
+  .slot video,.slot iframe{display:none}
+}
+@media (prefers-reduced-motion:reduce){.slide{transition:none}}
+</style>
+</head>
+<body>
+<div id="deck">
+
+<!-- 1 · TITLE -->
+<section class="slide" data-title="Title">
+  <img class="photo" src="../img/real_clip_seated_front_B.webp" alt="Dumpster Diver prototype v2, standing, safety clip seated" style="right:0;top:0;width:600px;height:900px">
+  <div class="shade-l" style="background:linear-gradient(90deg,var(--ink) 52%,rgba(4,15,10,0) 64%)"></div>
+  <div class="pad" style="display:flex;flex-direction:column;justify-content:center">
+    <p class="eyebrow">2026 Fayette Pitch Contest · Brag &amp; Bev LLC</p>
+    <h1 style="margin-top:28px">Dumpster Diver</h1>
+    <p style="font-family:var(--display);font-style:italic;font-size:46px;color:var(--gold);margin-top:18px">The bin that cleans itself.</p>
+    <p class="lede" style="max-width:640px">Pull the clip. Drop it in. Close the lid.</p>
+    <div class="rule" style="width:520px"></div>
+    <p style="font-size:22px;color:var(--cream)">Jacob B. Bevier, Founder</p>
+    <p class="small" style="margin-top:6px">Tyrone, GA · Patent pending since November 2024</p>
+  </div>
+  <aside class="notes">Hi, I'm Jacob Bevier, from right here in Tyrone. This is Dumpster Diver: the bin that cleans itself. You pull the clip, drop it in, close the lid, and walk away. Here's how it started.</aside>
+</section>
+
+<!-- 2 · PROBLEM / MARKET -->
+<section class="slide" data-title="The problem">
+  <div class="pad">
+    <p class="eyebrow">Market opportunity</p>
+    <h2>Every week. Same bin.<br><em>Same smell.</em></h2>
+    <p class="lede" style="max-width:1100px">Residue, grime and odor build up in every curbside bin. Cleaning it means a hose, a scrub brush and a bad afternoon, or paying someone $20 or more a visit. So most people never do it.</p>
+    <div class="grid" style="grid-template-columns:repeat(4,1fr);margin-top:60px;gap:48px">
+      <div><p class="num">118M</p><p class="lbl">U.S. homes</p></div>
+      <div><p class="num">2 <small>bins</small></p><p class="lbl">in many homes: trash plus recycling</p></div>
+      <div><p class="num">1 <small>pod</small></p><p class="lbl">per bin, every week. Single-use</p></div>
+      <div><p class="num">46,458</p><p class="lbl">homes in Fayette County, our launch market</p></div>
+    </div>
+    <p class="ev" style="font-size:19px">Who buys first: homeowners with curbside bins. Then HOAs, property managers and bin-cleaning operators.</p>
+  </div>
+  <div class="foot"><span>Fayette households: U.S. Census ACS 2024 · Cleaning cost: HomeServe</span><span>02</span></div>
+  <aside class="notes"><b>Rubric: Market Opportunity.</b> There are about 118 million homes in this country, and a lot of them roll out two bins every week, trash and recycling. Every one of those bins gets grimy and starts to smell. Today the options are a hose and a scrub brush, or paying a service twenty-plus dollars a visit, so most people just live with it. Dumpster Diver is single-use, one pod per bin, every week. Here in Fayette County alone that's more than 46,000 homes. My first customer is the homeowner. After that: HOAs, property managers and the bin-cleaning companies themselves.</aside>
+</section>
+
+<!-- 3 · THE BEGINNING: SKETCHES + PATENT -->
+<section class="slide" data-title="Where it started">
+  <div class="pad">
+    <p class="eyebrow">Where it started · November 2024</p>
+    <h2>It started on a notebook page.</h2>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:44px">
+      <img src="img/sketch1.jpg" alt="Original sketch: egg-shaped shell, weighted base, foaming solution, C-clamp to deactivate the impact trigger" style="width:100%;height:440px;object-fit:cover;border-radius:3px">
+      <img src="img/sketch2.jpg" alt="Original sketch: shell with nozzle spraying 360 degrees, lid closing" style="width:100%;height:440px;object-fit:cover;border-radius:3px">
+      <img src="img/sketch3.jpg" alt="Original sketch: can with pin trigger over a weighted dish base" style="width:100%;height:440px;object-fit:cover;border-radius:3px">
+      <img src="img/sketch4.jpg" alt="Original sketch: tapered housing with weighted base" style="width:100%;height:440px;object-fit:cover;border-radius:3px">
+    </div>
+    <p class="ev" style="font-size:19px;color:var(--mist)">My original sketches: weighted base, impact trigger, a clip to keep it safe, foam that reaches the whole bin. Provisional patent filed <span style="color:var(--cream)">November 24, 2024</span>.</p>
+  </div>
+  <div class="foot"><span>Original sketches, Jacob B. Bevier</span><span>03</span></div>
+  <aside class="notes">This is where it started: my notebook, November 2024. Weighted base so it always lands upright, an impact trigger, a safety clip, and foam that reaches the whole bin. I filed the provisional patent on November 24, 2024. The idea hasn't changed since. Getting it to work took two years.</aside>
+</section>
+
+<!-- 4 · BUILT WITH EXPERTS -->
+<section class="slide" data-title="Engineering partners">
+  <div class="pad">
+    <p class="eyebrow">Then I called everyone</p>
+    <h2>Built with engineers,<br>scientists and a <em>lab</em>.</h2>
+    <ul class="clean" style="margin-top:44px;max-width:1150px">
+      <li><b>Science</b><span>Scientists at Imperial College London and Warsaw University of Technology: mechanical, chemical and spray design</span></li>
+      <li><b>Design</b><span>Rabbit Product Design: housing, self-righting base, trigger</span></li>
+      <li><b>Aerosol</b><span>Spray Products: formula fill and nozzle</span></li>
+      <li><b>Testing</b><span>ARE Labs: independent drop and spray-coverage testing</span></li>
+    </ul>
+    <p class="ev">The standard was three things: <span style="color:var(--cream)">right itself and fire · break up grime with a pleasant-smelling deterrent · coat the whole bin.</span></p>
+  </div>
+  <div class="foot"><span>Brag &amp; Bev · Dumpster Diver</span><span>04</span></div>
+  <aside class="notes">I'm not a chemist, so I called every chemical-engineering department I could find. That led me to scientists at Imperial College London and Warsaw University of Technology. Rabbit Product Design engineered the housing, Spray Products fills the cans, and ARE Labs tests it independently. We held it to three standards: it has to right itself and fire, break up grime with a scent people like, and coat the whole bin.</aside>
+</section>
+
+<!-- 5 · SOLUTION -->
+<section class="slide" data-title="The solution">
+  <div class="pad" style="display:grid;grid-template-columns:1fr 690px;gap:64px">
+    <div>
+      <p class="eyebrow">Solution &amp; differentiation</p>
+      <h2 style="font-size:56px">A weighted pod that lands upright, fires on impact and <em>foams the whole bin.</em></h2>
+      <ul class="clean" style="margin-top:40px">
+        <li><b>Step 1</b><span>Pull the red safety clip</span></li>
+        <li><b>Step 2</b><span>Hold it over the empty bin and let go</span></li>
+        <li><b>Step 3</b><span>Close the lid and walk away</span></li>
+      </ul>
+      <p class="ev" style="font-size:18px">No hose, no scrubbing, no subscription. No battery, no button.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;align-content:start;margin-top:8px">
+      <img src="../img/real_standing_clip_in_front.webp" alt="Prototype v2 standing with the U-shaped red safety clip pulled out in front" style="width:100%;height:440px;object-fit:cover;border-radius:3px">
+      <img src="../img/real_on_side_clip_removed.webp" alt="Prototype v2 tipped on its side with the clip removed" style="width:100%;height:440px;object-fit:cover;border-radius:3px">
+      <p class="small" style="grid-column:1/-1">Actual photos of the working prototype (v2).</p>
+    </div>
+  </div>
+  <div class="foot"><span>Brag &amp; Bev · Dumpster Diver</span><span>05</span></div>
+  <aside class="notes"><b>Rubric: Solution &amp; Differentiation.</b> In one sentence: it's a weighted pod that lands upright, fires on impact and foams the whole bin. Three steps. Pull the clip, drop it in, close the lid. Nothing else on the market works this way: no hose, no scrubbing, no service, no battery. These are real photos of the working prototype.</aside>
+</section>
+
+<!-- 6 · LAB VALIDATION -->
+<section class="slide" data-title="Lab validation">
+  <div class="pad">
+    <p class="eyebrow">Independent validation · ARE Labs project 11048.30</p>
+    <h2 style="font-size:58px">Lab-tested: it fires on impact and <em>reaches every surface.</em></h2>
+    <div style="display:grid;grid-template-columns:330px 1fr;gap:70px;margin-top:46px">
+      <div style="display:flex;flex-direction:column;gap:30px">
+        <div><p class="num">3 <small>of 3</small></p><p class="lbl">drops actuated from 36 in into a 96-gal bin</p></div>
+        <div><p class="num">16 <small>of 16</small></p><p class="lbl">test coupons coated, from 1 ft up to the underside of the lid</p></div>
+        <div><p class="num">94<small> g</small></p><p class="lbl">average formula discharged per drop</p></div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline">
+          <p style="font-size:19px;color:var(--cream)">Foam deposited on the bin walls and lid (mg/in²)</p>
+          <div class="legend"><span><i style="background:var(--gold)"></i>Trial 1</span><span><i style="background:#8a7a3e"></i>Trial 2</span></div>
+        </div>
+        <div class="bars" style="margin-top:44px" role="img" aria-label="Deposition by height. Trial 1: 1 ft 26.0, 2 ft 28.8, 3 ft 28.1, lid 43.2. Trial 2: 1 ft 29.7, 2 ft 22.0, 3 ft 37.0, lid 28.3.">
+          <div class="col"><div class="pair"><div class="b t1" style="height:60%"><span>26.0</span></div><div class="b t2" style="height:68.8%"><span>29.7</span></div></div><p class="x">1 ft</p></div>
+          <div class="col"><div class="pair"><div class="b t1" style="height:66.7%"><span>28.8</span></div><div class="b t2" style="height:50.9%"><span>22.0</span></div></div><p class="x">2 ft</p></div>
+          <div class="col"><div class="pair"><div class="b t1" style="height:65%"><span>28.1</span></div><div class="b t2" style="height:85.6%"><span>37.0</span></div></div><p class="x">3 ft</p></div>
+          <div class="col"><div class="pair"><div class="b t1" style="height:100%"><span>43.2</span></div><div class="b t2" style="height:65.5%"><span>28.3</span></div></div><p class="x">Lid</p></div>
+        </div>
+        <p class="ev" style="margin-top:26px">What the lab also told us: the earlier shell tipped over after firing. That finding drove the self-righting base on the next slide.</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>ARE Labs Inc. · Spray Coverage Testing v1.0 · June 26, 2026</span><span>06</span></div>
+  <aside class="notes"><b>Rubric: proof the solution works.</b> I didn't want to just tell you it works, so I paid an independent lab to test it. ARE Labs dropped it from 36 inches into a standard 96-gallon bin, three times. It fired all three times, and foam landed on all sixteen test points, from the bottom of the wall all the way up to the underside of the lid. The lab also flagged that the earlier shell tipped over after firing. That's exactly what we fixed next.</aside>
+</section>
+
+<!-- 7 · WHERE WE ARE + NEW TRIAL -->
+<section class="slide" data-title="Where we are">
+  <div class="pad" style="display:grid;grid-template-columns:600px 1fr;gap:70px">
+    <div>
+      <p class="eyebrow">Where we are</p>
+      <h2 style="font-size:56px">Every piece proven. Now, <em>all three at once.</em></h2>
+      <ul class="clean" style="margin-top:40px">
+        <li style="justify-content:space-between"><span>Fires on impact</span><span class="tag lab">Lab-validated</span></li>
+        <li style="justify-content:space-between"><span>Coats the whole bin</span><span class="tag lab">Lab-validated</span></li>
+        <li style="justify-content:space-between"><span>Rights itself (v2 base)</span><span class="tag ok">Proven on the bench</span></li>
+        <li style="justify-content:space-between"><span>All three in one drop</span><span class="tag next">First v2 drop filmed</span></li>
+      </ul>
+      <p class="ev">Prototype path: egg → cylinder → can → v2 self-righting housing.</p>
+    </div>
+    <div><div class="slot" id="trialSlot" style="position:relative;height:439px;background:#000 url(img/trial-poster.jpg) center/cover;border-style:solid">
+      <div style="padding:40px">
+        <span></span>
+      </div>
+      <!-- Swap TRIAL_VIDEO in the script for the new v2 trial when it's filmed -->
+    </div></div>
+  </div>
+  <div class="foot"><span>Brag &amp; Bev · Dumpster Diver</span><span>07</span></div>
+  <aside class="notes">Here's where we are. Firing and coverage are lab-validated. The v2 base solved self-righting on the bench. And this is the v2, in my own bin, with a camera inside. [Play the trial video.] Next, ARE Labs repeats this test so we have independent data on all three together.</aside>
+</section>
+
+<!-- 8 · BUSINESS MODEL + 12-24 MONTHS -->
+<section class="slide" data-title="Business model">
+  <div class="pad">
+    <p class="eyebrow">Business model &amp; growth plan</p>
+    <h2 style="font-size:56px">A single-use pod, bought again <em>every week.</em></h2>
+    <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:40px;gap:28px">
+      <div class="card"><h3>Who pays</h3><p>The homeowner, by the pack.</p><p class="sub">Refill packs priced under the cost of one professional cleaning.</p></div>
+      <div class="card"><h3>Repeat revenue</h3><p>One pod per bin, per week.</p><p class="sub">Two-bin homes use two. Subscribe-and-save on our own site.</p></div>
+      <div class="card"><h3>Bulk buyers</h3><p>HOAs, property managers, bin-cleaning operators.</p><p class="sub">Case pricing for communities and crews.</p></div>
+    </div>
+    <div class="tl">
+      <div class="done"><b>Done</b><p>Patent filed, lab-validated firing and coverage, self-righting v2</p></div>
+      <div><b>Q4 2026</b><p>Integrated drop trial, all three functions</p></div>
+      <div><b>Q1 2027</b><p>Production-ready design and per-unit cost</p></div>
+      <div><b>Q2 2027</b><p>Pilot batch in Fayette homes and HOAs</p></div>
+      <div><b>2028</b><p>Online launch, then regional retail</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>Brag &amp; Bev · Dumpster Diver</span><span>08</span></div>
+  <aside class="notes"><b>Rubric: Business Model &amp; Growth Plan.</b> The homeowner pays, by the pack. It's single-use, one pod per bin every week, and a lot of homes have two bins. That's a repeat purchase built in. That's the business, not just the product. Communities and cleaning crews buy by the case. Over the next 12 to 24 months: finish the integrated trial this quarter, lock the production design and unit cost in Q1, put a pilot batch in Fayette homes in Q2, then launch online and go after regional retail.</aside>
+</section>
+
+<!-- 9 · GO TO MARKET -->
+<section class="slide" data-title="Go-to-market">
+  <div class="pad">
+    <p class="eyebrow">Marketing &amp; go-to-market</p>
+    <h2 style="font-size:58px">Win Fayette first.<br><em>Then grow out.</em></h2>
+    <ul class="clean" style="margin-top:40px;max-width:1150px">
+      <li><b>Pilot</b><span>Fayette HOAs in Tyrone, Peachtree City and Fayetteville: free pilot packs in exchange for feedback and reviews</span></li>
+      <li><b>Show it</b><span>Short drop-and-foam videos on our own channel; the product sells when people watch it work</span></li>
+      <li><b>Sell online</b><span>Direct on our site, with subscribe-and-save refill packs</span></li>
+      <li><b>Local shelves</b><span>Fayette hardware and home stores, using pilot results as proof</span></li>
+      <li><b>B2B</b><span>Property managers and bin-cleaning crews, by the case</span></li>
+    </ul>
+  </div>
+  <div class="foot"><span>Brag &amp; Bev · Dumpster Diver</span><span>09</span></div>
+  <aside class="notes"><b>Rubric: Marketing &amp; Go-to-Market.</b> We start here. Free pilot packs to HOAs in Tyrone, Peachtree City and Fayetteville in exchange for honest feedback and reviews. This product sells itself on video, so we'll keep showing it work. We sell direct online with refill subscriptions, take the pilot results to local hardware stores, and sell by the case to property managers and cleaning crews.</aside>
+</section>
+
+<!-- 10 · FOUNDER -->
+<section class="slide" data-title="Founder">
+  <div class="pad" style="display:grid;grid-template-columns:1fr 1fr;gap:80px">
+    <div>
+      <p class="eyebrow">Founder fit</p>
+      <h2 style="font-size:58px">Two years, sketch to <em>lab-tested prototype.</em></h2>
+      <p class="lede" style="font-size:24px">I don't stop at an idea. I filed the patent, recruited two universities, a design firm, an aerosol maker and an independent lab, and kept going when prototypes failed.</p>
+    </div>
+    <ul class="clean" style="align-self:center">
+      <li><b>Service</b><span>U.S. Army, nearly 14 years. Sergeant First Class, Dual Master Gunner, senior instructor</span></li>
+      <li><b>Education</b><span>M.S. Artificial Intelligence, Troy University. B.S. Computer Science, Cybersecurity, magna cum laude</span></li>
+      <li><b>Business</b><span>Founder, Bevier Strategic Technology Solutions</span></li>
+      <li><b>Local</b><span>Tyrone resident, raising my family in Fayette County</span></li>
+    </ul>
+  </div>
+  <div class="foot"><span>Jacob B. Bevier · Founder, Brag &amp; Bev LLC</span><span>10</span></div>
+  <aside class="notes"><b>Rubric: Founder Fit.</b> Why me? Because I've already done the hard part on my own dime. In two years I took this from a notebook sketch to a lab-tested prototype. I spent fourteen years in the Army as a Sergeant First Class and Master Gunner, which is mostly about making equipment work under pressure and teaching others to do it. I hold a master's in artificial intelligence, and I run my own technology firm. And I live here.</aside>
+</section>
+
+<!-- 11 · FAYETTE IMPACT -->
+<section class="slide" data-title="Fayette County">
+  <div class="pad">
+    <p class="eyebrow">Impact on Fayette County</p>
+    <h2>Born in Tyrone.<br><em>Built in Fayette.</em></h2>
+    <ul class="clean" style="margin-top:44px;max-width:1150px">
+      <li><b>Launch</b><span>Fayette County is our first market and test bed</span></li>
+      <li><b>Pilot</b><span>Local HOAs and families shape the final product</span></li>
+      <li><b>Jobs</b><span>Packing, fulfillment and sales hires stay local as we grow</span></li>
+      <li><b>Partners</b><span>Local stores and service crews first in line to carry it</span></li>
+    </ul>
+  </div>
+  <div class="foot"><span>Brag &amp; Bev · Dumpster Diver</span><span>11</span></div>
+  <aside class="notes"><b>Rubric: Impact on Fayette County.</b> This company was born in Tyrone and it's going to be built in Fayette. Our first customers, our pilot families and our first retail partners are here. As we grow, packing, fulfillment and sales jobs stay here too.</aside>
+</section>
+
+<!-- 12 · HOW WINNING HELPS -->
+<section class="slide" data-title="How winning helps">
+  <div class="pad">
+    <p class="eyebrow">How winning helps</p>
+    <h2>The prize package takes us from <em>prototype to pilot.</em></h2>
+    <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:50px;gap:28px">
+      <div class="card"><h3>1 · Prove it</h3><p>Integrated drop trial at ARE Labs</p><p class="sub">Independent data on all three functions together</p></div>
+      <div class="card"><h3>2 · Price it</h3><p>Production-ready design and a real per-unit cost</p><p class="sub">The number every retailer and investor asks for</p></div>
+      <div class="card"><h3>3 · Pilot it</h3><p>First pilot batch into Fayette homes and HOAs</p><p class="sub">Real customers, real reviews, real reorders</p></div>
+    </div>
+    <p class="lede" style="margin-top:44px;max-width:1200px">Every StartUp Fayette resource goes to one of those three steps, plus the Launch Fayette network: mentors, local retailers and the investors who come after the pilot.</p>
+  </div>
+  <div class="foot"><span>Brag &amp; Bev · Dumpster Diver</span><span>12</span></div>
+  <aside class="notes"><b>Rubric: How Winning Helps.</b> Here's exactly what I'd do with the prize package. One: run the integrated drop trial at ARE Labs. Two: finish the production design and get a real per-unit cost. Three: put the first pilot batch into Fayette homes. And the Launch Fayette network is how we find the retailers and investors who come next.</aside>
+</section>
+
+<!-- 13 · CLOSE -->
+<section class="slide" id="evidence" data-title="Close">
+  <div class="pad" style="display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center">
+    <div style="text-align:center">
+      <p style="font-size:22px;color:var(--cream);letter-spacing:.3em;text-transform:uppercase">Dumpster Diver</p>
+      <p class="small" style="margin-top:20px;letter-spacing:.3em;text-transform:uppercase">From</p>
+      <img src="../img/logo-braganini-bevier.png" alt="Braganini &amp; Bevier" style="width:520px;margin:14px auto 0">
+      <p style="font-family:var(--display);font-style:italic;font-size:46px;color:var(--gold);margin-top:30px">Toss it in. Walk away.</p>
+      <p style="font-size:20px;color:var(--cream);margin-top:40px">Jacob B. Bevier</p>
+      <p class="small" style="margin-top:8px">bevier19jacob@gmail.com · (760) 490-3416</p>
+    </div>
+    <div>
+      <p class="eyebrow">The evidence</p>
+      <ul class="clean" style="margin-top:24px">
+        <li><b>Jun 2026</b><span><a href="https://drive.google.com/file/d/1dGpSTdbNBTLN6zN0m4AJyTTaQM06A4Cp/view" target="_blank" rel="noopener">ARE Labs report 11048.30</a></span></li>
+        <li><b>Jul 2026</b><span>Lab drop trials: <a href="https://drive.google.com/file/d/1oN6GMi8Qi_c1QGgd9XWTAq94WzmAPOrH/view" target="_blank" rel="noopener">1</a> · <a href="https://drive.google.com/file/d/1TtkNI7O1wmbRfL20cCqp7iR95Fiz0Ym2/view" target="_blank" rel="noopener">2</a> · <a href="https://drive.google.com/file/d/1nScNyIb5uxIAZjDhgcIi27bXVrmN1RC8/view" target="_blank" rel="noopener">3</a></span></li>
+        <li><b>Prototypes</b><span><a href="https://drive.google.com/file/d/1F_tvCtcGm9Xi129qPQn8E4iVTli4AxH-/view" target="_blank" rel="noopener">Early prototype</a> · <a href="https://drive.google.com/file/d/1_O6OVGf6E-jCoRUNGjrT8treEUmJeVcu/view" target="_blank" rel="noopener">v2 walkaround</a></span></li>
+        <li><b>Oct 2026</b><span><a href="https://bragandbev.netlify.app/pitch/trial.mp4" target="_blank" rel="noopener">Prototype v2 drop trial</a></span></li>
+      </ul>
+      <p class="small" style="margin-top:22px">bragandbev.netlify.app/pitch</p>
+    </div>
+  </div>
+  <aside class="notes">Dumpster Diver. Toss it in, walk away. Thank you. The lab report and every trial video are linked right here.</aside>
+</section>
+
+
+
+</div>
+
+<div id="notes" aria-live="polite"></div>
+<div id="bar"></div>
+<div id="hud">
+  <span id="count"></span>
+  <button id="prev" aria-label="Previous slide">←</button>
+  <button id="next" aria-label="Next slide">→</button>
+  <button id="nbtn" aria-label="Toggle speaker notes">Notes (N)</button>
+  <button id="fbtn" aria-label="Full screen">Full screen (F)</button>
+</div>
+
+<script>
+/* Set to "trial.mp4" (or a YouTube embed URL) when the new integrated trial video is ready. */
+const TRIAL_VIDEO = "trial.mp4";
+const TRIAL_LABEL = "Prototype v2 drop trial · filmed October 2026 · camera inside the bin";
+
+const slides=[...document.querySelectorAll('.slide')];
+let i=0;
+function fit(){
+  const s=Math.min(innerWidth/1600, innerHeight/900);
+  slides.forEach(el=>el.style.transform=`scale(${s})`);
+}
+function show(n){
+  i=Math.max(0,Math.min(slides.length-1,n));
+  slides.forEach((el,k)=>el.classList.toggle('on',k===i));
+  document.getElementById('count').textContent=`${i+1} / ${slides.length}`;
+  document.getElementById('bar').style.width=`${(i+1)/slides.length*100}%`;
+  const note=slides[i].querySelector('.notes');
+  document.getElementById('notes').innerHTML=note?`<b>${i+1} · ${slides[i].dataset.title}</b><br>${note.innerHTML}`:'';
+  const id=slides[i].id; history.replaceState(null,'',id?'#'+id:'#'+(i+1));
+}
+document.getElementById('prev').onclick=()=>show(i-1);
+document.getElementById('next').onclick=()=>show(i+1);
+document.getElementById('nbtn').onclick=()=>document.getElementById('notes').classList.toggle('show');
+document.getElementById('fbtn').onclick=()=>document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen?.();
+addEventListener('keydown',e=>{
+  if(['ArrowRight','PageDown',' ','Enter'].includes(e.key)){e.preventDefault();show(i+1)}
+  else if(['ArrowLeft','PageUp','Backspace'].includes(e.key)){e.preventDefault();show(i-1)}
+  else if(e.key==='Home')show(0);
+  else if(e.key==='End')show(slides.length-1);
+  else if(e.key.toLowerCase()==='n')document.getElementById('notes').classList.toggle('show');
+  else if(e.key.toLowerCase()==='f')document.getElementById('fbtn').click();
+});
+document.querySelectorAll('[data-go]').forEach(a=>a.onclick=e=>{e.preventDefault();show(+a.dataset.go-1)});
+addEventListener('resize',fit);
+let hudT;addEventListener('mousemove',()=>{document.body.classList.add('mouse');clearTimeout(hudT);hudT=setTimeout(()=>document.body.classList.remove('mouse'),2500)});
+
+if(TRIAL_VIDEO){
+  const slot=document.getElementById('trialSlot');
+  if(/youtube|youtu\.be|drive\.google/.test(TRIAL_VIDEO)){
+    slot.insertAdjacentHTML('beforeend',`<iframe src="${TRIAL_VIDEO}" title="Dumpster Diver trial video" allow="autoplay; fullscreen" allowfullscreen></iframe>`);
+  }else{
+    slot.insertAdjacentHTML('beforeend',`<video src="${TRIAL_VIDEO}" poster="img/trial-poster.jpg" controls playsinline preload="metadata"></video>`);
+  }
+  slot.insertAdjacentHTML('afterend',`<p class="small" style="margin-top:12px">${TRIAL_LABEL}</p>`);
+}
+
+const h=location.hash.slice(1);
+fit();
+show(h==='evidence'?slides.length-1:(parseInt(h)||1)-1);
+</script>
+</body>
+</html>
