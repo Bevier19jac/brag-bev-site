@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Real footage of the Dumpster Diver prototype v2 on a real bin: one camera outside, one inside. Patent pending.">
+<meta name="description" content="Five real drops of the Dumpster Diver prototype v2 in a real bin: one camera outside, one inside. Patent pending.">
 <title>Real test · Dumpster Diver · Braganini &amp; Bevier</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300;1,9..144,400&family=Inter:wght@400;500&display=swap">
 <style>
-/* Same ground, type and gold as the main page. One clip, nothing else competing with it. */
+/* Same ground, type and gold as the main page. Five real trials, one after another. */
 :root{
   --ink:#040f0a;
   --cream:#f2efe8;
@@ -39,24 +39,38 @@ nav a:hover{color:var(--cream)}
 nav a[aria-current="page"]{color:var(--gold)}
 @media (max-width:560px){nav li.opt{display:none}}
 
-/* the clip */
+/* header */
 main{flex:1}
 .test{padding-block:clamp(48px,7vw,96px) clamp(56px,8vw,110px)}
-.test .top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:10px 24px;margin-bottom:24px}
+.test .top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:10px 24px;margin-bottom:clamp(28px,4vw,48px)}
 .test h1{font:300 clamp(34px,5vw,64px)/1.04 var(--display);color:var(--cream);margin:12px 0 10px;letter-spacing:-.015em;text-wrap:balance}
 .test .lede{margin:0;max-width:52ch}
 .test .len{font:500 12px/1 var(--body);letter-spacing:.24em;text-transform:uppercase;color:var(--gold-soft);padding-bottom:6px}
+
+/* one row per trial: player + notes */
+.trials{list-style:none;margin:0;padding:0;display:grid;gap:clamp(36px,5vw,64px)}
+.trial{display:grid;gap:16px 36px;align-items:center}
+@media (min-width:900px){
+  .trial{grid-template-columns:minmax(0,1.7fr) minmax(0,1fr)}
+  .trial:nth-child(even){grid-template-columns:minmax(0,1fr) minmax(0,1.7fr)}
+  .trial:nth-child(even) .player-slot{order:2}
+}
+.trial .no{font:500 12px/1 var(--body);letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+.trial h2{font:300 clamp(26px,3vw,38px)/1.1 var(--display);color:var(--cream);margin:10px 0 10px;letter-spacing:-.01em;text-wrap:balance}
+.trial p{margin:0 0 14px;max-width:44ch}
+.trial .meta{font:500 11px/1.5 var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft);margin:0}
+.trial .meta .miss{color:#d98b6a}
+
 .player{position:relative;display:block;width:100%;aspect-ratio:16/9;background:#000;border:0;padding:0;border-radius:2px;overflow:hidden;cursor:pointer;box-shadow:0 0 0 1px var(--line),0 30px 80px rgba(0,0,0,.55)}
 .player img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s ease,filter .8s ease;filter:brightness(.82)}
 .player:hover img{transform:scale(1.02);filter:brightness(.92)}
-.player .play{position:absolute;left:50%;top:50%;width:clamp(64px,8vw,92px);aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;border:1.5px solid var(--gold);background:rgba(4,15,10,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);display:grid;place-items:center;transition:background .3s ease}
+.player .play{position:absolute;left:50%;top:50%;width:clamp(56px,7vw,84px);aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;border:1.5px solid var(--gold);background:rgba(4,15,10,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);display:grid;place-items:center;transition:background .3s ease}
 .player:hover .play{background:rgba(212,175,55,.22)}
-.player .play::after{content:"";margin-left:8%;border-style:solid;border-width:clamp(11px,1.4vw,16px) 0 clamp(11px,1.4vw,16px) clamp(18px,2.3vw,26px);border-color:transparent transparent transparent var(--gold)}
+.player .play::after{content:"";margin-left:8%;border-style:solid;border-width:clamp(10px,1.3vw,15px) 0 clamp(10px,1.3vw,15px) clamp(16px,2.1vw,24px);border-color:transparent transparent transparent var(--gold)}
 .player video{position:absolute;inset:0;width:100%;height:100%;background:#000}
-.cap{font:500 11px/1.5 var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft);margin:14px 0 0}
 
 /* point back to the film, which stays the main event */
-.next{margin-top:clamp(40px,6vw,72px);padding-top:28px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px}
+.next{margin-top:clamp(48px,7vw,88px);padding-top:28px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px}
 .next p{margin:0;font:300 clamp(22px,2.6vw,30px)/1.25 var(--display);color:var(--cream)}
 .btn{display:inline-block;border:1px solid var(--gold);color:var(--gold);font:500 12px/1 var(--body);letter-spacing:.2em;text-transform:uppercase;text-decoration:none;padding:14px 20px;border-radius:2px;white-space:nowrap}
 .btn:hover{background:rgba(212,175,55,.12)}
@@ -88,16 +102,84 @@ footer .doc:hover{color:var(--gold)}
     <div class="top">
       <div>
         <div class="label">The real test</div>
-        <h1>Take one of one. Then, take two.</h1>
-        <p class="lede">Prototype v2 on a real bin. One camera outside, one inside.</p>
+        <h1>Take one of one. Then, take five.</h1>
+        <p class="lede">Five real drops of prototype v2 in a real bin. One camera outside, one inside the bin.</p>
       </div>
-      <div class="len">56 s · sound on</div>
+      <div class="len">5 trials · sound on</div>
     </div>
-    <button class="player" id="test-player" type="button" data-mp4="film/real-test-take1-take2.mp4" aria-label="Play the real test footage">
-      <img src="img/realtest.webp" alt="" width="1280" height="720">
-      <span class="play" aria-hidden="true"></span>
-    </button>
-    <p class="cap">Real footage · Prototype v2</p>
+
+    <ol class="trials">
+      <li class="trial">
+        <div class="player-slot">
+          <button class="player" type="button" data-mp4="film/real-test-trial1.mp4" aria-label="Play trial 1">
+            <img src="img/realtest-trial1.webp" alt="" width="1280" height="720">
+            <span class="play" aria-hidden="true"></span>
+          </button>
+        </div>
+        <div>
+          <div class="no">Trial 1</div>
+          <h2>Take 1 of 1.</h2>
+          <p>The first real drop of prototype v2. Then the broadcast cut out.</p>
+          <p class="meta">18 s · It fired · The bin cam froze</p>
+        </div>
+      </li>
+      <li class="trial">
+        <div class="player-slot">
+          <button class="player" type="button" data-mp4="film/real-test-trial2.mp4" aria-label="Play trial 2">
+            <img src="img/realtest-trial2.webp" alt="" width="1280" height="720" loading="lazy">
+            <span class="play" aria-hidden="true"></span>
+          </button>
+        </div>
+        <div>
+          <div class="no">Trial 2</div>
+          <h2>Take 2 of what was supposed to be 1.</h2>
+          <p>Same bin, with a camera inside this time. It fires on impact and mists every wall.</p>
+          <p class="meta">41 s · It fired</p>
+        </div>
+      </li>
+      <li class="trial">
+        <div class="player-slot">
+          <button class="player" type="button" data-mp4="film/real-test-trial3.mp4" aria-label="Play trial 3">
+            <img src="img/realtest-trial3.webp" alt="" width="1280" height="720" loading="lazy">
+            <span class="play" aria-hidden="true"></span>
+          </button>
+        </div>
+        <div>
+          <div class="no">Trial 3</div>
+          <h2>Take 3.</h2>
+          <p>The kids take over the drop. The pod leans against the side of the bin and still goes off.</p>
+          <p class="meta">45 s · It fired</p>
+        </div>
+      </li>
+      <li class="trial">
+        <div class="player-slot">
+          <button class="player" type="button" data-mp4="film/real-test-trial4.mp4" aria-label="Play trial 4">
+            <img src="img/realtest-trial4.webp" alt="" width="1280" height="720" loading="lazy">
+            <span class="play" aria-hidden="true"></span>
+          </button>
+        </div>
+        <div>
+          <div class="no">Trial 4</div>
+          <h2>Take 4.</h2>
+          <p>The one that didn't go off. The actuator popped off, so we are experiencing technical difficulties.</p>
+          <p class="meta">30 s · <span class="miss">Didn't fire</span> · Fixed for Take 5</p>
+        </div>
+      </li>
+      <li class="trial">
+        <div class="player-slot">
+          <button class="player" type="button" data-mp4="film/real-test-trial5.mp4" aria-label="Play trial 5">
+            <img src="img/realtest-trial5.webp" alt="" width="1280" height="720" loading="lazy">
+            <span class="play" aria-hidden="true"></span>
+          </button>
+        </div>
+        <div>
+          <div class="no">Trial 5</div>
+          <h2>Take 5.</h2>
+          <p>Actuator fixed. It fires on impact and the foam covers the camera. So fresh and so clean.</p>
+          <p class="meta">46 s · It fired</p>
+        </div>
+      </li>
+    </ol>
 
     <div class="next">
       <p>Want the whole story?</p>
@@ -115,14 +197,20 @@ footer .doc:hover{color:var(--gold)}
 </footer>
 
 <script>
-document.getElementById('test-player').addEventListener('click',function(){
-  var v=document.createElement('video');
-  v.src=this.getAttribute('data-mp4');
-  v.poster=this.querySelector('img').getAttribute('src');
-  v.controls=true; v.autoplay=true; v.playsInline=true; v.setAttribute('playsinline','');
-  var wrap=document.createElement('div'); wrap.className='player'; wrap.style.cursor='default'; wrap.appendChild(v); this.replaceWith(wrap);
-  var pr=v.play(); if(pr&&pr.catch){pr.catch(function(){});}
+// Click a poster to swap in the video; only one trial plays at a time.
+document.querySelectorAll('button.player').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var v=document.createElement('video');
+    v.src=btn.getAttribute('data-mp4');
+    v.poster=btn.querySelector('img').getAttribute('src');
+    v.controls=true; v.autoplay=true; v.playsInline=true; v.setAttribute('playsinline','');
+    var wrap=document.createElement('div'); wrap.className='player'; wrap.style.cursor='default'; wrap.appendChild(v); btn.replaceWith(wrap);
+    var pr=v.play(); if(pr&&pr.catch){pr.catch(function(){});}
+  });
 });
+document.addEventListener('play',function(e){
+  document.querySelectorAll('.trials video').forEach(function(o){ if(o!==e.target){o.pause();} });
+},true);
 </script>
 </body>
 </html>
