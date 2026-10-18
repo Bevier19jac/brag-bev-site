@@ -111,10 +111,22 @@ body.mouse #hud{opacity:1}
   #hud,#notes,#bar{display:none!important}
   .slot video,.slot iframe{display:none}
 }
+
+/* Phones / portrait: slides stack and you just scroll */
+@media (hover:none){#hud{opacity:.85;top:auto;bottom:10px;right:10px}#hud button{padding:7px 10px;font-size:12px}#nbtn,#fbtn{display:none}}
+.frame{display:contents}
+body.stack{height:auto;overflow-y:auto;background:var(--ink)}
+body.stack #deck{position:static;display:block;overflow:visible;padding:0 0 24px}
+body.stack .frame{display:block;position:relative;overflow:hidden;margin:0 auto 12px}
+body.stack .slide{opacity:1;pointer-events:auto;transform-origin:0 0;left:0;top:0;transition:none}
+body.stack #hud,body.stack #bar,body.stack #notes{display:none!important}
+#tip{display:none}
+body.stack #tip{display:block;font:500 13px/1.4 var(--body);color:var(--gold-soft);text-align:center;padding:14px 16px 10px;letter-spacing:.04em}
 @media (prefers-reduced-motion:reduce){.slide{transition:none}}
 </style>
 </head>
 <body>
+<p id="tip">Scroll to see every slide · turn your phone sideways for full-screen slides</p>
 <div id="deck">
 
 <!-- 1 · TITLE -->
@@ -399,9 +411,17 @@ const TRIAL_LABEL = "Prototype v2 drop trial · filmed October 2026 · camera in
 
 const slides=[...document.querySelectorAll('.slide')];
 let i=0;
+slides.forEach(el=>{const f=document.createElement('div');f.className='frame';el.before(f);f.appendChild(el)});
 function fit(){
-  const s=Math.min(innerWidth/1600, innerHeight/900);
-  slides.forEach(el=>el.style.transform=`scale(${s})`);
+  const stack = innerWidth<900 && innerHeight>innerWidth;
+  document.body.classList.toggle('stack',stack);
+  if(stack){
+    const s=innerWidth/1600;
+    slides.forEach(el=>{el.style.transform=`scale(${s})`;const f=el.parentElement;f.style.width=innerWidth+'px';f.style.height=(900*s)+'px'});
+  }else{
+    const s=Math.min(innerWidth/1600, innerHeight/900);
+    slides.forEach(el=>{el.style.transform=`scale(${s})`;const f=el.parentElement;f.style.width='';f.style.height=''});
+  }
 }
 function show(n){
   i=Math.max(0,Math.min(slides.length-1,n));
@@ -426,6 +446,21 @@ addEventListener('keydown',e=>{
 });
 document.querySelectorAll('[data-go]').forEach(a=>a.onclick=e=>{e.preventDefault();show(+a.dataset.go-1)});
 addEventListener('resize',fit);
+addEventListener('orientationchange',()=>setTimeout(fit,200));
+/* Tap right side = next, left side = back. Swipe works too. */
+document.getElementById('deck').addEventListener('click',e=>{
+  if(document.body.classList.contains('stack'))return;
+  if(e.target.closest('a,button,video,iframe'))return;
+  e.clientX>innerWidth/2?show(i+1):show(i-1);
+});
+let tx=null;
+addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});
+addEventListener('touchend',e=>{
+  if(tx===null||document.body.classList.contains('stack'))return;
+  const dx=e.changedTouches[0].clientX-tx; tx=null;
+  if(Math.abs(dx)>50){dx<0?show(i+1):show(i-1)}
+});
+document.body.classList.add('mouse');setTimeout(()=>document.body.classList.remove('mouse'),4000);
 let hudT;addEventListener('mousemove',()=>{document.body.classList.add('mouse');clearTimeout(hudT);hudT=setTimeout(()=>document.body.classList.remove('mouse'),2500)});
 
 if(TRIAL_VIDEO){
