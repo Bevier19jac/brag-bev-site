@@ -42,9 +42,8 @@ nav ul{display:flex;gap:clamp(14px,3vw,32px);list-style:none;margin:0;padding:0}
 nav a{white-space:nowrap;font:500 12px/1 var(--body);letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--mist)}
 nav a:hover{color:var(--cream)}
 @media (max-width:820px){nav li.opt{display:none}}
-@media (max-width:560px){nav li.opt2{display:none}nav ul{gap:16px}nav a{letter-spacing:.14em}nav .brand img{height:28px}}
-@media (max-width:480px){nav li.opt3{display:none}}
-@media (max-width:360px){nav ul{gap:10px}}
+/* phones: links get their own row under the logo, so nothing important is hidden */
+@media (max-width:640px){nav .wrap{flex-wrap:wrap;row-gap:10px;padding-block:10px}nav ul{width:100%;flex-wrap:wrap;justify-content:space-between;gap:8px 12px}nav a{letter-spacing:.12em}nav .brand img{height:28px}}
 
 /* hero */
 .hero{position:relative;min-height:clamp(520px,82vh,860px);display:flex;align-items:flex-end;overflow:hidden}
@@ -185,11 +184,11 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Brag &amp; Bev home"><img src="img/logo-brag-bev.png" alt="Brag &amp; Bev" width="562" height="148"></a>
     <ul>
-      <li class="opt2"><a href="#film">Film</a></li>
+      <li><a href="#film">Film</a></li>
       <li class="opt"><a href="#story">Story</a></li>
       <li class="opt"><a href="#how">How it works</a></li>
       <li><a href="real-test.html">Real test</a></li>
-      <li class="opt3"><a href="#contact">Contact</a></li><li><a href="pitch/">Pitch deck</a></li>
+      <li><a href="#contact">Contact</a></li><li><a href="pitch/">Pitch deck</a></li>
     </ul>
   </div>
 </nav>
