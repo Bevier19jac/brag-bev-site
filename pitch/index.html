@@ -99,6 +99,8 @@ ul.clean li b{color:var(--gold);font-weight:600;min-width:150px;font-size:16px;l
 body.mouse #hud{opacity:1}
 #hud button{background:rgba(10,26,18,.8);color:var(--cream);border:1px solid var(--line);border-radius:4px;padding:9px 13px;font:500 13px/1 var(--body);cursor:pointer}
 #hud button:hover{border-color:var(--gold)}
+#hud a.home{background:rgba(10,26,18,.8);color:var(--cream);border:1px solid var(--line);border-radius:4px;padding:9px 13px;font:500 13px/1 var(--body);text-decoration:none}
+#hud a.home:hover{border-color:var(--gold)}
 #bar{position:fixed;left:0;bottom:0;height:3px;background:var(--gold);z-index:6;transition:width .3s}
 .notes{display:none}
 
@@ -113,7 +115,7 @@ body.mouse #hud{opacity:1}
 }
 
 /* Phones / portrait: slides stack and you just scroll */
-@media (hover:none){#hud{opacity:.85;top:auto;bottom:10px;right:10px}#hud button{padding:7px 10px;font-size:12px}#nbtn,#fbtn{display:none}}
+@media (hover:none){#hud{opacity:.85;top:auto;bottom:10px;right:10px}#hud button,#hud a.home{padding:7px 10px;font-size:12px}#nbtn,#fbtn{display:none}}
 .frame{display:contents}
 body.stack{height:auto;overflow-y:auto;background:var(--ink)}
 body.stack #deck{position:static;display:block;overflow:visible;padding:0 0 24px}
@@ -121,12 +123,13 @@ body.stack .frame{display:block;position:relative;overflow:hidden;margin:0 auto 
 body.stack .slide{opacity:1;pointer-events:auto;transform-origin:0 0;left:0;top:0;transition:none}
 body.stack #hud,body.stack #bar,body.stack #notes{display:none!important}
 #tip{display:none}
+body.stack #tip a{color:var(--gold);text-decoration:none;font-weight:600}
 body.stack #tip{display:block;font:500 13px/1.4 var(--body);color:var(--gold-soft);text-align:center;padding:14px 16px 10px;letter-spacing:.04em}
 @media (prefers-reduced-motion:reduce){.slide{transition:none}}
 </style>
 </head>
 <body>
-<p id="tip">Scroll to see every slide · turn your phone sideways for full-screen slides</p>
+<p id="tip"><a href="../">← Back to the site</a> · Scroll to see every slide · turn your phone sideways for full-screen slides</p>
 <div id="deck">
 
 <!-- 1 · TITLE -->
@@ -411,7 +414,7 @@ body.stack #tip{display:block;font:500 13px/1.4 var(--body);color:var(--gold-sof
         <li><b>Jun 2026</b><span><a href="https://drive.google.com/file/d/1dGpSTdbNBTLN6zN0m4AJyTTaQM06A4Cp/view" target="_blank" rel="noopener">ARE Labs report 11048.30</a></span></li>
         <li><b>Jul 2026</b><span>Lab drop trials: <a href="https://drive.google.com/file/d/1oN6GMi8Qi_c1QGgd9XWTAq94WzmAPOrH/view" target="_blank" rel="noopener">1</a> · <a href="https://drive.google.com/file/d/1TtkNI7O1wmbRfL20cCqp7iR95Fiz0Ym2/view" target="_blank" rel="noopener">2</a> · <a href="https://drive.google.com/file/d/1nScNyIb5uxIAZjDhgcIi27bXVrmN1RC8/view" target="_blank" rel="noopener">3</a></span></li>
         <li><b>Prototypes</b><span><a href="https://drive.google.com/file/d/1F_tvCtcGm9Xi129qPQn8E4iVTli4AxH-/view" target="_blank" rel="noopener">Early prototype</a> · <a href="https://drive.google.com/file/d/1_O6OVGf6E-jCoRUNGjrT8treEUmJeVcu/view" target="_blank" rel="noopener">v2 walkaround</a></span></li>
-        <li><b>Oct 2026</b><span><a href="https://bragandbev.netlify.app/pitch/trial.mp4" target="_blank" rel="noopener">Prototype v2 demo (33 s)</a> · <a href="https://bragandbev.netlify.app/real-test" target="_blank" rel="noopener">all five trials + highlights</a></span></li>
+        <li><b>Oct 2026</b><span><a href="https://bragandbev.netlify.app/pitch/trial.mp4" target="_blank" rel="noopener">Prototype v2 demo (36 s)</a> · <a href="https://bragandbev.netlify.app/real-test" target="_blank" rel="noopener">all five trials + highlights</a></span></li>
       </ul>
       <p class="small" style="margin-top:22px">bragandbev.netlify.app/pitch</p>
     </div>
@@ -426,6 +429,7 @@ body.stack #tip{display:block;font:500 13px/1.4 var(--body);color:var(--gold-sof
 <div id="notes" aria-live="polite"></div>
 <div id="bar"></div>
 <div id="hud">
+  <a class="home" id="hbtn" href="../" aria-label="Back to the Brag &amp; Bev site">← Site</a>
   <span id="count"></span>
   <button id="prev" aria-label="Previous slide">←</button>
   <button id="next" aria-label="Next slide">→</button>
